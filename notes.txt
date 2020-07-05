@@ -1,5 +1,5 @@
 Survey from qualtrics.
-Qualtrics code to link up the identifier. Just to link up. 
+Qualtrics code to link up the identifier. Just to link up.
 
 Collect from the course picking:
 What courses they pick.
