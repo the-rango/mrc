@@ -113,29 +113,29 @@ const INIT_SELECTED = {
 
 const REQUIREMENT = `
 Biology Difficulty 4 /4\n
-Core Curriculum
-Life Sciences: 3 and 27L
-Chemistry: 12A and 12B
-Mathematics: 6A, and 6C or 6D
-Physics: 3A and 3B
+Core Curriculum\n
+Life Sciences: 3 and 27L\n
+Chemistry: 12A and 12B\n
+Mathematics: 6A, and 6C or 6D\n
+Physics: 3A and 3B\n
+\n
+Chemistry\n
+Chemistry: 119A, 119B, 120, 125, or 130\n
 
-Chemistry
-Chemistry: 119A, 119B, 120, 125, or 130
+Foundation Courses ��� Choose two courses from the following list:\n
+Ecology & Evolutionary Biology: 113 or 114, 127, 198, 129\n
+Physics: 111, 114A\n
+Chemistry: one of 119B, 120, 121, 125, 130\n
+\n
+Laboratory Courses -��� Choose five courses from the following list:\n
+Ecology & Evolutionary Biology: 113A, 127, 129, 130, 132 + 132A (most take BOTH courses for it to count), 137, 151, 151A, 158, 160, 161, 174, 178, 185, 192, 193\n
+Microbiology: 112, 112, 118, 121\n
+Physiological Science: 112, 116, 119\n
+At least two courses taken to fulfill this requirement must be Ecology & Evolutionary Biology: courses\n
 
-Foundation Courses ��� Choose two courses from the following list:
-Ecology & Evolutionary Biology: 113 or 114, 127, 198, 129
-Physics: 111, 114A
-Chemistry: one of 119B, 120, 121, 125, 130
-
-Laboratory Courses -��� Choose five courses from the following list:
-Ecology & Evolutionary Biology: 113A, 127, 129, 130, 132 + 132A (most take BOTH courses for it to count), 137, 151, 151A, 158, 160, 161, 174, 178, 185, 192, 193
-Microbiology: 112, 112, 118, 121
-Physiological Science: 112, 116, 119
-At least two courses taken to fulfill this requirement must be Ecology & Evolutionary Biology: courses
-
-Upper Division Electives ��� Choose eight courses from the following list:
-Anthropology: 110 and/or one of 116A, 116P, or 119A
-Ecology & Evolutionary Biology: 127, 129, 130, 146A, 151, 151A, 154, 158, 160, 161, 174, 178, 179, 193, 198 (can be taken multiple times, but only can be counted twice towards requirements)
+Upper Division Electives ��� Choose eight courses from the following list:\n
+Anthropology: 110 and/or one of 116A, 116P, or 119A\n
+Ecology & Evolutionary Biology: 127, 129, 130, 146A, 151, 151A, 154, 158, 160, 161, 174, 178, 179, 193, 198 (can be taken multiple times, but only can be counted twice towards requirements)\n
 Molecular Biology: 112, 114, 115, 124, 128, 131, 133, 142`
 
 const min = (a,b) => {
@@ -365,8 +365,8 @@ class App extends Component {
 
             <Grid item xs={12} s={6} md={6} lg={6} xl={6}>
               <Paper style={{height: '100%', width: '97%'}}>
-                <Typography variant='body1' style={{margin: 10}}>
-                `{this.state.requirement}`
+                <Typography variant='body1' style={{margin: 10, whiteSpace: "pre-line"}}>
+                {this.state.requirement}
                 </Typography>
 
                 <Pool key={'pool'} column={this.state.pool} courses={this.state.pool.courseIds.map(courseId => this.state.courses[courseId])} />
