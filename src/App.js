@@ -5,7 +5,6 @@ import {
   Toolbar,
   AppBar,
   Typography,
-  Paper,
   Dialog,
   DialogActions,
   DialogContent,
@@ -111,9 +110,7 @@ const INIT_SELECTED = {
   },
 }
 
-const REQUIREMENT = `
-Biology Difficulty 4 /4
-Core Curriculum
+const REQUIREMENT = `Core Curriculum
 Life Sciences: 3 and 27L
 Chemistry: 12A and 12B
 Mathematics: 6A, and 6C or 6D
@@ -122,18 +119,18 @@ Physics: 3A and 3B
 Chemistry
 Chemistry: 119A, 119B, 120, 125, or 130
 
-Foundation Courses ��� Choose two courses from the following list:
+Foundation Courses - Choose two courses from the following list:
 Ecology & Evolutionary Biology: 113 or 114, 127, 198, 129
 Physics: 111, 114A
 Chemistry: one of 119B, 120, 121, 125, 130
 
-Laboratory Courses -��� Choose five courses from the following list:
+Laboratory Courses - Choose five courses from the following list:
 Ecology & Evolutionary Biology: 113A, 127, 129, 130, 132 + 132A (most take BOTH courses for it to count), 137, 151, 151A, 158, 160, 161, 174, 178, 185, 192, 193
 Microbiology: 112, 112, 118, 121
 Physiological Science: 112, 116, 119
 At least two courses taken to fulfill this requirement must be Ecology & Evolutionary Biology: courses
 
-Upper Division Electives ��� Choose eight courses from the following list:
+Upper Division Electives - Choose eight courses from the following list:
 Anthropology: 110 and/or one of 116A, 116P, or 119A
 Ecology & Evolutionary Biology: 127, 129, 130, 146A, 151, 151A, 154, 158, 160, 161, 174, 178, 179, 193, 198 (can be taken multiple times, but only can be counted twice towards requirements)
 Molecular Biology: 112, 114, 115, 124, 128, 131, 133, 142`
@@ -156,7 +153,8 @@ class App extends Component {
       },
       failed: [],
       checked: false,
-      new: false,
+      progress: 1,
+      help: false,
       requirement: REQUIREMENT,
     };
   }
@@ -273,21 +271,25 @@ class App extends Component {
           }}
         >
           <Toolbar variant="dense">
-            <div style={{ flexGrow: 1 }}>
+            <Typography variant='h6' style={{ flexGrow: 1 }}>
               {'Major Requirements Complexity'}
-            </div>
-
-            <Typography variant = "body2" style={{margin: 5}}>
-            Email
             </Typography>
 
-            <Button onClick={this.checkout} variant="contained" color="secondary">
+            <Typography variant='body2' style={{ flexGrow: 1 }}>
+              {'Major '+this.state.progress+' of 2'}
+            </Typography>
+
+            <Button onClick={()=>this.setState({help: true})} size="small" variant="contained" style={{marginRight: 15}}>
+            instructions
+            </Button>
+
+            <Button onClick={this.checkout} size="small" variant="contained" color="secondary">
             checkout
             </Button>
           </Toolbar>
         </AppBar>
 
-        <Dialog open={this.state.new} onClose={()=>{this.setState({new: false})}} style={{minWidth: "80%"}}>
+        <Dialog open={this.state.progress === 0} onClose={()=>{this.setState({progress: 1, help: true})}} style={{minWidth: "80%"}}>
           <DialogTitle>Welcome</DialogTitle>
           <DialogContent>
             <DialogContentText>
@@ -304,94 +306,104 @@ class App extends Component {
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={()=>{this.setState({new: false})}} color="primary">
+            <Button onClick={()=>{this.setState({progress: 1, help: true})}} color="primary">
               Continue
             </Button>
           </DialogActions>
         </Dialog>
 
+        <Dialog open={this.state.help} onClose={()=>{this.setState({help: false})}} style={{minWidth: "80%"}}>
+          <DialogTitle>Instructions</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Select up to 2 courses per quarter. Click checkout when ready.
+              <br />
+              If you would like to see this message again, click on instructions to the top right of the page.
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={()=>{this.setState({help: false})}} color="primary">
+              Continue
+            </Button>
+          </DialogActions>
+        </Dialog>
 
         <DragDropContext onDragEnd={this.onDragEnd}>
           <Grid container>
             <Grid item xs={12} s={6} md={6} lg={6} xl={6}>
-              <Typography variant = 'h6' style={{margin: 10}}>
-              Select up to 2 courses per quarter. Click checkout when ready.
-              </Typography>
-              <Divider />
-              <Typography variant = 'h7' style={{margin: 15}}>
-              Year One
-              </Typography>
-              <div style={{marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
-                {['1f','1w','1s'].map(columnId => {
-                  const column = this.state.selected[columnId];
-                  const courses = column.courseIds.map(courseId => this.state.courses[courseId]);
-                  return <Column key={column.id} column={column} courses={courses} />;
-                })}
-              </div>
-              <Divider />
-              <Typography variant = 'h7' style={{margin: 15}}>
-              Year Two
-              </Typography>
-              <div style={{marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
-                {['2f','2w','2s'].map(columnId => {
-                  const column = this.state.selected[columnId];
-                  const courses = column.courseIds.map(courseId => this.state.courses[courseId]);
-                  return <Column key={column.id} column={column} courses={courses} />;
-                })}
-              </div>
-              <Divider />
-              <Typography variant = 'h7' style={{margin: 15}}>
-              Year Three
-              </Typography>
-              <div style={{marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
-                {['3f','3w','3s'].map(columnId => {
-                  const column = this.state.selected[columnId];
-                  const courses = column.courseIds.map(courseId => this.state.courses[courseId]);
-                  return <Column key={column.id} column={column} courses={courses} />;
-                })}
-              </div>
-              <Divider />
-              <Typography variant = 'h7' style={{margin: 15}}>
-              Year Four
-              </Typography>
-              <div style={{marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
-                {['4f','4w','4s'].map(columnId => {
-                  const column = this.state.selected[columnId];
-                  const courses = column.courseIds.map(courseId => this.state.courses[courseId]);
-                  return <Column key={column.id} column={column} courses={courses} />;
-                })}
+              <div style = {{display: 'flex', flexFlow: 'column', height: '100%'}}>
+                <div style = {{flex: '1 1 auto', display: 'flex'}}>
+                  <Typography variant = 'h3' style={{marginLeft: 15}}>
+                  1
+                  </Typography>
+                  <div style={{flex: '1 1 auto', marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
+                    {['1f','1w','1s'].map(columnId => {
+                      const column = this.state.selected[columnId];
+                      const courses = column.courseIds.map(courseId => this.state.courses[courseId]);
+                      return <Column key={column.id} column={column} courses={courses} />;
+                    })}
+                  </div>
+                </div>
+
+                <Divider />
+
+                <div style = {{flex: '1 1 auto', display: 'flex'}}>
+                  <Typography variant = 'h3' style={{marginLeft: 15}}>
+                  2
+                  </Typography>
+                  <div style={{flex: '1 1 auto', marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
+                    {['2f','2w','2s'].map(columnId => {
+                      const column = this.state.selected[columnId];
+                      const courses = column.courseIds.map(courseId => this.state.courses[courseId]);
+                      return <Column key={column.id} column={column} courses={courses} />;
+                    })}
+                  </div>
+                </div>
+
+                <Divider />
+
+                <div style = {{flex: '1 1 auto', display: 'flex'}}>
+                  <Typography variant = 'h3' style={{marginLeft: 15}}>
+                  3
+                  </Typography>
+                  <div style={{flex: '1 1 auto', marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
+                    {['3f','3w','3s'].map(columnId => {
+                      const column = this.state.selected[columnId];
+                      const courses = column.courseIds.map(courseId => this.state.courses[courseId]);
+                      return <Column key={column.id} column={column} courses={courses} />;
+                    })}
+                  </div>
+                </div>
+
+                <Divider />
+
+                <div style = {{flex: '1 1 auto', display: 'flex'}}>
+                  <Typography variant = 'h3' style={{marginLeft: 15}}>
+                  4
+                  </Typography>
+                  <div style={{flex: '1 1 auto', marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
+                    {['4f','4w','4s'].map(columnId => {
+                      const column = this.state.selected[columnId];
+                      const courses = column.courseIds.map(courseId => this.state.courses[courseId]);
+                      return <Column key={column.id} column={column} courses={courses} />;
+                    })}
+                  </div>
+                </div>
               </div>
             </Grid>
 
             <Grid item xs={12} s={6} md={6} lg={6} xl={6}>
-              <Paper style={{height: '100%', width: '97%'}}>
-                <Typography variant='body2' style={{margin: 10, whiteSpace: "pre-line"}}>
-                {this.state.requirement}
-                </Typography>
+              <div style={{display: 'flex', flexFlow: 'row', position: 'relative', height: '100%'}}>
+                <div style={{flex: '0 1 auto', height: '100%'}}>
+                  <Pool key={'pool'} column={this.state.pool} courses={this.state.pool.courseIds.map(courseId => this.state.courses[courseId])} />
+                </div>
 
-                <Pool key={'pool'} column={this.state.pool} courses={this.state.pool.courseIds.map(courseId => this.state.courses[courseId])} />
-
-                {(this.state.checked) ? (
-                  (this.state.failed !== []) ? (
-                    <Fragment>
-                      <Typography style={{margin: '10px'}}>
-                      Failed the following requirements:
-                      </Typography>
-                      <ul>
-                      {this.state.failed.map((item) => {
-                        return (<Typography><li>{item}</li></Typography>);
-                      })}
-                      </ul>
-                    </Fragment>
-                  ) : (
-                    <Typography>
-                    All requirements met
-                    </Typography>
-                  )
-                ) : (
-                  <Fragment />
-                )}
-              </Paper>
+                <div style={{flex: '1 1 auto', margin: 10, overflow: 'auto'}}>
+                  <Typography variant='body2' style={{whiteSpace: "pre-line"}}>
+                    {this.state.requirement}
+                  </Typography>
+                </div>
+              </div>
             </Grid>
           </Grid>
         </DragDropContext>

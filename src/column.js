@@ -7,16 +7,17 @@ import {Droppable} from 'react-beautiful-dnd'
 import Course from './course'
 
 const Container = styled.div`
-  margin: 8px;
+  margin: 5px;
   border: 1px solid lightgrey;
   border-radius: 2px;
   width: 100%;
+  height: 83%;
 `;
 const CourseList = styled.div`
-  padding: 2px;
   min-height: 82px;
   display: flex;
   justify-content: space-between;
+  height: 80%;
 `;
 
 
@@ -24,7 +25,7 @@ export default class Column extends React.Component{
   render(){
     return (
       <Container>
-        <Typography variant="h7">{this.props.column.title}</Typography>
+        <Typography variant="subtitle2">{this.props.column.title}</Typography>
         <Droppable droppableId={this.props.column.id} direction="horizontal">
           {(provided) => (
             <CourseList

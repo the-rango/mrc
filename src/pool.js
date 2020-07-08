@@ -7,17 +7,17 @@ import {Droppable} from 'react-beautiful-dnd'
 import Course from './course'
 
 const Container = styled.div`
-  margin: 8px;
+  margin: 5px;
   border: 1px solid lightgrey;
   border-radius: 2px;
   width: 97%;
-  min-height: 90px;
+  height: 100%;
 `;
 const CourseList = styled.div`
   margin: 8px;
-  display: flex;
+  height: 100%;
   overflow: auto;
-  justify-content: space-between;
+  flex-flow: column;
 `;
 
 
@@ -25,8 +25,8 @@ export default class Pool extends React.Component{
   render(){
     return (
       <Container>
-        <Typography variant="h7" style={{margin: 10}}>{this.props.column.title}</Typography>
-        <Droppable droppableId={this.props.column.id} direction="horizontal" isDropDisabled={true}>
+        <Typography variant="subtitle1" style={{marginLeft: 10}}>{this.props.column.title}</Typography>
+        <Droppable droppableId={this.props.column.id} isDropDisabled={true}>
           {(provided, snapshot) => (
             <CourseList
               ref={provided.innerRef}
