@@ -25,7 +25,7 @@ export default class Column extends React.Component{
   render(){
     return (
       <Container>
-        <Typography variant="subtitle2">{this.props.column.title}</Typography>
+        <Typography variant="subtitle2" style = {{margin: 3}}>{this.props.column.title}</Typography>
         <Droppable droppableId={this.props.column.id} direction="horizontal">
           {(provided) => (
             <CourseList

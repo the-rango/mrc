@@ -11,7 +11,6 @@ import {
   DialogContentText,
   DialogTitle,
   TextField,
-  Divider,
 } from '@material-ui/core';
 import {
   DragDropContext,
@@ -265,9 +264,8 @@ class App extends Component {
         <AppBar
           position="static"
           style={{
-            marginBottom: '4px',
+            marginBottom: '3px',
             boxShadow: 'none',
-            backgroundColor: '#305db7',
           }}
         >
           <Toolbar variant="dense">
@@ -392,7 +390,12 @@ class App extends Component {
                   <Pool key={'pool'} column={this.state.pool} courses={this.state.pool.courseIds.map(courseId => this.state.courses[courseId])} />
                 </div>
 
-                <div style={{flex: '1 1 auto', margin: 15, overflow: 'auto'}}>
+                <div style={{flex: '1 1 auto', marginTop: 5, marginLeft: 15, marginRight: 15, overflow: 'auto'}}>
+                  <Typography variant='h6'>
+                    <strong>
+                    Requirements
+                    </strong>
+                  </Typography>
                   <Typography variant='body2' style={{whiteSpace: "pre-line"}}>
                     {this.state.requirement}
                   </Typography>
