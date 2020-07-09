@@ -345,8 +345,6 @@ class App extends Component {
                   </div>
                 </div>
 
-                <Divider />
-
                 <div style = {{flex: '1 1 auto', display: 'flex'}}>
                   <Typography variant = 'h3' style={{marginLeft: 15}}>
                   2
@@ -360,8 +358,6 @@ class App extends Component {
                   </div>
                 </div>
 
-                <Divider />
-
                 <div style = {{flex: '1 1 auto', display: 'flex'}}>
                   <Typography variant = 'h3' style={{marginLeft: 15}}>
                   3
@@ -374,8 +370,6 @@ class App extends Component {
                     })}
                   </div>
                 </div>
-
-                <Divider />
 
                 <div style = {{flex: '1 1 auto', display: 'flex'}}>
                   <Typography variant = 'h3' style={{marginLeft: 15}}>
@@ -393,12 +387,12 @@ class App extends Component {
             </Grid>
 
             <Grid item xs={12} s={6} md={6} lg={6} xl={6}>
-              <div style={{display: 'flex', flexFlow: 'row', position: 'relative', height: '100%'}}>
+              <div style={{display: 'flex', flexFlow: 'row', position: 'relative', height: 'calc(100vh - 62px + 9px)'}}>
                 <div style={{flex: '0 1 auto', height: '100%'}}>
                   <Pool key={'pool'} column={this.state.pool} courses={this.state.pool.courseIds.map(courseId => this.state.courses[courseId])} />
                 </div>
 
-                <div style={{flex: '1 1 auto', margin: 10, overflow: 'auto'}}>
+                <div style={{flex: '1 1 auto', margin: 15, overflow: 'auto'}}>
                   <Typography variant='body2' style={{whiteSpace: "pre-line"}}>
                     {this.state.requirement}
                   </Typography>

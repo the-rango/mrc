@@ -10,13 +10,14 @@ const Container = styled.div`
   margin: 5px;
   border: 1px solid lightgrey;
   border-radius: 2px;
-  width: 97%;
-  height: 100%;
+  width: 100%;
+  height: 96%;
 `;
 const CourseList = styled.div`
   margin: 8px;
-  height: 100%;
-  overflow: auto;
+  height: 93%;
+  overflow-y: auto;
+  overflow-x: hidden;
   flex-flow: column;
 `;
 
@@ -25,7 +26,7 @@ export default class Pool extends React.Component{
   render(){
     return (
       <Container>
-        <Typography variant="subtitle1" style={{marginLeft: 10}}>{this.props.column.title}</Typography>
+        <Typography variant="subtitle1" style={{marginLeft: 5}}>{this.props.column.title}</Typography>
         <Droppable droppableId={this.props.column.id} isDropDisabled={true}>
           {(provided, snapshot) => (
             <CourseList
