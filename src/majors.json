@@ -1,0 +1,49 @@
+{
+  "depts": ["Evolutionary Biology"],
+  "diffl": [4],
+  "requirements": {
+    "Evolutionary Biology": {
+      "courses": {
+        "bio1": {"id": "bio1", "content": "bio-1", "tag": [1]},
+        "bio2": {"id": "bio2", "content": "bio-2", "tag": [1]},
+        "bio3": {"id": "bio3", "content": "bio-3", "tag": [1]},
+        "bio4": {"id": "bio4", "content": "bio-4", "tag": [1]},
+        "bio5": {"id": "bio5", "content": "bio-5", "tag": [1]},
+        "bio6": {"id": "bio6", "content": "bio-6", "tag": [1]},
+        "bio7": {"id": "bio7", "content": "bio-7", "tag": [1]},
+        "bio8": {"id": "bio8", "content": "bio-8", "tag": [1]},
+        "bio9": {"id": "bio9", "content": "bio-9", "tag": [1]},
+        "bio10": {"id": "bio10", "content": "bio-10", "tag": [1]},
+        "bio11": {"id": "bio11", "content": "bio-11", "tag": [1]},
+        "bio12": {"id": "bio12", "content": "bio-12", "tag": [1]},
+        "bio13": {"id": "bio13", "content": "bio-13", "tag": [1]},
+        "bio14": {"id": "bio14", "content": "bio-14", "tag": [1]},
+        "bio15": {"id": "bio15", "content": "bio-15", "tag": [1]},
+        "bio16": {"id": "bio16", "content": "bio-16", "tag": [1]},
+        "bio100": {"id": "bio100", "content": "bio-100", "tag": [3]},
+        "bio101": {"id": "bio101", "content": "bio-101", "tag": [3]},
+        "bio102": {"id": "bio102", "content": "bio-102", "tag": [3]},
+        "bio103": {"id": "bio103", "content": "bio-103", "tag": [3]},
+        "bio104": {"id": "bio104", "content": "bio-104", "tag": [3]},
+        "bio105": {"id": "bio105", "content": "bio-105", "tag": [3]},
+        "bio106": {"id": "bio106", "content": "bio-106", "tag": [3]},
+        "capstone1": {"id": "capstone1", "content": "capstone-1", "tag": [7]},
+        "capstone2": {"id": "capstone2", "content": "capstone-2", "tag": [7]}
+      },
+      "4": {
+        "textreq": "Core Curriculum\nLife Sciences: 3 and 27L\nChemistry: 12A and 12B\nMathematics: 6A, and 6C or 6D\nPhysics: 3A and 3B\nChemistry\nChemistry: 119A, 119B, 120, 125, or 130\n\nFoundation Courses - Choose two courses from the following list:\nEcology & Evolutionary Biology: 113 or 114, 127, 198, 129\nPhysics: 111, 114A\nChemistry: one of 119B, 120, 121, 125, 130\n\nLaboratory Courses - Choose five courses from the following list:\nEcology & Evolutionary Biology: 113A, 127, 129, 130, 132 + 132A (most take BOTH courses for it to count), 137, 151, 151A, 158, 160, 161, 174, 178, 185, 192, 193\nMicrobiology: 112, 112, 118, 121\nPhysiological Science: 112, 116, 119\nAt least two courses taken to fulfill this requirement must be Ecology & Evolutionary Biology: courses\n\nUpper Division Electives - Choose eight courses from the following list:\nAnthropology: 110 and/or one of 116A, 116P, or 119A\nEcology & Evolutionary Biology: 127, 129, 130, 146A, 151, 151A, 154, 158, 160, 161, 174, 178, 179, 193, 198 (can be taken multiple times, but only can be counted twice towards requirements)\nMolecular Biology: 112, 114, 115, 124, 128, 131, 133, 142",
+        "boolreq": [
+          "SUMTAG[1] >= 16",
+          "SUMTAG[3] >= 7",
+          "SUMTAG[4] >= 7",
+          "SUMTAG[4]+SUMTAG[5]+MIN(SUMTAG[6],3) >= 10",
+          "SUMTAG[3]+SUMTAG[4]+SUMTAG[5]+MIN(SUMTAG[6],3)+MIN(SUMTAG[7],2) >= 23",
+          "SUMTAG[8] >= 6",
+          "SUMTAG[7] >= 2",
+          "SUMTAG[9]+MIN(SUMTAG[11],3)+MIN(SUMTAG[12],2) >= 34",
+          "(SUMTAG[4] + SUMTAG[5] + MIN(SUMTAG[6],3))+(SUMTAG[7]) - SUMTAG[10] >= 10 + 2"
+        ]
+      }
+    }
+  }
+}
