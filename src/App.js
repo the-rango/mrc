@@ -345,7 +345,7 @@ class App extends Component {
                   <Pool key={'pool'} column={this.state.pool} courses={this.state.pool.courseIds.map(courseId => this.state.courses[courseId])} />
                 </div>
 
-                <div style={{flex: '1 1 auto', marginTop: 5, marginLeft: 15, marginRight: 15, overflow: 'auto'}}>
+                <div style={{flex: '1 1 auto', marginTop: 5, marginLeft: 16, marginRight: 15, overflow: 'auto'}}>
                   <Typography variant='h6'>
                     <strong>
                     Requirements
