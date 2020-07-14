@@ -437,10 +437,8 @@ class App extends Component {
                 </div>
 
                 <div style={{flex: '1 1 auto', marginTop: 5, marginLeft: 16, marginRight: 15, overflow: 'auto'}}>
-                  <Typography variant='h6'>
-                    <strong>
+                  <Typography variant='h6' style={{marginBottom: 5}}>
                     Requirements
-                    </strong>
                   </Typography>
                   <Typography variant='body2' style={{whiteSpace: "pre-line"}}>
                     {this.state.requirement}

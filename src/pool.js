@@ -8,8 +8,6 @@ import Course from './course'
 
 const Container = styled.div`
   margin: 5px;
-  border: 1px solid lightgrey;
-  border-radius: 2px;
   width: 100%;
   height: 96%;
 `;
@@ -26,7 +24,9 @@ export default class Pool extends React.Component{
   render(){
     return (
       <Container>
-        <Typography variant="subtitle1" style={{marginLeft: 5}}>{this.props.column.title}</Typography>
+        <Typography variant='h6' style={{marginLeft: 5}}>
+          Courses
+        </Typography>
         <Droppable droppableId={this.props.column.id} isDropDisabled={true}>
           {(provided, snapshot) => (
             <CourseList
