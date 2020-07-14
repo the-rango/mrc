@@ -11,7 +11,17 @@ import {
   DialogContentText,
   DialogTitle,
   Snackbar,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  RadioGroup,
+  Radio,
+  Select,
+  MenuItem,
+  InputLabel,
+  Slider,
   TextField,
+  Divider,
 } from '@material-ui/core';
 import Alert from '@material-ui/lab/Alert';
 import {
@@ -107,10 +117,17 @@ class App extends Component {
       },
       failed: [],
       checked: false,
-      progress: 1,
+      progress: 0,
       help: false,
       requirement: major.textreq,
       boolreq: major.boolreq,
+      gender: "",
+      ethncity: "",
+      candmajor: "",
+      standing: "",
+      gpa: 3.0,
+      moreyears: 2,
+      advifreq: "",
     };
   }
 
@@ -158,41 +175,45 @@ class App extends Component {
     }
 
     if (destination.droppableId !== 'pool'){
-      const column = this.state.selected[destination.droppableId];
-      const newCourseIds = Array.from(column.courseIds);
-      var newCourse = draggableId + '-' + Math.floor(Math.random() * 1000).toString();
-      newCourseIds.splice(destination.index, 0, newCourse);
+      if (source.droppableId === 'pool'){
+        const column = this.state.selected[destination.droppableId];
+        const newCourseIds = Array.from(column.courseIds);
+        var newCourse = draggableId + '-' + Math.floor(Math.random() * 1000).toString();
+        newCourseIds.splice(destination.index, 0, newCourse);
 
-      const newColumn = {
-        ...column,
-        courseIds: newCourseIds,
-      }
-
-      const newCourseContent = {
-        ...this.state.courses[draggableId],
-        id: newCourse,
-      }
-
-      const newState = {
-        ...this.state,
-        selected: {
-          ...this.state.selected,
-          [newColumn.id]: newColumn,
-        },
-        courses: {
-          ...this.state.courses,
-          [newCourse]: newCourseContent,
+        const newColumn = {
+          ...column,
+          courseIds: newCourseIds,
         }
-      };
 
-      this.setState(newState);
-      console.log(this.state)
+        const newCourseContent = {
+          ...this.state.courses[draggableId],
+          id: newCourse,
+        }
+
+        const newState = {
+          ...this.state,
+          selected: {
+            ...this.state.selected,
+            [newColumn.id]: newColumn,
+          },
+          courses: {
+            ...this.state.courses,
+            [newCourse]: newCourseContent,
+          }
+        };
+
+        this.setState(newState);
+      } else {
+        // Move between columns
+        return;
+      }
     } else {
       return;
     }
   }
 
-  handleClose = (event, reason) => {
+  closeSnackbar = (event, reason) => {
     if (reason === 'clickaway') {
       return;
     }
@@ -233,8 +254,8 @@ class App extends Component {
           </Toolbar>
         </AppBar>
 
-        <Snackbar open={this.state.checked} autoHideDuration={6000} onClose={this.handleClose} anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}>
-          <Alert onClose={this.handleClose} severity= {(this.state.failed.length === 0) ? "success" : "error"}>
+        <Snackbar open={this.state.checked} autoHideDuration={6000} onClose={this.closeSnackbar} anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}>
+          <Alert onClose={this.closeSnackbar} severity= {(this.state.failed.length === 0) ? "success" : "error"}>
             {(this.state.failed) ?
               "Failed! " + this.state.failed.join(' ')
               :
@@ -242,21 +263,91 @@ class App extends Component {
           </Alert>
         </Snackbar>
 
-        <Dialog open={this.state.progress === 0} onClose={()=>{this.setState({progress: 1, help: true})}} style={{minWidth: "80%"}}>
+        <Dialog open={this.state.progress === 0} onClose={()=>{this.setState({progress: 1, help: true})}} maxWidth="lg">
           <DialogTitle>Welcome</DialogTitle>
           <DialogContent>
             <DialogContentText>
               Thank you for participating in our study! Before we begin, please tell us about yourself!
               Your information is used strictly for the purposes of this survey and will not be released to other parties.
             </DialogContentText>
-            <TextField
-              autoFocus
-              margin="dense"
-              id="name"
-              label="Email Address"
-              type="email"
-              fullWidth
-            />
+            <Divider />
+            <br />
+            <FormControl required style={{marginBottom: 5}}>
+              <FormLabel component="legend">Gender</FormLabel>
+              <RadioGroup row name="gender" value={this.state.gender} onChange={(event) => {this.setState({gender: event.target.value})}}>
+                <FormControlLabel value="female" control={<Radio />} label="Female" />
+                <FormControlLabel value="male" control={<Radio />} label="Male" />
+                <FormControlLabel value="other" control={<Radio />} label="Other/Prefer not to state" />
+              </RadioGroup>
+            </FormControl>
+            <br />
+            <FormControl required fullWidth style={{marginBottom: 5}}>
+             <InputLabel>Race/Ethnicity</InputLabel>
+             <Select
+               labelId="ethnicity"
+               id="ethnicity"
+               value={this.state.ethnicity}
+               onChange={(event)=>this.setState({ethnicity: event.target.value})}
+             >
+               <MenuItem value={"White"}>White</MenuItem>
+               <MenuItem value={"Black"}>Black</MenuItem>
+               <MenuItem value={"Asian"}>Asian</MenuItem>
+               <MenuItem value={"Hispanic"}>Hispanic</MenuItem>
+               <MenuItem value={"Multi-Racial"}>Multi-Racial</MenuItem>
+               <MenuItem value={"Other"}>Other</MenuItem>
+             </Select>
+           </FormControl>
+           <br />
+           <FormControl required fullWidth style={{marginBottom: 5}}>
+            <InputLabel>Standing</InputLabel>
+            <Select
+              labelId="standing"
+              id="standing"
+              value={this.state.standing}
+              onChange={(event)=>this.setState({standing: event.target.value})}
+            >
+              <MenuItem value={1}>1st Year</MenuItem>
+              <MenuItem value={2}>2nd Year</MenuItem>
+              <MenuItem value={3}>3rd Year</MenuItem>
+              <MenuItem value={4}>4th Year</MenuItem>
+              <MenuItem value={5}>5th Year</MenuItem>
+              <MenuItem value={6}>6th Year or Higher</MenuItem>
+              <MenuItem value={0}>Graduate</MenuItem>
+            </Select>
+          </FormControl>
+          <br />
+          <FormControl required style={{marginBottom: 10}} fullWidth>
+            <TextField label="Major(s)" value={this.state.candmajor} onChange={(event)=>this.setState({candmajor: event.target.value})} />
+          </FormControl>
+          <br />
+          <FormControl required style={{marginBottom: 5}} fullWidth>
+            <Typography variant="body2">Best estimate of your current cumulative GPA</Typography>
+            <br />
+            <Slider defaultValue={this.state.gpa} valueLabelDisplay="on" step={0.1} marks min={0} max={4} onChange={(event)=>this.setState({gpa: event.target.value})}/>
+          </FormControl>
+          <br />
+          <FormControl required style={{marginBottom: 5}} fullWidth>
+            <Typography variant="body2">How many MORE years do you expect it to take for you to graduate?</Typography>
+            <br />
+            <Slider defaultValue={this.state.moreyears} valueLabelDisplay="on" step={1} marks min={1} max={5} onChange={(event)=>this.setState({moreyears: event.target.value})}/>
+          </FormControl>
+          <br />
+          <FormControl required fullWidth style={{marginBottom: 5}}>
+           <Typography variant="body2">How often have you met with an academic advisor or counselor to discuss your class schedule?</Typography>
+           <Select
+             labelId="advifreq"
+             id="advifreq"
+             value={this.state.advifreq}
+             onChange={(event)=>this.setState({advifreq: event.target.value})}
+           >
+             <MenuItem value={"Never"}>Never</MenuItem>
+             <MenuItem value={"Very Rarely"}>Very Rarely</MenuItem>
+             <MenuItem value={"Rarely"}>Rarely</MenuItem>
+             <MenuItem value={"Occasionally"}>Occasionally</MenuItem>
+             <MenuItem value={"Frequently"}>Frequently</MenuItem>
+           </Select>
+         </FormControl>
+
           </DialogContent>
           <DialogActions>
             <Button onClick={()=>{this.setState({progress: 1, help: true})}} color="primary">
