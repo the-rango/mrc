@@ -272,17 +272,17 @@ class App extends Component {
             </DialogContentText>
             <Divider />
             <br />
-            <FormControl required style={{marginBottom: 5}}>
-              <FormLabel component="legend">Gender</FormLabel>
+            <FormControl required style={{marginBottom: 5, width: "49%", padding: 5}}>
+            <Typography variant="body2">Please select the gender you identify the most with:</Typography>
               <RadioGroup row name="gender" value={this.state.gender} onChange={(event) => {this.setState({gender: event.target.value})}}>
                 <FormControlLabel value="female" control={<Radio />} label="Female" />
                 <FormControlLabel value="male" control={<Radio />} label="Male" />
                 <FormControlLabel value="other" control={<Radio />} label="Other/Prefer not to state" />
               </RadioGroup>
             </FormControl>
-            <br />
-            <FormControl required fullWidth style={{marginBottom: 5}}>
-             <InputLabel>Race/Ethnicity</InputLabel>
+
+            <FormControl required style={{marginBottom: 5, width: "49%", padding: 5}}>
+            <Typography variant="body2">Please select the ethnicity that you identify the most with:</Typography>
              <Select
                labelId="ethnicity"
                id="ethnicity"
@@ -297,9 +297,11 @@ class App extends Component {
                <MenuItem value={"Other"}>Other</MenuItem>
              </Select>
            </FormControl>
+
            <br />
-           <FormControl required fullWidth style={{marginBottom: 5}}>
-            <InputLabel>Standing</InputLabel>
+
+           <FormControl required fullWidth style={{marginBottom: 5, width: "49%", padding: 5}}>
+            <Typography variant="body2">What is your current standing in college?</Typography>
             <Select
               labelId="standing"
               id="standing"
@@ -315,24 +317,27 @@ class App extends Component {
               <MenuItem value={0}>Graduate</MenuItem>
             </Select>
           </FormControl>
-          <br />
-          <FormControl required style={{marginBottom: 10}} fullWidth>
-            <TextField label="Major(s)" value={this.state.candmajor} onChange={(event)=>this.setState({candmajor: event.target.value})} />
+
+          <FormControl required style={{marginBottom: 5, width: "49%", padding: 5}} fullWidth>
+            <Typography variant="body2">Please enter your major(s)</Typography>
+            <TextField value={this.state.candmajor} onChange={(event)=>this.setState({candmajor: event.target.value})} />
           </FormControl>
+
           <br />
-          <FormControl required style={{marginBottom: 5}} fullWidth>
+
+          <FormControl required style={{marginBottom: 5, width: "49%", padding: 5}} fullWidth>
             <Typography variant="body2">Best estimate of your current cumulative GPA</Typography>
             <br />
             <Slider defaultValue={this.state.gpa} valueLabelDisplay="on" step={0.1} marks min={0} max={4} onChange={(event)=>this.setState({gpa: event.target.value})}/>
           </FormControl>
-          <br />
-          <FormControl required style={{marginBottom: 5}} fullWidth>
+
+          <FormControl required style={{marginBottom: 5, width: "49%", padding: 5}} fullWidth>
             <Typography variant="body2">How many MORE years do you expect it to take for you to graduate?</Typography>
             <br />
             <Slider defaultValue={this.state.moreyears} valueLabelDisplay="on" step={1} marks min={1} max={5} onChange={(event)=>this.setState({moreyears: event.target.value})}/>
           </FormControl>
           <br />
-          <FormControl required fullWidth style={{marginBottom: 5}}>
+          <FormControl required fullWidth style={{marginBottom: 5, padding: 5}}>
            <Typography variant="body2">How often have you met with an academic advisor or counselor to discuss your class schedule?</Typography>
            <Select
              labelId="advifreq"
