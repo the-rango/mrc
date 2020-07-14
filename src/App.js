@@ -122,12 +122,13 @@ class App extends Component {
       requirement: major.textreq,
       boolreq: major.boolreq,
       gender: "",
-      ethncity: "",
+      ethnicity: "",
       candmajor: "",
       standing: "",
       gpa: 3.0,
       moreyears: 2,
       advifreq: "",
+      surveyed: false,
     };
   }
 
@@ -220,6 +221,15 @@ class App extends Component {
     this.setState({checked: false});
   };
 
+  submitSurvey = () => {
+    if (this.state.gender === "" || this.state.ethnicity === "" || this.state.candmajor === "" || this.state.standing === ""
+     || this.state.advifreq === "") {
+      this.setState({surveyed: true});
+    } else {
+      this.setState({surveyed: true, progress: 1, help: true});
+    }
+  }
+
   render() {
     return (
       <Fragment>
@@ -263,7 +273,7 @@ class App extends Component {
           </Alert>
         </Snackbar>
 
-        <Dialog open={this.state.progress === 0} onClose={()=>{this.setState({progress: 1, help: true})}} maxWidth="lg">
+        <Dialog open={this.state.progress === 0} maxWidth="lg">
           <DialogTitle>Welcome</DialogTitle>
           <DialogContent>
             <DialogContentText>
@@ -272,8 +282,8 @@ class App extends Component {
             </DialogContentText>
             <Divider />
             <br />
-            <FormControl required style={{marginBottom: 5, width: "49%", padding: 5}}>
-            <Typography variant="body2">Please select the gender you identify the most with:</Typography>
+            <FormControl error={this.state.surveyed && this.state.gender===''} size = "small" required style={{marginBottom: 5, width: "49%", padding: 5}}>
+            <FormLabel >Please select the gender you identify the most with:</FormLabel>
               <RadioGroup row name="gender" value={this.state.gender} onChange={(event) => {this.setState({gender: event.target.value})}}>
                 <FormControlLabel value="female" control={<Radio />} label="Female" />
                 <FormControlLabel value="male" control={<Radio />} label="Male" />
@@ -281,8 +291,8 @@ class App extends Component {
               </RadioGroup>
             </FormControl>
 
-            <FormControl required style={{marginBottom: 5, width: "49%", padding: 5}}>
-            <Typography variant="body2">Please select the ethnicity that you identify the most with:</Typography>
+            <FormControl error={this.state.surveyed && this.state.ethnicity===''} required style={{marginBottom: 5, width: "49%", padding: 5}}>
+            <FormLabel >Please select the ethnicity that you identify the most with:</FormLabel>
              <Select
                labelId="ethnicity"
                id="ethnicity"
@@ -300,8 +310,8 @@ class App extends Component {
 
            <br />
 
-           <FormControl required fullWidth style={{marginBottom: 5, width: "49%", padding: 5}}>
-            <Typography variant="body2">What is your current standing in college?</Typography>
+           <FormControl error={this.state.surveyed && this.state.standing===''} required fullWidth style={{marginBottom: 5, width: "49%", padding: 5}}>
+            <FormLabel >What is your current standing in college?</FormLabel>
             <Select
               labelId="standing"
               id="standing"
@@ -318,44 +328,54 @@ class App extends Component {
             </Select>
           </FormControl>
 
-          <FormControl required style={{marginBottom: 5, width: "49%", padding: 5}} fullWidth>
-            <Typography variant="body2">Please enter your major(s)</Typography>
-            <TextField value={this.state.candmajor} onChange={(event)=>this.setState({candmajor: event.target.value})} />
+          <FormControl error={this.state.surveyed && this.state.advifreq===''} required style={{marginBottom: 5, width: "49%", padding: 5}} fullWidth>
+            <FormLabel >How often do you meet with an academic advisor to discuss your class schedule?</FormLabel>
+            <Select
+              labelId="advifreq"
+              id="advifreq"
+              value={this.state.advifreq}
+              onChange={(event)=>this.setState({advifreq: event.target.value})}
+            >
+              <MenuItem value={"Never"}>Never</MenuItem>
+              <MenuItem value={"Very Rarely"}>Very Rarely</MenuItem>
+              <MenuItem value={"Rarely"}>Rarely</MenuItem>
+              <MenuItem value={"Occasionally"}>Occasionally</MenuItem>
+              <MenuItem value={"Frequently"}>Frequently</MenuItem>
+            </Select>
+          </FormControl>
+
+          <br />
+
+          <FormControl error={this.state.surveyed && this.state.candmajor===''} required fullWidth style={{marginBottom: 5, padding: 5, width: "99%"}}>
+            <FormLabel >Please enter your major(s)</FormLabel>
+            <TextField
+              error={this.state.surveyed && this.state.candmajor===''}
+              value={this.state.candmajor}
+              onChange={(event)=>this.setState({candmajor: event.target.value})}
+            />
           </FormControl>
 
           <br />
 
           <FormControl required style={{marginBottom: 5, width: "49%", padding: 5}} fullWidth>
-            <Typography variant="body2">Best estimate of your current cumulative GPA</Typography>
+            <FormLabel style={{marginBottom: 23}}>Best estimate of your current cumulative GPA</FormLabel>
             <br />
             <Slider defaultValue={this.state.gpa} valueLabelDisplay="on" step={0.1} marks min={0} max={4} onChange={(event)=>this.setState({gpa: event.target.value})}/>
           </FormControl>
 
           <FormControl required style={{marginBottom: 5, width: "49%", padding: 5}} fullWidth>
-            <Typography variant="body2">How many MORE years do you expect it to take for you to graduate?</Typography>
+            <FormLabel style={{marginBottom: 23}}>How many MORE years do you expect it to take for you to graduate?</FormLabel>
             <br />
             <Slider defaultValue={this.state.moreyears} valueLabelDisplay="on" step={1} marks min={1} max={5} onChange={(event)=>this.setState({moreyears: event.target.value})}/>
           </FormControl>
           <br />
-          <FormControl required fullWidth style={{marginBottom: 5, padding: 5}}>
-           <Typography variant="body2">How often have you met with an academic advisor or counselor to discuss your class schedule?</Typography>
-           <Select
-             labelId="advifreq"
-             id="advifreq"
-             value={this.state.advifreq}
-             onChange={(event)=>this.setState({advifreq: event.target.value})}
-           >
-             <MenuItem value={"Never"}>Never</MenuItem>
-             <MenuItem value={"Very Rarely"}>Very Rarely</MenuItem>
-             <MenuItem value={"Rarely"}>Rarely</MenuItem>
-             <MenuItem value={"Occasionally"}>Occasionally</MenuItem>
-             <MenuItem value={"Frequently"}>Frequently</MenuItem>
-           </Select>
-         </FormControl>
 
           </DialogContent>
           <DialogActions>
-            <Button onClick={()=>{this.setState({progress: 1, help: true})}} color="primary">
+            <Button variant="outlined" onClick={()=>{this.setState({surveyed: true, progress: 1, help: true})}} color="primary">
+              Skip
+            </Button>
+            <Button variant="contained" onClick={this.submitSurvey} color="primary">
               Continue
             </Button>
           </DialogActions>
