@@ -18,7 +18,6 @@ import {
   Radio,
   Select,
   MenuItem,
-  InputLabel,
   Slider,
   TextField,
   Divider,
@@ -102,6 +101,15 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    // let savedState = null;
+    // if (typeof Storage !== 'undefined') {
+    //   savedState = window.localStorage.getItem('save');
+    //   if (savedState !== null) {
+    //     this.state = JSON.parse(savedState);
+    //     return;
+    //   }
+    // }
+
     const name = "Evolutionary Biology";
     const dept = majors["requirements"][name];
     const major = dept[4];
@@ -132,6 +140,12 @@ class App extends Component {
     };
   }
 
+  // componentDidMount = () => {
+  //   window.addEventListener('beforeunload', (event) => {
+  //     window.localStorage.setItem('save', JSON.stringify(this.state));
+  //   });
+  // };
+
   checkout = () => {
     var SUMTAG = [0,0,0,0,0,0,0,0,0,0,0,0,0];
     var year, cid, tag;
@@ -155,11 +169,31 @@ class App extends Component {
     console.log(nfailed);
   }
 
+  delete = (parentId, index, draggableId) => {
+    // delete if source is not pool
+    const start = this.state.selected[parentId];
+    const startCourseIds = Array.from(start.courseIds);
+    startCourseIds.splice(index, 1);
+    const newStart = {
+      ...start,
+      courseIds: startCourseIds,
+    };
+
+    const newState = {
+      ...this.state,
+      selected: {
+        ...this.state.selected,
+        [newStart.id]: newStart,
+      },
+    };
+    this.setState(newState);
+    return;
+  }
+
   onDragEnd = result => {
     const { destination, source, draggableId } = result;
 
     if (!destination){
-      // delete if source is not pool
       return;
     }
 
@@ -207,7 +241,32 @@ class App extends Component {
         this.setState(newState);
       } else {
         // Move between columns
-        return;
+        const start = this.state.selected[source.droppableId];
+        const finish = this.state.selected[destination.droppableId];
+
+        const startCourseIds = Array.from(start.courseIds);
+        startCourseIds.splice(source.index, 1);
+        const newStart = {
+          ...start,
+          courseIds: startCourseIds,
+        };
+
+        const finishCourseIds = Array.from(finish.courseIds);
+        finishCourseIds.splice(destination.index, 0, draggableId);
+        const newFinish = {
+          ...finish,
+          courseIds: finishCourseIds,
+        };
+
+        const newState = {
+          ...this.state,
+          selected: {
+            ...this.state.selected,
+            [newStart.id]: newStart,
+            [newFinish.id]: newFinish,
+          },
+        };
+        this.setState(newState);
       }
     } else {
       return;
@@ -250,15 +309,15 @@ class App extends Component {
               {'Major '+this.state.progress+' of 2'}
             </Typography>
 
-            <Button onClick={()=>this.setState({selected: INIT_SELECTED})}  size="small" variant="contained" style={{marginRight: 15}}>
+            <Button disableElevation onClick={()=>this.setState({selected: INIT_SELECTED})}  size="small" variant="contained" style={{marginRight: 15}}>
             clear
             </Button>
 
-            <Button onClick={()=>this.setState({help: true})}  size="small" variant="contained" style={{marginRight: 15}}>
+            <Button disableElevation onClick={()=>this.setState({help: true})}  size="small" variant="contained" style={{marginRight: 15}}>
             instructions
             </Button>
 
-            <Button onClick={this.checkout} size="small" variant="contained" color="secondary">
+            <Button disableElevation onClick={this.checkout} size="small" variant="contained" color="secondary">
             checkout
             </Button>
           </Toolbar>
@@ -285,9 +344,9 @@ class App extends Component {
             <FormControl error={this.state.surveyed && this.state.gender===''} size = "small" required style={{marginBottom: 5, width: "49%", padding: 5}}>
             <FormLabel >Please select the gender you identify the most with:</FormLabel>
               <RadioGroup row name="gender" value={this.state.gender} onChange={(event) => {this.setState({gender: event.target.value})}}>
-                <FormControlLabel value="female" control={<Radio />} label="Female" />
-                <FormControlLabel value="male" control={<Radio />} label="Male" />
-                <FormControlLabel value="other" control={<Radio />} label="Other/Prefer not to state" />
+                <FormControlLabel value="female" control={<Radio color='primary'/>} label="Female" />
+                <FormControlLabel value="male" control={<Radio color='primary'/>} label="Male" />
+                <FormControlLabel value="other" control={<Radio color='primary'/>} label="Other/Prefer not to state" />
               </RadioGroup>
             </FormControl>
 
@@ -391,7 +450,7 @@ class App extends Component {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={()=>{this.setState({help: false})}} color="primary">
+            <Button variant="contained" onClick={()=>{this.setState({help: false})}} color="primary">
               Continue
             </Button>
           </DialogActions>
@@ -409,7 +468,7 @@ class App extends Component {
                     {['1f','1w','1s'].map(columnId => {
                       const column = this.state.selected[columnId];
                       const courses = column.courseIds.map(courseId => this.state.courses[courseId]);
-                      return <Column key={column.id} column={column} courses={courses} />;
+                      return <Column delete={this.delete} key={column.id} column={column} courses={courses} />;
                     })}
                   </div>
                 </div>
@@ -422,7 +481,7 @@ class App extends Component {
                     {['2f','2w','2s'].map(columnId => {
                       const column = this.state.selected[columnId];
                       const courses = column.courseIds.map(courseId => this.state.courses[courseId]);
-                      return <Column key={column.id} column={column} courses={courses} />;
+                      return <Column delete={this.delete} key={column.id} column={column} courses={courses} />;
                     })}
                   </div>
                 </div>
@@ -435,7 +494,7 @@ class App extends Component {
                     {['3f','3w','3s'].map(columnId => {
                       const column = this.state.selected[columnId];
                       const courses = column.courseIds.map(courseId => this.state.courses[courseId]);
-                      return <Column key={column.id} column={column} courses={courses} />;
+                      return <Column delete={this.delete} key={column.id} column={column} courses={courses} />;
                     })}
                   </div>
                 </div>
@@ -448,7 +507,7 @@ class App extends Component {
                     {['4f','4w','4s'].map(columnId => {
                       const column = this.state.selected[columnId];
                       const courses = column.courseIds.map(courseId => this.state.courses[courseId]);
-                      return <Column key={column.id} column={column} courses={courses} />;
+                      return <Column delete={this.delete} key={column.id} column={column} courses={courses} />;
                     })}
                   </div>
                 </div>
@@ -466,7 +525,7 @@ class App extends Component {
                     Requirements
                   </Typography>
                   <Typography variant='body2' style={{whiteSpace: "pre-line"}}>
-                    {this.state.requirement}
+                    <div dangerouslySetInnerHTML = {{"__html": this.state.requirement}} />
                   </Typography>
                 </div>
               </div>
