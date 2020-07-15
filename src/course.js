@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
-import {Button, Typography} from '@material-ui/core';
+import {IconButton, Typography} from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
 import styled from 'styled-components';
 import {Draggable} from 'react-beautiful-dnd';
 
@@ -39,12 +40,12 @@ export default class Course extends React.Component {
               </Typography>
               {(this.props.delete ?
               (
-                <Fragment style={{ display: "flex", flexFlow: "row"}}>
+                <div style={{ display: "flex", flexFlow: "row"}}>
                   <div style={{flexGrow: 1}} />
-                  <Button style={{flexGrow: 0}} size="small" variant="text" onClick={()=>this.props.delete(this.props.parentId, this.props.index, this.props.course.id)}>
-                  delete
-                  </Button>
-                </Fragment>
+                  <IconButton style={{flexGrow: 0}} size="small" variant="text" onClick={()=>this.props.delete(this.props.parentId, this.props.index, this.props.course.id)}>
+                    <DeleteIcon />
+                  </IconButton>
+                </div>
               ):(
                 <Fragment />
               ))}
