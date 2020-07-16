@@ -101,14 +101,14 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    // let savedState = null;
-    // if (typeof Storage !== 'undefined') {
-    //   savedState = window.localStorage.getItem('save');
-    //   if (savedState !== null) {
-    //     this.state = JSON.parse(savedState);
-    //     return;
-    //   }
-    // }
+    let savedState = null;
+    if (typeof Storage !== 'undefined') {
+      savedState = window.localStorage.getItem('save');
+      if (savedState !== null && savedState !== "cleared") {
+        this.state = JSON.parse(savedState);
+        return;
+      }
+    }
 
     const name = "Evolutionary Biology";
     const dept = majors["requirements"][name];
@@ -140,12 +140,6 @@ class App extends Component {
     };
   }
 
-  // componentDidMount = () => {
-  //   window.addEventListener('beforeunload', (event) => {
-  //     window.localStorage.setItem('save', JSON.stringify(this.state));
-  //   });
-  // };
-
   checkout = () => {
     var SUMTAG = [0,0,0,0,0,0,0,0,0,0,0,0,0];
     var year, cid, tag;
@@ -166,7 +160,6 @@ class App extends Component {
         nfailed.push(i);
     });
     this.setState({failed: nfailed, checked: true});
-    console.log(nfailed);
   }
 
   delete = (parentId, index, draggableId) => {
@@ -178,7 +171,6 @@ class App extends Component {
       ...start,
       courseIds: startCourseIds,
     };
-
     const newState = {
       ...this.state,
       selected: {
@@ -187,6 +179,7 @@ class App extends Component {
       },
     };
     this.setState(newState);
+    window.localStorage.setItem('save', JSON.stringify(newState));
     return;
   }
 
@@ -237,8 +230,8 @@ class App extends Component {
             [newCourse]: newCourseContent,
           }
         };
-
         this.setState(newState);
+        window.localStorage.setItem('save', JSON.stringify(newState));
       } else {
         // Move between columns
         const start = this.state.selected[source.droppableId];
@@ -267,6 +260,7 @@ class App extends Component {
           },
         };
         this.setState(newState);
+        window.localStorage.setItem('save', JSON.stringify(newState));
       }
     } else {
       return;
@@ -285,8 +279,17 @@ class App extends Component {
      || this.state.advifreq === "") {
       this.setState({surveyed: true});
     } else {
-      this.setState({surveyed: true, progress: 1, help: true});
+      this.setState({
+        surveyed: true, progress: 1, help: true
+      }, ()=>{
+        window.localStorage.setItem('save', JSON.stringify(this.state));
+      });
     }
+  }
+
+  restart = () => {
+    window.localStorage.setItem('save', 'cleared');
+    window.location.reload(true);
   }
 
   render() {
@@ -317,7 +320,7 @@ class App extends Component {
             instructions
             </Button>
 
-            <Button disableElevation onClick={this.checkout} size="small" variant="contained" color="secondary">
+            <Button onClick={this.checkout} size="small" variant="contained" color="secondary">
             checkout
             </Button>
           </Toolbar>
@@ -446,7 +449,14 @@ class App extends Component {
             <DialogContentText>
               Select up to 2 courses per quarter. Click checkout when ready.
               <br />
+              Recommended: use 100% zoom on Google Chrome for the best experience!
+              <hr />
               If you would like to see this message again, click on instructions to the top right of the page.
+              <hr />
+              If you would like to start over, click here to clear your saved progress and return to the initial survey. Warning: this action cannot be undone.
+              <Button disableElevation fullWidth onClick={this.restart} variant="contained" style={{marginTop: 5}}>
+              restart
+              </Button>
             </DialogContentText>
           </DialogContent>
           <DialogActions>
@@ -500,7 +510,7 @@ class App extends Component {
                 </div>
 
                 <div style = {{flex: '1 1 auto', display: 'flex'}}>
-                  <Typography variant = 'h3' style={{marginLeft: 15}}>
+                  <Typography variant = 'h3' style={{marginLeft: 15, marginRight:3}}>
                   4
                   </Typography>
                   <div style={{flex: '1 1 auto', marginLeft: 8, display: "flex", justifyContent: "space-between"}}>

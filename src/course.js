@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import {IconButton, Typography} from '@material-ui/core';
-import DeleteIcon from '@material-ui/icons/Delete';
+import DeleteIcon from '@material-ui/icons/DeleteOutlined';
 import styled from 'styled-components';
 import {Draggable} from 'react-beautiful-dnd';
 
