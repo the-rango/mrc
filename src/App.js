@@ -305,7 +305,7 @@ class App extends Component {
         >
           <Toolbar variant="dense">
             <Typography variant='h6' style={{ flexGrow: 1 }}>
-              {'Major Requirements Complexity'}
+              {'Four-Year Planner'}
             </Typography>
 
             <Typography variant='body2' style={{ flexGrow: 1 }}>
@@ -329,9 +329,9 @@ class App extends Component {
         <Snackbar open={this.state.checked} autoHideDuration={6000} onClose={this.closeSnackbar} anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}>
           <Alert onClose={this.closeSnackbar} severity= {(this.state.failed.length === 0) ? "success" : "error"}>
             {(this.state.failed) ?
-              "Failed! " + this.state.failed.join(' ')
+              "Does not meet major requirements! Please try again! " + this.state.failed.join(' ')
               :
-              "Success! Graduated!"}
+              "Great job! You have successfully graduated!"}
           </Alert>
         </Snackbar>
 
@@ -447,12 +447,21 @@ class App extends Component {
           <DialogTitle>Instructions</DialogTitle>
           <DialogContent>
             <DialogContentText>
-              Select up to 2 courses per quarter. Click checkout when ready.
+              Make a four-year plan to satisfy the given requirements by dragging courses from the course list to your schedule on the left. When ready, click CHECKOUT to see if you have fulfilled the requirements. Keep trying until your plan successfully graduates. Click the trashcan icon on courses to delete them; click the CLEAR button to clear all selections.
               <br />
+              <br />
+              Note that General Education requirements are not included in this study, and you are limited to two courses per quarter.
+              <br />
+              <br />
+              You will be asked to create four-year plans for two separate majors.
+              <hr />
               Recommended: use 100% zoom on Google Chrome for the best experience!
+              <br />
+              <br />
+              If you would like to see this message again, click on INSTRUCTIONS to the top right of the page.
               <hr />
-              If you would like to see this message again, click on instructions to the top right of the page.
-              <hr />
+              Your progress will be saved automatically. 
+              <br />
               If you would like to start over, click here to clear your saved progress and return to the initial survey. Warning: this action cannot be undone.
               <Button disableElevation fullWidth onClick={this.restart} variant="contained" style={{marginTop: 5}}>
               restart
