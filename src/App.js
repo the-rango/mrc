@@ -321,12 +321,12 @@ class App extends Component {
             </Button>
 
             <Button onClick={this.checkout} size="small" variant="contained" color="secondary">
-            checkout
+            do i graduate?
             </Button>
           </Toolbar>
         </AppBar>
 
-        <Snackbar open={this.state.checked} autoHideDuration={6000} onClose={this.closeSnackbar} anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}>
+        <Snackbar open={this.state.checked} autoHideDuration={6000} onClose={this.closeSnackbar} anchorOrigin={{vertical: 'top', horizontal: 'right'}}>
           <Alert onClose={this.closeSnackbar} severity= {(this.state.failed.length === 0) ? "success" : "error"}>
             {(this.state.failed) ?
               "Does not meet major requirements! Please try again! " + this.state.failed.join(' ')
@@ -455,17 +455,16 @@ class App extends Component {
               <br />
               You will be asked to create four-year plans for two separate majors.
               <hr />
+              Your progress will be saved automatically. 
+              If you would like to start over, click here to clear your saved progress and return to the initial survey. Warning: this action cannot be undone.
+              <Button disableElevation fullWidth onClick={this.restart} color="secondary" variant="outlined" style={{marginTop: 5}}>
+              restart
+              </Button>
+              <hr />
               Recommended: use 100% zoom on Google Chrome for the best experience!
               <br />
               <br />
               If you would like to see this message again, click on INSTRUCTIONS to the top right of the page.
-              <hr />
-              Your progress will be saved automatically. 
-              <br />
-              If you would like to start over, click here to clear your saved progress and return to the initial survey. Warning: this action cannot be undone.
-              <Button disableElevation fullWidth onClick={this.restart} variant="contained" style={{marginTop: 5}}>
-              restart
-              </Button>
             </DialogContentText>
           </DialogContent>
           <DialogActions>
