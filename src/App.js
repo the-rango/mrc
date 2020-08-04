@@ -134,13 +134,14 @@ class App extends Component {
       candmajor: "",
       standing: "",
       gpa: 3.0,
-      moreyears: 2,
+      moreqtrs: 2,
       advifreq: "",
       surveyed: false,
+      uid: null,
     };
   }
 
-  checkout = () => {
+  evaluate = () => {
     var SUMTAG = [0,0,0,0,0,0,0,0,0,0,0,0,0];
     var year, cid, tag;
     var unique_count = new Set();
@@ -159,6 +160,11 @@ class App extends Component {
       if(!eval(linereq))
         nfailed.push(i);
     });
+    return nfailed;
+  }
+
+  checkout = () => {
+    const nfailed = this.evaluate();
     this.setState({failed: nfailed, checked: true});
   }
 
@@ -204,9 +210,10 @@ class App extends Component {
 
     if (destination.droppableId !== 'pool'){
       if (source.droppableId === 'pool'){
+        // Pool to selection
         const column = this.state.selected[destination.droppableId];
         const newCourseIds = Array.from(column.courseIds);
-        var newCourse = draggableId + '-' + Math.floor(Math.random() * 1000).toString();
+        var newCourse = draggableId + '-' + Math.floor(Math.random() * 10000).toString();
         newCourseIds.splice(destination.index, 0, newCourse);
 
         const newColumn = {
@@ -279,11 +286,36 @@ class App extends Component {
      || this.state.advifreq === "") {
       this.setState({surveyed: true});
     } else {
+      const uid =  Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
       this.setState({
-        surveyed: true, progress: 1, help: true
+        surveyed: true, progress: 1, help: true, uid: uid
       }, ()=>{
         window.localStorage.setItem('save', JSON.stringify(this.state));
       });
+      const payload = JSON.stringify({
+        gender: this.state.gender,
+        ethnicity: this.state.ethnicity,
+        candmajor: this.state.candmajor,
+        standing: this.state.standing,
+        advifreq: this.state.advifreq,
+        moreqtrs: this.state.moreqtrs,
+        gpa: this.state.gpa
+      });
+      console.log(payload);
+      const response = fetch(
+        'https://pleaserunforme.herokuapp.com/log/demographics/'+uid,
+        {
+          method: 'POST',
+          mode: 'cors',
+          cache: 'no-cache',
+          headers: {
+            'Content-Type': 'application/json; charset=utf-8',
+          },
+          redirect: 'follow',
+          referrer: 'no-referrer',
+          body: payload
+        });
+        console.log(response);
     }
   }
 
@@ -344,7 +376,7 @@ class App extends Component {
             </DialogContentText>
             <Divider />
             <br />
-            <FormControl error={this.state.surveyed && this.state.gender===''} size = "small" required style={{marginBottom: 5, width: "49%", padding: 5}}>
+            <FormControl error={this.state.surveyed && this.state.gender===''} size = "small" required style={{marginBottom: 5, width: "39%", padding: 5}}>
             <FormLabel >Please select the gender you identify the most with:</FormLabel>
               <RadioGroup row name="gender" value={this.state.gender} onChange={(event) => {this.setState({gender: event.target.value})}}>
                 <FormControlLabel value="female" control={<Radio color='primary'/>} label="Female" />
@@ -353,7 +385,7 @@ class App extends Component {
               </RadioGroup>
             </FormControl>
 
-            <FormControl error={this.state.surveyed && this.state.ethnicity===''} required style={{marginBottom: 5, width: "49%", padding: 5}}>
+            <FormControl error={this.state.surveyed && this.state.ethnicity===''} required style={{marginBottom: 5, width: "59%", padding: 5}}>
             <FormLabel >Please select the ethnicity that you identify the most with:</FormLabel>
              <Select
                labelId="ethnicity"
@@ -372,7 +404,7 @@ class App extends Component {
 
            <br />
 
-           <FormControl error={this.state.surveyed && this.state.standing===''} required fullWidth style={{marginBottom: 5, width: "49%", padding: 5}}>
+           <FormControl error={this.state.surveyed && this.state.standing===''} required fullWidth style={{marginBottom: 5, width: "39%", padding: 5}}>
             <FormLabel >What is your current standing in college?</FormLabel>
             <Select
               labelId="standing"
@@ -390,7 +422,7 @@ class App extends Component {
             </Select>
           </FormControl>
 
-          <FormControl error={this.state.surveyed && this.state.advifreq===''} required style={{marginBottom: 5, width: "49%", padding: 5}} fullWidth>
+          <FormControl error={this.state.surveyed && this.state.advifreq===''} required style={{marginBottom: 5, width: "59%", padding: 5}} fullWidth>
             <FormLabel >How often do you meet with an academic advisor to discuss your class schedule?</FormLabel>
             <Select
               labelId="advifreq"
@@ -419,16 +451,16 @@ class App extends Component {
 
           <br />
 
-          <FormControl required style={{marginBottom: 5, width: "49%", padding: 5}} fullWidth>
+          <FormControl required style={{marginBottom: 5, width: "39%", padding: 5}} fullWidth>
             <FormLabel style={{marginBottom: 23}}>Best estimate of your current cumulative GPA</FormLabel>
             <br />
-            <Slider defaultValue={this.state.gpa} valueLabelDisplay="on" step={0.1} marks min={0} max={4} onChange={(event)=>this.setState({gpa: event.target.value})}/>
+            <Slider value={this.state.gpa} valueLabelDisplay="on" step={0.1} marks min={0} max={4} onChange={(event, newValue)=>this.setState({gpa: newValue})}/>
           </FormControl>
 
-          <FormControl required style={{marginBottom: 5, width: "49%", padding: 5}} fullWidth>
-            <FormLabel style={{marginBottom: 23}}>How many MORE years do you expect it to take for you to graduate?</FormLabel>
+          <FormControl required style={{marginBottom: 5, width: "59%", padding: 5}} fullWidth>
+            <FormLabel style={{marginBottom: 23}}>How many quarters (include current, and planned summer ones) do you have before graduating?</FormLabel>
             <br />
-            <Slider defaultValue={this.state.moreyears} valueLabelDisplay="on" step={1} marks min={1} max={5} onChange={(event)=>this.setState({moreyears: event.target.value})}/>
+            <Slider value={this.state.moreqtrs} valueLabelDisplay="on" step={1} marks min={1} max={24} onChange={(event, newValue)=>this.setState({moreqtrs: newValue})}/>
           </FormControl>
           <br />
 
