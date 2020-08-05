@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment } from "react";
 import {
   Button,
   Grid,
@@ -21,74 +21,74 @@ import {
   Slider,
   TextField,
   Divider,
-} from '@material-ui/core';
-import Alert from '@material-ui/lab/Alert';
+} from "@material-ui/core";
+import Alert from "@material-ui/lab/Alert";
 import {
   DragDropContext,
-} from 'react-beautiful-dnd';
-import Column from './column';
-import Pool from './pool';
-import majors from './majors.json'
+} from "react-beautiful-dnd";
+import Column from "./column";
+import Pool from "./pool";
+import majors from "./majors.json"
 
 const INIT_SELECTED = {
-  '1f': {
-    id: '1f',
-    title: 'Fall',
+  "1f": {
+    id: "1f",
+    title: "Fall",
     courseIds: [],
   },
-  '1w': {
-    id: '1w',
-    title: 'Winter',
+  "1w": {
+    id: "1w",
+    title: "Winter",
     courseIds: [],
   },
-  '1s': {
-    id: '1s',
-    title: 'Spring',
+  "1s": {
+    id: "1s",
+    title: "Spring",
     courseIds: [],
   },
-  '2f': {
-    id: '2f',
-    title: 'Fall',
+  "2f": {
+    id: "2f",
+    title: "Fall",
     courseIds: [],
   },
-  '2w': {
-    id: '2w',
-    title: 'Winter',
+  "2w": {
+    id: "2w",
+    title: "Winter",
     courseIds: [],
   },
-  '2s': {
-    id: '2s',
-    title: 'Spring',
+  "2s": {
+    id: "2s",
+    title: "Spring",
     courseIds: [],
   },
-  '3f': {
-    id: '3f',
-    title: 'Fall',
+  "3f": {
+    id: "3f",
+    title: "Fall",
     courseIds: [],
   },
-  '3w': {
-    id: '3w',
-    title: 'Winter',
+  "3w": {
+    id: "3w",
+    title: "Winter",
     courseIds: [],
   },
-  '3s': {
-    id: '3s',
-    title: 'Spring',
+  "3s": {
+    id: "3s",
+    title: "Spring",
     courseIds: [],
   },
-  '4f': {
-    id: '4f',
-    title: 'Fall',
+  "4f": {
+    id: "4f",
+    title: "Fall",
     courseIds: [],
   },
-  '4w': {
-    id: '4w',
-    title: 'Winter',
+  "4w": {
+    id: "4w",
+    title: "Winter",
     courseIds: [],
   },
-  '4s': {
-    id: '4s',
-    title: 'Spring',
+  "4s": {
+    id: "4s",
+    title: "Spring",
     courseIds: [],
   },
 }
@@ -102,8 +102,8 @@ class App extends Component {
     super(props);
 
     let savedState = null;
-    if (typeof Storage !== 'undefined') {
-      savedState = window.localStorage.getItem('save');
+    if (typeof Storage !== "undefined") {
+      savedState = window.localStorage.getItem("save");
       if (savedState !== null && savedState !== "cleared") {
         this.state = JSON.parse(savedState);
         return;
@@ -119,8 +119,8 @@ class App extends Component {
       courses: dept.courses,
       selected: INIT_SELECTED,
       pool: {
-        id: 'pool',
-        title: 'Course Listing',
+        id: "pool",
+        title: "Course Listing",
         courseIds: Object.keys(dept.courses),
       },
       failed: [],
@@ -141,17 +141,36 @@ class App extends Component {
     };
   }
 
-  evaluate = () => {
+  report = (type, payload) => {
+    console.log(type);
+    console.log(payload);
+
+    const response = fetch(
+      "https://pleaserunforme.herokuapp.com/log/"+type+"/"+this.state.uid,
+      {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+        },
+        redirect: "follow",
+        referrer: "no-referrer",
+        body: JSON.stringify(payload),
+      });
+  }
+
+  check = () => {
     var SUMTAG = [0,0,0,0,0,0,0,0,0,0,0,0,0];
     var year, cid, tag;
     var unique_count = new Set();
     for (year in this.state.selected){
-      for (cid of this.state.selected[year]['courseIds']){
-        unique_count.add(cid.substring(0, cid.indexOf('-')));
+      for (cid of this.state.selected[year]["courseIds"]){
+        unique_count.add(cid.substring(0, cid.indexOf("-")));
       }
     }
     unique_count.forEach((cid) => {
-      for (tag of this.state.courses[cid]['tag']){
+      for (tag of this.state.courses[cid]["tag"]){
         SUMTAG[tag] += 1;
       }
     });
@@ -161,11 +180,6 @@ class App extends Component {
         nfailed.push(i);
     });
     return nfailed;
-  }
-
-  checkout = () => {
-    const nfailed = this.evaluate();
-    this.setState({failed: nfailed, checked: true});
   }
 
   delete = (parentId, index, draggableId) => {
@@ -184,8 +198,8 @@ class App extends Component {
         [newStart.id]: newStart,
       },
     };
-    this.setState(newState);
-    window.localStorage.setItem('save', JSON.stringify(newState));
+    this.setState(newState, ()=>{this.report("delete", {selection: this.state.selected, failed: this.check()});});
+    window.localStorage.setItem("save", JSON.stringify(newState));
     return;
   }
 
@@ -208,12 +222,12 @@ class App extends Component {
       return;
     }
 
-    if (destination.droppableId !== 'pool'){
-      if (source.droppableId === 'pool'){
+    if (destination.droppableId !== "pool"){
+      if (source.droppableId === "pool"){
         // Pool to selection
         const column = this.state.selected[destination.droppableId];
         const newCourseIds = Array.from(column.courseIds);
-        var newCourse = draggableId + '-' + Math.floor(Math.random() * 10000).toString();
+        var newCourse = draggableId + "-" + Math.floor(Math.random() * 10000).toString();
         newCourseIds.splice(destination.index, 0, newCourse);
 
         const newColumn = {
@@ -225,7 +239,6 @@ class App extends Component {
           ...this.state.courses[draggableId],
           id: newCourse,
         }
-
         const newState = {
           ...this.state,
           selected: {
@@ -235,10 +248,10 @@ class App extends Component {
           courses: {
             ...this.state.courses,
             [newCourse]: newCourseContent,
-          }
+          },
         };
-        this.setState(newState);
-        window.localStorage.setItem('save', JSON.stringify(newState));
+        this.setState(newState, ()=>{this.report("select", {selection: this.state.selected, failed: this.check()})});
+        window.localStorage.setItem("save", JSON.stringify(newState));
       } else {
         // Move between columns
         const start = this.state.selected[source.droppableId];
@@ -257,7 +270,6 @@ class App extends Component {
           ...finish,
           courseIds: finishCourseIds,
         };
-
         const newState = {
           ...this.state,
           selected: {
@@ -266,8 +278,8 @@ class App extends Component {
             [newFinish.id]: newFinish,
           },
         };
-        this.setState(newState);
-        window.localStorage.setItem('save', JSON.stringify(newState));
+        this.setState(newState, ()=>{this.report("edit", {selection: this.state.selected, failed: this.check()})});
+        window.localStorage.setItem("save", JSON.stringify(newState));
       }
     } else {
       return;
@@ -275,7 +287,7 @@ class App extends Component {
   }
 
   closeSnackbar = (event, reason) => {
-    if (reason === 'clickaway') {
+    if (reason === "clickaway") {
       return;
     }
     this.setState({checked: false});
@@ -290,9 +302,9 @@ class App extends Component {
       this.setState({
         surveyed: true, progress: 1, help: true, uid: uid
       }, ()=>{
-        window.localStorage.setItem('save', JSON.stringify(this.state));
+        window.localStorage.setItem("save", JSON.stringify(this.state));
       });
-      const payload = JSON.stringify({
+      const payload = {
         gender: this.state.gender,
         ethnicity: this.state.ethnicity,
         candmajor: this.state.candmajor,
@@ -300,27 +312,14 @@ class App extends Component {
         advifreq: this.state.advifreq,
         moreqtrs: this.state.moreqtrs,
         gpa: this.state.gpa
-      });
-      console.log(payload);
-      const response = fetch(
-        'https://pleaserunforme.herokuapp.com/log/demographics/'+uid,
-        {
-          method: 'POST',
-          mode: 'cors',
-          cache: 'no-cache',
-          headers: {
-            'Content-Type': 'application/json; charset=utf-8',
-          },
-          redirect: 'follow',
-          referrer: 'no-referrer',
-          body: payload
-        });
-        console.log(response);
+      };
+      // console.log(payload);
+      this.report("demographics", payload);
     }
   }
 
   restart = () => {
-    window.localStorage.setItem('save', 'cleared');
+    window.localStorage.setItem("save", "cleared");
     window.location.reload(true);
   }
 
@@ -330,18 +329,18 @@ class App extends Component {
         <AppBar
           position="static"
           style={{
-            marginBottom: '3px',
-            boxShadow: 'none',
-            backgroundColor: '#2196f3'
+            marginBottom: "3px",
+            boxShadow: "none",
+            backgroundColor: "#2196f3"
           }}
         >
           <Toolbar variant="dense">
-            <Typography variant='h6' style={{ flexGrow: 1 }}>
-              {'Four-Year Planner'}
+            <Typography variant="h6" style={{ flexGrow: 1 }}>
+              {"Four-Year Planner"}
             </Typography>
 
-            <Typography variant='body2' style={{ flexGrow: 1 }}>
-              {'Major '+this.state.progress+' of 2'}
+            <Typography variant="body2" style={{ flexGrow: 1 }}>
+              {"Major "+this.state.progress+" of 2"}
             </Typography>
 
             <Button disableElevation onClick={()=>this.setState({selected: INIT_SELECTED})}  size="small" variant="contained" style={{marginRight: 15}}>
@@ -352,16 +351,16 @@ class App extends Component {
             instructions
             </Button>
 
-            <Button onClick={this.checkout} size="small" variant="contained" color="secondary">
+            <Button onClick={()=>this.setState({failed: this.check(), checked: true})} size="small" variant="contained" color="secondary">
             do i graduate?
             </Button>
           </Toolbar>
         </AppBar>
 
-        <Snackbar open={this.state.checked} autoHideDuration={6000} onClose={this.closeSnackbar} anchorOrigin={{vertical: 'top', horizontal: 'right'}}>
+        <Snackbar open={this.state.checked} autoHideDuration={6000} onClose={this.closeSnackbar} anchorOrigin={{vertical: "top", horizontal: "right"}}>
           <Alert onClose={this.closeSnackbar} severity= {(this.state.failed.length === 0) ? "success" : "error"}>
             {(this.state.failed) ?
-              "Does not meet major requirements! Please try again! " + this.state.failed.join(' ')
+              "Does not meet major requirements! Please try again! " + this.state.failed.join(" ")
               :
               "Great job! You have successfully graduated!"}
           </Alert>
@@ -376,16 +375,16 @@ class App extends Component {
             </DialogContentText>
             <Divider />
             <br />
-            <FormControl error={this.state.surveyed && this.state.gender===''} size = "small" required style={{marginBottom: 5, width: "39%", padding: 5}}>
+            <FormControl error={this.state.surveyed && this.state.gender===""} size = "small" required style={{marginBottom: 5, width: "39%", padding: 5}}>
             <FormLabel >Please select the gender you identify the most with:</FormLabel>
               <RadioGroup row name="gender" value={this.state.gender} onChange={(event) => {this.setState({gender: event.target.value})}}>
-                <FormControlLabel value="female" control={<Radio color='primary'/>} label="Female" />
-                <FormControlLabel value="male" control={<Radio color='primary'/>} label="Male" />
-                <FormControlLabel value="other" control={<Radio color='primary'/>} label="Other/Prefer not to state" />
+                <FormControlLabel value="female" control={<Radio color="primary"/>} label="Female" />
+                <FormControlLabel value="male" control={<Radio color="primary"/>} label="Male" />
+                <FormControlLabel value="other" control={<Radio color="primary"/>} label="Other/Prefer not to state" />
               </RadioGroup>
             </FormControl>
 
-            <FormControl error={this.state.surveyed && this.state.ethnicity===''} required style={{marginBottom: 5, width: "59%", padding: 5}}>
+            <FormControl error={this.state.surveyed && this.state.ethnicity===""} required style={{marginBottom: 5, width: "59%", padding: 5}}>
             <FormLabel >Please select the ethnicity that you identify the most with:</FormLabel>
              <Select
                labelId="ethnicity"
@@ -404,7 +403,7 @@ class App extends Component {
 
            <br />
 
-           <FormControl error={this.state.surveyed && this.state.standing===''} required fullWidth style={{marginBottom: 5, width: "39%", padding: 5}}>
+           <FormControl error={this.state.surveyed && this.state.standing===""} required fullWidth style={{marginBottom: 5, width: "39%", padding: 5}}>
             <FormLabel >What is your current standing in college?</FormLabel>
             <Select
               labelId="standing"
@@ -422,7 +421,7 @@ class App extends Component {
             </Select>
           </FormControl>
 
-          <FormControl error={this.state.surveyed && this.state.advifreq===''} required style={{marginBottom: 5, width: "59%", padding: 5}} fullWidth>
+          <FormControl error={this.state.surveyed && this.state.advifreq===""} required style={{marginBottom: 5, width: "59%", padding: 5}} fullWidth>
             <FormLabel >How often do you meet with an academic advisor to discuss your class schedule?</FormLabel>
             <Select
               labelId="advifreq"
@@ -440,10 +439,10 @@ class App extends Component {
 
           <br />
 
-          <FormControl error={this.state.surveyed && this.state.candmajor===''} required fullWidth style={{marginBottom: 5, padding: 5, width: "99%"}}>
+          <FormControl error={this.state.surveyed && this.state.candmajor===""} required fullWidth style={{marginBottom: 5, padding: 5, width: "99%"}}>
             <FormLabel >Please enter your major(s)</FormLabel>
             <TextField
-              error={this.state.surveyed && this.state.candmajor===''}
+              error={this.state.surveyed && this.state.candmajor===""}
               value={this.state.candmajor}
               onChange={(event)=>this.setState({candmajor: event.target.value})}
             />
@@ -479,7 +478,7 @@ class App extends Component {
           <DialogTitle>Instructions</DialogTitle>
           <DialogContent>
             <DialogContentText>
-              Make a four-year plan to satisfy the given requirements by dragging courses from the course list to your schedule on the left. When ready, click CHECKOUT to see if you have fulfilled the requirements. Keep trying until your plan successfully graduates. Click the trashcan icon on courses to delete them; click the CLEAR button to clear all selections.
+              Make a four-year plan to satisfy the given requirements by dragging courses from the course list to your schedule on the left. When ready, click DO I GRADUATE? to see if you have fulfilled the requirements. Keep trying until your plan successfully graduates. Click the trashcan icon on courses to delete them; click the CLEAR button to clear all selections.
               <br />
               <br />
               Note that General Education requirements are not included in this study, and you are limited to two courses per quarter.
@@ -509,13 +508,13 @@ class App extends Component {
         <DragDropContext onDragEnd={this.onDragEnd}>
           <Grid container>
             <Grid item xs={12} s={6} md={6} lg={6} xl={6}>
-              <div style = {{display: 'flex', flexFlow: 'column', height: '100%'}}>
-                <div style = {{flex: '1 1 auto', display: 'flex'}}>
-                  <Typography variant = 'h3' style={{marginLeft: 15}}>
+              <div style = {{display: "flex", flexFlow: "column", height: "100%"}}>
+                <div style = {{flex: "1 1 auto", display: "flex"}}>
+                  <Typography variant = "h3" style={{marginLeft: 15}}>
                   1
                   </Typography>
-                  <div style={{flex: '1 1 auto', marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
-                    {['1f','1w','1s'].map(columnId => {
+                  <div style={{flex: "1 1 auto", marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
+                    {["1f","1w","1s"].map(columnId => {
                       const column = this.state.selected[columnId];
                       const courses = column.courseIds.map(courseId => this.state.courses[courseId]);
                       return <Column delete={this.delete} key={column.id} column={column} courses={courses} />;
@@ -523,12 +522,12 @@ class App extends Component {
                   </div>
                 </div>
 
-                <div style = {{flex: '1 1 auto', display: 'flex'}}>
-                  <Typography variant = 'h3' style={{marginLeft: 15}}>
+                <div style = {{flex: "1 1 auto", display: "flex"}}>
+                  <Typography variant = "h3" style={{marginLeft: 15}}>
                   2
                   </Typography>
-                  <div style={{flex: '1 1 auto', marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
-                    {['2f','2w','2s'].map(columnId => {
+                  <div style={{flex: "1 1 auto", marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
+                    {["2f","2w","2s"].map(columnId => {
                       const column = this.state.selected[columnId];
                       const courses = column.courseIds.map(courseId => this.state.courses[courseId]);
                       return <Column delete={this.delete} key={column.id} column={column} courses={courses} />;
@@ -536,12 +535,12 @@ class App extends Component {
                   </div>
                 </div>
 
-                <div style = {{flex: '1 1 auto', display: 'flex'}}>
-                  <Typography variant = 'h3' style={{marginLeft: 15}}>
+                <div style = {{flex: "1 1 auto", display: "flex"}}>
+                  <Typography variant = "h3" style={{marginLeft: 15}}>
                   3
                   </Typography>
-                  <div style={{flex: '1 1 auto', marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
-                    {['3f','3w','3s'].map(columnId => {
+                  <div style={{flex: "1 1 auto", marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
+                    {["3f","3w","3s"].map(columnId => {
                       const column = this.state.selected[columnId];
                       const courses = column.courseIds.map(courseId => this.state.courses[courseId]);
                       return <Column delete={this.delete} key={column.id} column={column} courses={courses} />;
@@ -549,12 +548,12 @@ class App extends Component {
                   </div>
                 </div>
 
-                <div style = {{flex: '1 1 auto', display: 'flex'}}>
-                  <Typography variant = 'h3' style={{marginLeft: 15, marginRight:3}}>
+                <div style = {{flex: "1 1 auto", display: "flex"}}>
+                  <Typography variant = "h3" style={{marginLeft: 15, marginRight:3}}>
                   4
                   </Typography>
-                  <div style={{flex: '1 1 auto', marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
-                    {['4f','4w','4s'].map(columnId => {
+                  <div style={{flex: "1 1 auto", marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
+                    {["4f","4w","4s"].map(columnId => {
                       const column = this.state.selected[columnId];
                       const courses = column.courseIds.map(courseId => this.state.courses[courseId]);
                       return <Column delete={this.delete} key={column.id} column={column} courses={courses} />;
@@ -565,16 +564,16 @@ class App extends Component {
             </Grid>
 
             <Grid item xs={12} s={6} md={6} lg={6} xl={6}>
-              <div style={{display: 'flex', flexFlow: 'row', position: 'relative', height: 'calc(100vh - 62px + 9px)'}}>
-                <div style={{flex: '0 1 auto', height: '100%'}}>
-                  <Pool key={'pool'} column={this.state.pool} courses={this.state.pool.courseIds.map(courseId => this.state.courses[courseId])} />
+              <div style={{display: "flex", flexFlow: "row", position: "relative", height: "calc(100vh - 62px + 9px)"}}>
+                <div style={{flex: "0 1 auto", height: "100%"}}>
+                  <Pool key={"pool"} column={this.state.pool} courses={this.state.pool.courseIds.map(courseId => this.state.courses[courseId])} />
                 </div>
 
-                <div style={{flex: '1 1 auto', marginTop: 5, marginLeft: 16, marginRight: 15, overflow: 'auto'}}>
-                  <Typography variant='h6' style={{marginBottom: 5}}>
+                <div style={{flex: "1 1 auto", marginTop: 5, marginLeft: 16, marginRight: 15, overflow: "auto"}}>
+                  <Typography variant="h6" style={{marginBottom: 5}}>
                     Requirements
                   </Typography>
-                  <Typography variant='body2' style={{whiteSpace: "pre-line"}}>
+                  <Typography variant="body2" style={{whiteSpace: "pre-line"}}>
                     <div dangerouslySetInnerHTML = {{"__html": this.state.requirement}} />
                   </Typography>
                 </div>
