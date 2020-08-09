@@ -26,6 +26,7 @@ import Alert from "@material-ui/lab/Alert";
 import {
   DragDropContext,
 } from "react-beautiful-dnd";
+import IdleTimer from 'react-idle-timer'
 import Column from "./column";
 import Pool from "./pool";
 import majors from "./majors.json"
@@ -331,15 +332,15 @@ class App extends Component {
           style={{
             marginBottom: "3px",
             boxShadow: "none",
-            backgroundColor: "#2196f3"
+            backgroundColor: "#f6f63f"
           }}
         >
           <Toolbar variant="dense">
-            <Typography variant="h6" style={{ flexGrow: 1 }}>
-              {"Four-Year Planner"}
+            <Typography variant="h6" style={{ flexGrow: 1, color:"black" }}>
+              <strong>{"Four-Year Planner"}</strong>
             </Typography>
 
-            <Typography variant="body2" style={{ flexGrow: 1 }}>
+            <Typography variant="body2" style={{ flexGrow: 1, color:"black" }}>
               {"Major "+this.state.progress+" of 2"}
             </Typography>
 
@@ -351,7 +352,7 @@ class App extends Component {
             instructions
             </Button>
 
-            <Button onClick={()=>this.setState({failed: this.check(), checked: true})} size="small" variant="contained" color="secondary">
+            <Button onClick={()=>this.setState({failed: this.check(), checked: true})} size="small" variant="contained" style={{backgroundColor: "#f3682b"}}>
             do i graduate?
             </Button>
           </Toolbar>
@@ -508,9 +509,29 @@ class App extends Component {
         <DragDropContext onDragEnd={this.onDragEnd}>
           <Grid container>
             <Grid item xs={12} s={6} md={6} lg={6} xl={6}>
-              <div style = {{display: "flex", flexFlow: "column", height: "100%"}}>
+              <div style = {{flex: "1 1 auto", display: "flex", minHeight: 0, height: "6%"}}>
+                <div style={{marginLeft: 15, width: "27px"}}/>
+                <div style={{flex: "1 1 auto", marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
+                  <div style={{width: "100%", textAlign: "center"}}>
+                    <p>
+                      <strong>Fall</strong>
+                    </p>
+                  </div>
+                  <div style={{width: "100%", textAlign: "center"}}>
+                    <p>
+                      <strong>Winter</strong>
+                    </p>
+                  </div>
+                  <div style={{width: "100%", textAlign: "center"}}>
+                    <p>
+                      <strong>Spring</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div style = {{display: "flex", flexFlow: "column", height: "94%"}}>
                 <div style = {{flex: "1 1 auto", display: "flex"}}>
-                  <Typography variant = "h3" style={{marginLeft: 15}}>
+                  <Typography variant = "h3" style={{verticalAlign: "middle", marginLeft: 15}}>
                   1
                   </Typography>
                   <div style={{flex: "1 1 auto", marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
@@ -523,7 +544,7 @@ class App extends Component {
                 </div>
 
                 <div style = {{flex: "1 1 auto", display: "flex"}}>
-                  <Typography variant = "h3" style={{marginLeft: 15}}>
+                  <Typography variant = "h3" style={{verticalAlign: "middle", marginLeft: 15}}>
                   2
                   </Typography>
                   <div style={{flex: "1 1 auto", marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
@@ -536,7 +557,7 @@ class App extends Component {
                 </div>
 
                 <div style = {{flex: "1 1 auto", display: "flex"}}>
-                  <Typography variant = "h3" style={{marginLeft: 15}}>
+                  <Typography variant = "h3" style={{verticalAlign: "middle", marginLeft: 15}}>
                   3
                   </Typography>
                   <div style={{flex: "1 1 auto", marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
@@ -549,7 +570,7 @@ class App extends Component {
                 </div>
 
                 <div style = {{flex: "1 1 auto", display: "flex"}}>
-                  <Typography variant = "h3" style={{marginLeft: 15, marginRight:3}}>
+                  <Typography variant = "h3" style={{verticalAlign: "middle", marginLeft: 15}}>
                   4
                   </Typography>
                   <div style={{flex: "1 1 auto", marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
@@ -569,13 +590,15 @@ class App extends Component {
                   <Pool key={"pool"} column={this.state.pool} courses={this.state.pool.courseIds.map(courseId => this.state.courses[courseId])} />
                 </div>
 
-                <div style={{flex: "1 1 auto", marginTop: 5, marginLeft: 16, marginRight: 15, overflow: "auto"}}>
-                  <Typography variant="h6" style={{marginBottom: 5}}>
-                    Requirements
+                <div style={{backgroundColor: "#fdfddd", overflow: "auto"}}>
+                  <Typography variant="body1" style={{marginBottom: 5, marginTop: 5, textAlign: "center"}}>
+                    <strong>Requirements</strong>
                   </Typography>
-                  <Typography variant="body2" style={{whiteSpace: "pre-line"}}>
-                    <div dangerouslySetInnerHTML = {{"__html": this.state.requirement}} />
-                  </Typography>
+                  <div style={{flex: "1 1 auto", marginLeft: 14, marginRight: 15}}>
+                    <Typography variant="body2" style={{whiteSpace: "pre-line"}}>
+                      <div dangerouslySetInnerHTML = {{"__html": this.state.requirement}} />
+                    </Typography>
+                  </div>
                 </div>
               </div>
             </Grid>

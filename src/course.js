@@ -6,12 +6,14 @@ import {Draggable} from 'react-beautiful-dnd';
 
 const Container = styled.div`
   border: 1px solid lightgrey;
+  background-color: white;
   border-radius: 2px;
-  padding: 3px;
-  margin: 3px;
-  width: 69px;
+  margin: 5px;
+  padding: 5px;
+  width: 98%;
   display: flex;
   min-height: 56px;
+  flexGrow: 1;
   overflow-y: auto;
   overflow-x: hidden;
   flex-flow: column;

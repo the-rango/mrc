@@ -11,13 +11,13 @@ const Container = styled.div`
   border: 1px solid lightgrey;
   border-radius: 2px;
   width: 100%;
-  height: 83%;
+  background-color: #ededed;
 `;
 const CourseList = styled.div`
   min-height: 82px;
   display: flex;
   justify-content: space-between;
-  height: 80%;
+  height: 100%;
 `;
 const DashedDivider = styled.div`
   z-index: 100;
@@ -34,7 +34,7 @@ const LeftSpacer = styled.div`
   border-right: 1px dashed #D3D3D3;
 `;
 const RightSpacer = styled.div`
-  width: 50%;
+  width: 100%;
   z-index: 100;
   top: 0;
   bottom: 0;
@@ -45,7 +45,6 @@ export default class Column extends React.Component{
   render(){
     return (
       <Container>
-        <Typography variant="subtitle2" style = {{margin: 3}}>{this.props.column.title}</Typography>
         <Droppable droppableId={this.props.column.id} direction="horizontal">
           {(provided) => (
             <CourseList
