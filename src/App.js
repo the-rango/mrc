@@ -143,8 +143,8 @@ class App extends Component {
   }
 
   report = (type, payload) => {
-    console.log(type);
-    console.log(payload);
+    // console.log(type);
+    // console.log(payload);
 
     const response = fetch(
       "https://pleaserunforme.herokuapp.com/log/"+type+"/"+this.state.uid,
@@ -324,9 +324,32 @@ class App extends Component {
     window.location.reload(true);
   }
 
+  checkout = () => {
+    this.setState({failed: this.check(), checked: true}, ()=>{
+      this.report("submit", {selection: this.state.selected, failed: this.state.failed})
+    })
+  }
+
   render() {
     return (
       <Fragment>
+      <IdleTimer
+        ref={ref => { this.idleTimer = ref }}
+        timeout={1000 * 60}
+        onAction={(event)=>{
+          this.report("granular", event)
+          console.log('user did something', event);
+        }}
+        onActive={(event)=>{
+          this.report("resume", {})
+          console.log('user is active', event);
+        }}
+        onIdle={(event)=>{
+          this.report("idle", {})
+          console.log('user is idle', event);
+        }}
+        debounce={250}
+        />
         <AppBar
           position="static"
           style={{
@@ -352,7 +375,7 @@ class App extends Component {
             instructions
             </Button>
 
-            <Button onClick={()=>this.setState({failed: this.check(), checked: true})} size="small" variant="contained" style={{backgroundColor: "#f3682b"}}>
+            <Button onClick={this.checkout} size="small" variant="contained" style={{backgroundColor: "#f3682b"}}>
             do i graduate?
             </Button>
           </Toolbar>
