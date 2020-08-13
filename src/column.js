@@ -1,7 +1,4 @@
 import React, {Fragment} from 'react';
-import {
-  Typography,
-} from '@material-ui/core';
 import styled from 'styled-components';
 import {Droppable} from 'react-beautiful-dnd'
 import Course from './course'
@@ -9,12 +6,11 @@ import Course from './course'
 const Container = styled.div`
   margin: 5px;
   border: 1px solid lightgrey;
-  border-radius: 2px;
   width: 100%;
   background-color: #ededed;
 `;
 const CourseList = styled.div`
-  min-height: 82px;
+  min-height: 115px;
   display: flex;
   justify-content: space-between;
   height: 100%;

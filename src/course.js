@@ -7,13 +7,12 @@ import {Draggable} from 'react-beautiful-dnd';
 const Container = styled.div`
   border: 1px solid lightgrey;
   background-color: white;
-  border-radius: 2px;
-  margin: 5px;
-  padding: 5px;
+  margin: 3px;
+  padding: 3px;
+  padding-bottom: 2px;
   width: 98%;
   display: flex;
   min-height: 56px;
-  flexGrow: 1;
   overflow-y: auto;
   overflow-x: hidden;
   flex-flow: column;
@@ -27,6 +26,9 @@ const Container = styled.div`
 
 export default class Course extends React.Component {
   render(){
+    const fullname = this.props.course.content;
+    const title = fullname.substring(0, fullname.indexOf("\n"));
+    const name = fullname.substring(fullname.indexOf("\n")+1)
     return (
       <Draggable draggableId={this.props.course.id} index={this.props.index}>
         {(provided, snapshot) => (
@@ -38,13 +40,15 @@ export default class Course extends React.Component {
               isDragging={snapshot.isDragging}
             >
               <Typography variant="body2" style={{flexGrow: 1}}>
-                {this.props.course.content}
+                <strong>{title}</strong>
+                <br />
+                {name}
               </Typography>
               {(this.props.delete ?
               (
-                <div style={{ display: "flex", flexFlow: "row"}}>
+                <div style={{ zIndex: 100, display: "flex", flexFlow: "row"}}>
                   <div style={{flexGrow: 1}} />
-                  <IconButton style={{flexGrow: 0}} size="small" variant="text" onClick={()=>this.props.delete(this.props.parentId, this.props.index, this.props.course.id)}>
+                  <IconButton style={{flexGrow: 0, padding: 0}} size="small" onClick={()=>this.props.delete(this.props.parentId, this.props.index, this.props.course.id)}>
                     <DeleteIcon />
                   </IconButton>
                 </div>

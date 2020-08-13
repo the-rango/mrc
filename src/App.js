@@ -94,10 +94,6 @@ const INIT_SELECTED = {
   },
 }
 
-const MIN = (a,b) => {
-  return (a>b) ? b : a;
-}
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -111,7 +107,7 @@ class App extends Component {
       }
     }
 
-    const name = "Evolutionary Biology";
+    const name = majors["depts"][Math.floor(Math.random() * majors["depts"].length)];
     const dept = majors["requirements"][name];
     const major = dept[4];
 
@@ -146,7 +142,7 @@ class App extends Component {
     // console.log(type);
     // console.log(payload);
 
-    const response = fetch(
+    fetch(
       "https://pleaserunforme.herokuapp.com/log/"+type+"/"+this.state.uid,
       {
         method: "POST",
@@ -337,16 +333,16 @@ class App extends Component {
         ref={ref => { this.idleTimer = ref }}
         timeout={1000 * 60}
         onAction={(event)=>{
-          this.report("granular", event)
-          console.log('user did something', event);
+          this.report("granular", {type: event.type})
+          // console.log('user did something', event);
         }}
         onActive={(event)=>{
           this.report("resume", {})
-          console.log('user is active', event);
+          // console.log('user is active', event);
         }}
         onIdle={(event)=>{
           this.report("idle", {})
-          console.log('user is idle', event);
+          // console.log('user is idle', event);
         }}
         debounce={250}
         />
@@ -367,11 +363,7 @@ class App extends Component {
               {"Major "+this.state.progress+" of 2"}
             </Typography>
 
-            <Button disableElevation onClick={()=>this.setState({selected: INIT_SELECTED})}  size="small" variant="contained" style={{marginRight: 15}}>
-            clear
-            </Button>
-
-            <Button disableElevation onClick={()=>this.setState({help: true})}  size="small" variant="contained" style={{marginRight: 15}}>
+            <Button disableElevation onClick={()=>this.setState({help: true}, ()=>{this.report("help", {})})}  size="small" variant="contained" style={{marginRight: 15}}>
             instructions
             </Button>
 
@@ -532,32 +524,26 @@ class App extends Component {
         <DragDropContext onDragEnd={this.onDragEnd}>
           <Grid container>
             <Grid item xs={12} s={6} md={6} lg={6} xl={6}>
-              <div style = {{flex: "1 1 auto", display: "flex", minHeight: 0, height: "6%"}}>
-                <div style={{marginLeft: 15, width: "27px"}}/>
+              <div style = {{flex: "1 1 auto", display: "flex", minHeight: 0, height: "4%"}}>
+                <div style={{marginLeft: 10, width: "15px"}}/>
                 <div style={{flex: "1 1 auto", marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
-                  <div style={{width: "100%", textAlign: "center"}}>
-                    <p>
+                    <p style={{margin: 3, width: "100%", textAlign: "center"}}>
                       <strong>Fall</strong>
                     </p>
-                  </div>
-                  <div style={{width: "100%", textAlign: "center"}}>
-                    <p>
+                    <p style={{margin: 3, width: "100%", textAlign: "center"}}>
                       <strong>Winter</strong>
                     </p>
-                  </div>
-                  <div style={{width: "100%", textAlign: "center"}}>
-                    <p>
+                    <p style={{margin: 3, width: "100%", textAlign: "center"}}>
                       <strong>Spring</strong>
                     </p>
-                  </div>
                 </div>
               </div>
-              <div style = {{display: "flex", flexFlow: "column", height: "94%"}}>
+              <div style = {{display: "flex", flexFlow: "column", height: "96%"}}>
                 <div style = {{flex: "1 1 auto", display: "flex"}}>
-                  <Typography variant = "h3" style={{verticalAlign: "middle", marginLeft: 15}}>
-                  1
+                  <Typography variant = "h5" style={{verticalAlign: "middle", marginLeft: 10}}>
+                  <strong>1</strong>
                   </Typography>
-                  <div style={{flex: "1 1 auto", marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
+                  <div style={{flex: "1 1 auto", marginLeft: 3, display: "flex", justifyContent: "space-between"}}>
                     {["1f","1w","1s"].map(columnId => {
                       const column = this.state.selected[columnId];
                       const courses = column.courseIds.map(courseId => this.state.courses[courseId]);
@@ -567,10 +553,10 @@ class App extends Component {
                 </div>
 
                 <div style = {{flex: "1 1 auto", display: "flex"}}>
-                  <Typography variant = "h3" style={{verticalAlign: "middle", marginLeft: 15}}>
-                  2
+                  <Typography variant = "h5" style={{verticalAlign: "middle", marginLeft: 10}}>
+                  <strong>2</strong>
                   </Typography>
-                  <div style={{flex: "1 1 auto", marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
+                  <div style={{flex: "1 1 auto", marginLeft: 3, display: "flex", justifyContent: "space-between"}}>
                     {["2f","2w","2s"].map(columnId => {
                       const column = this.state.selected[columnId];
                       const courses = column.courseIds.map(courseId => this.state.courses[courseId]);
@@ -580,10 +566,10 @@ class App extends Component {
                 </div>
 
                 <div style = {{flex: "1 1 auto", display: "flex"}}>
-                  <Typography variant = "h3" style={{verticalAlign: "middle", marginLeft: 15}}>
-                  3
+                  <Typography variant = "h5" style={{verticalAlign: "middle", marginLeft: 10}}>
+                  <strong>3</strong>
                   </Typography>
-                  <div style={{flex: "1 1 auto", marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
+                  <div style={{flex: "1 1 auto", marginLeft: 3, display: "flex", justifyContent: "space-between"}}>
                     {["3f","3w","3s"].map(columnId => {
                       const column = this.state.selected[columnId];
                       const courses = column.courseIds.map(courseId => this.state.courses[courseId]);
@@ -593,10 +579,10 @@ class App extends Component {
                 </div>
 
                 <div style = {{flex: "1 1 auto", display: "flex"}}>
-                  <Typography variant = "h3" style={{verticalAlign: "middle", marginLeft: 15}}>
-                  4
+                  <Typography variant = "h5" style={{verticalAlign: "middle", marginLeft: 10}}>
+                  <strong>4</strong>
                   </Typography>
-                  <div style={{flex: "1 1 auto", marginLeft: 8, display: "flex", justifyContent: "space-between"}}>
+                  <div style={{flex: "1 1 auto", marginLeft: 3, display: "flex", justifyContent: "space-between"}}>
                     {["4f","4w","4s"].map(columnId => {
                       const column = this.state.selected[columnId];
                       const courses = column.courseIds.map(courseId => this.state.courses[courseId]);

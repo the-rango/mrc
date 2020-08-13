@@ -7,16 +7,16 @@ import {Droppable} from 'react-beautiful-dnd'
 import Course from './course'
 
 const Container = styled.div`
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-left: 8px;
   margin-bottom: 5px;
   margin-top: 5px;
-  width: 100%;
+  width: 120px;
   height: 92%;
 `;
 const CourseList = styled.div`
-  margin-left: 8px;
-  margin-right: 8px;
   margin-bottom: 5px;
+  padding-right: 10px;
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;

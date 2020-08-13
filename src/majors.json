@@ -7,15 +7,13 @@
       "4": {
         "textreq": "<strong>Core Curriculum</strong><br />Life Sciences: 3 and 27L<br />Chemistry: 12A and 12B<br />Mathematics: 6A, and 6C or 6D<br />Physics: 3A and 3B<br /><hr /><strong>Chemistry</strong><br />Chemistry: 119A, 119B, 120, 125, or 130<br /><hr /><strong>Foundation Courses - Choose two courses from the following list:</strong><br />Ecology & Evolutionary Biology: 113 or 114, 127, 198, 129<br />Physics: 111, 114A<br />Chemistry: one of 119B, 120, 121, 125, 130<br /><hr /><strong>Laboratory Courses - Choose five courses from the following list:</strong><br />Ecology & Evolutionary Biology: 113A, 127, 129, 130, 132 + 132A (most take BOTH courses for it to count), 137, 151, 151A, 158, 160, 161, 174, 178, 185, 192, 193<br />Microbiology: 112, 112, 118, 121<br />Physiological Science: 112, 116, 119<br />At least two courses taken to fulfill this requirement must be Ecology & Evolutionary Biology: courses<br /><hr /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Anthropology: 110 and/or one of 116A, 116P, or 119A<br />Ecology & Evolutionary Biology: 127, 129, 130, 146A, 151, 151A, 154, 158, 160, 161, 174, 178, 179, 193, 198 (can be taken multiple times, but only can be counted twice towards requirements)<br />Molecular Biology: 112, 114, 115, 124, 128, 131, 133, 142",
         "boolreq": [
-          "SUMTAG[1] >= 16",
-          "SUMTAG[3] >= 7",
-          "SUMTAG[4] >= 7",
-          "SUMTAG[4]+SUMTAG[5]+MIN(SUMTAG[6],3) >= 10",
-          "SUMTAG[3]+SUMTAG[4]+SUMTAG[5]+MIN(SUMTAG[6],3)+MIN(SUMTAG[7],2) >= 23",
-          "SUMTAG[8] >= 6",
-          "SUMTAG[7] >= 2",
-          "SUMTAG[9]+MIN(SUMTAG[11],3)+MIN(SUMTAG[12],2) >= 34",
-          "(SUMTAG[4] + SUMTAG[5] + MIN(SUMTAG[6],3))+(SUMTAG[7]) - SUMTAG[10] >= 10 + 2"
+          "SUMTAG[1] >= 7",
+          "SUMTAG[2] >= 1",
+          "SUMTAG[3] + SUMTAG[4] >= 1",
+          "Math.min(SUMTAG[5], 1) + SUMTAG[6] + SUMTAG[8] + SUMTAG[15] + Math.min(SUMTAG[7] + Math.max(SUMTAG[3] + SUMTAG[4] - 1, 0), 1) >= 2",
+          "SUMTAG[13] + Math.min(SUMTAG[14], 1) + SUMTAG[10] + Math.min(Math.max(Math.min(SUMTAG[5], 1) + SUMTAG[6] + SUMTAG[8] + SUMTAG[15]+  Math.min(SUMTAG[7] + Math.max(SUMTAG[3] + SUMTAG[4] - 1, 0), 1) -2,0),SUMTAG[8] + SUMTAG[15]) >= 8",
+          "SUMTAG[9] + SUMTAG[12] + 2*(SUMTAG[11] == 2) + Math.min(Math.max(SUMTAG[13] + Math.min(SUMTAG[14], 1) + SUMTAG[10] + Math.min(Math.max(Math.min(SUMTAG[5], 1) + SUMTAG[6] + SUMTAG[8] + SUMTAG[15]+  Math.min(SUMTAG[7] + Math.max(SUMTAG[3] + SUMTAG[4] - 1, 0), 1) -2,0),SUMTAG[8] + SUMTAG[15]) -8,0), SUMTAG[8] + SUMTAG[10]) >= 5",
+          "SUMTAG[9] + 2*(SUMTAG[11] == 2) + Math.min(Math.max(SUMTAG[13] + Math.min(SUMTAG[14], 1) + SUMTAG[10] + Math.min(Math.max(Math.min(SUMTAG[5], 1) + SUMTAG[6] + SUMTAG[8] + SUMTAG[15]+  Math.min(SUMTAG[7] + Math.max(SUMTAG[3] + SUMTAG[4] - 1, 0), 1) -2,0),SUMTAG[8] + SUMTAG[15]) -8,0), SUMTAG[8] + SUMTAG[10]) >= 2"
         ]
       }
     }
