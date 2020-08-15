@@ -109,12 +109,16 @@ class App extends Component {
 
     const name = majors["depts"][Math.floor(Math.random() * majors["depts"].length)];
     const dept = majors["requirements"][name];
-    const major = dept[4];
+    const diff = majors["diffl"][Math.floor(Math.random() * majors["diffl"].length)];
+    const major = dept[diff];
 
     this.state = {
       name: name,
+      diff: diff,
       courses: dept.courses,
       selected: INIT_SELECTED,
+      requirement: major.textreq,
+      boolreq: major.boolreq,
       pool: {
         id: "pool",
         title: "Course Listing",
@@ -124,8 +128,6 @@ class App extends Component {
       checked: false,
       progress: 0,
       help: false,
-      requirement: major.textreq,
-      boolreq: major.boolreq,
       gender: "",
       ethnicity: "",
       candmajor: "",
@@ -177,6 +179,12 @@ class App extends Component {
         nfailed.push(i);
     });
     return nfailed;
+  }
+
+  clear = () => {
+    this.setState({selected: INIT_SELECTED}, ()=>{
+      this.report("clear", {selection: INIT_SELECTED, failed: this.check()});
+    });
   }
 
   delete = (parentId, index, draggableId) => {
@@ -312,6 +320,7 @@ class App extends Component {
       };
       // console.log(payload);
       this.report("demographics", payload);
+      this.report("start", {major: this.state.name, difficulty: this.state.diff});
     }
   }
 
@@ -321,9 +330,40 @@ class App extends Component {
   }
 
   checkout = () => {
-    this.setState({failed: this.check(), checked: true}, ()=>{
-      this.report("submit", {selection: this.state.selected, failed: this.state.failed})
-    })
+    const nfailed = this.check();
+    this.report("submit", {selection: this.state.selected, failed: nfailed});
+    if (nfailed.length === 0){
+      if (this.state.progress === 1){
+        // successful, move onto the next major
+        const name = majors["depts"][Math.floor(Math.random() * majors["depts"].length)];
+        const dept = majors["requirements"][name];
+        const diff = majors["diffl"][Math.floor(Math.random() * majors["diffl"].length)];
+        const major = dept[diff];
+        this.setState({
+          checked: true,
+          progress: 2,
+          name: name,
+          diff: diff,
+          courses: dept.courses,
+          selected: INIT_SELECTED,
+          requirement: major.textreq,
+          boolreq: major.boolreq,
+          pool: {
+            id: "pool",
+            title: "Course Listing",
+            courseIds: Object.keys(dept.courses),
+          },
+          failed: [],
+        });
+        this.report("start", {major: name, difficulty: diff});
+      } else if (this.state.progress === 2){
+        // successful, finished
+        this.setState({failed: [], checked: true, progress: 3});
+      }
+    } else {
+      // unsuccessful,
+      this.setState({failed: nfailed, checked: true})
+    }
   }
 
   render() {
@@ -363,12 +403,16 @@ class App extends Component {
               {"Major "+this.state.progress+" of 2"}
             </Typography>
 
+            <Button disableElevation onClick={this.clear}  size="small" variant="contained" style={{marginRight: 15}}>
+              clear
+            </Button>
+
             <Button disableElevation onClick={()=>this.setState({help: true}, ()=>{this.report("help", {})})}  size="small" variant="contained" style={{marginRight: 15}}>
-            instructions
+              instructions
             </Button>
 
             <Button onClick={this.checkout} size="small" variant="contained" style={{backgroundColor: "#f3682b"}}>
-            do i graduate?
+              do i graduate?
             </Button>
           </Toolbar>
         </AppBar>
@@ -378,9 +422,13 @@ class App extends Component {
             {(this.state.failed) ?
               "Does not meet major requirements! Please try again! " + this.state.failed.join(" ")
               :
-              "Great job! You have successfully graduated!"}
+              "Great job! You have successfully graduated! Now moving onto the next major..."}
           </Alert>
         </Snackbar>
+
+        <Dialog open={this.state.progress === 3} maxWidth="lg">
+          <DialogTitle>Thank you! You have completed the survey!</DialogTitle>
+        </Dialog>
 
         <Dialog open={this.state.progress === 0} maxWidth="lg">
           <DialogTitle>Welcome</DialogTitle>
