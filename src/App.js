@@ -161,7 +161,7 @@ class App extends Component {
   }
 
   check = () => {
-    var SUMTAG = [0,0,0,0,0,0,0,0,0,0,0,0,0];
+    var SUMTAG = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
     var year, cid, tag;
     var unique_count = new Set();
     for (year in this.state.selected){
@@ -420,10 +420,10 @@ class App extends Component {
 
         <Snackbar open={this.state.checked} autoHideDuration={6000} onClose={this.closeSnackbar} anchorOrigin={{vertical: "top", horizontal: "right"}}>
           <Alert onClose={this.closeSnackbar} severity= {(this.state.failed.length === 0) ? "success" : "error"}>
-            {(this.state.failed) ?
-              "Does not meet major requirements! Please try again! " + this.state.failed.join(" ")
+            {(this.state.failed.length === 0) ?
+              "Great job! You have successfully graduated! Now moving onto the next major..."
               :
-              "Great job! You have successfully graduated! Now moving onto the next major..."}
+              "Does not meet major requirements! Please try again! " + this.state.failed.join(" ")}
           </Alert>
         </Snackbar>
 
