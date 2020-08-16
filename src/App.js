@@ -160,7 +160,7 @@ class App extends Component {
   }
 
   check = () => {
-    var SUMTAG = [0,0,0,0,0,0,0,0,0,0,0,0,0];
+    var SUMTAG = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
     var year, cid, tag;
     var unique_count = new Set();
     for (year in this.state.selected){
