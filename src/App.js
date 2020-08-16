@@ -20,6 +20,7 @@ import {
   MenuItem,
   Slider,
   TextField,
+  Checkbox,
   Divider,
 } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
@@ -133,7 +134,7 @@ class App extends Component {
       candmajor: "",
       standing: "",
       gpa: 3.0,
-      moreqtrs: 2,
+      moreqtrs: 15,
       advifreq: "",
       surveyed: false,
       uid: null,
@@ -431,11 +432,12 @@ class App extends Component {
         </Dialog>
 
         <Dialog open={this.state.progress === 0} maxWidth="lg">
-          <DialogTitle>Welcome</DialogTitle>
+          <DialogTitle>Welcome! Thank you for participating in our study! </DialogTitle>
           <DialogContent>
             <DialogContentText>
-              Thank you for participating in our study! Before we begin, please tell us about yourself!
+              Before we begin, please tell us about yourself!
               Your information is used strictly for the purposes of this survey and will not be released to other parties.
+              Please try to provide as much information as possible!
             </DialogContentText>
             <Divider />
             <br />
@@ -444,7 +446,8 @@ class App extends Component {
               <RadioGroup row name="gender" value={this.state.gender} onChange={(event) => {this.setState({gender: event.target.value})}}>
                 <FormControlLabel value="female" control={<Radio color="primary"/>} label="Female" />
                 <FormControlLabel value="male" control={<Radio color="primary"/>} label="Male" />
-                <FormControlLabel value="other" control={<Radio color="primary"/>} label="Other/Prefer not to state" />
+                <FormControlLabel value="other" control={<Radio color="primary"/>} label="Other" />
+                <FormControlLabel value="nosay" control={<Radio color="primary"/>} label="Prefer not to state" />
               </RadioGroup>
             </FormControl>
 
@@ -462,6 +465,7 @@ class App extends Component {
                <MenuItem value={"Hispanic"}>Hispanic</MenuItem>
                <MenuItem value={"Multi-Racial"}>Multi-Racial</MenuItem>
                <MenuItem value={"Other"}>Other</MenuItem>
+               <MenuItem value={"Nosay"}>Prefer not to state</MenuItem>
              </Select>
            </FormControl>
 
@@ -475,18 +479,19 @@ class App extends Component {
               value={this.state.standing}
               onChange={(event)=>this.setState({standing: event.target.value})}
             >
-              <MenuItem value={1}>1st Year</MenuItem>
-              <MenuItem value={2}>2nd Year</MenuItem>
-              <MenuItem value={3}>3rd Year</MenuItem>
-              <MenuItem value={4}>4th Year</MenuItem>
-              <MenuItem value={5}>5th Year</MenuItem>
-              <MenuItem value={6}>6th Year or Higher</MenuItem>
+              <MenuItem value={1}>1st year</MenuItem>
+              <MenuItem value={2}>2nd year</MenuItem>
+              <MenuItem value={3}>3rd year</MenuItem>
+              <MenuItem value={4}>4th year</MenuItem>
+              <MenuItem value={5}>5th year</MenuItem>
+              <MenuItem value={6}>6th year or higher</MenuItem>
               <MenuItem value={0}>Graduate</MenuItem>
+              <MenuItem value={9}>Prefer not to state</MenuItem>
             </Select>
           </FormControl>
 
           <FormControl error={this.state.surveyed && this.state.advifreq===""} required style={{marginBottom: 5, width: "59%", padding: 5}} fullWidth>
-            <FormLabel >How often do you meet with an academic advisor to discuss your class schedule?</FormLabel>
+            <FormLabel >How often have you met with an academic advisor about your schedule in the last school year?</FormLabel>
             <Select
               labelId="advifreq"
               id="advifreq"
@@ -494,10 +499,11 @@ class App extends Component {
               onChange={(event)=>this.setState({advifreq: event.target.value})}
             >
               <MenuItem value={"Never"}>Never</MenuItem>
-              <MenuItem value={"Very Rarely"}>Very Rarely</MenuItem>
-              <MenuItem value={"Rarely"}>Rarely</MenuItem>
-              <MenuItem value={"Occasionally"}>Occasionally</MenuItem>
-              <MenuItem value={"Frequently"}>Frequently</MenuItem>
+              <MenuItem value={"Very Rarely"}>Once or twice</MenuItem>
+              <MenuItem value={"Rarely"}>Between two and five times</MenuItem>
+              <MenuItem value={"Occasionally"}>Between five and ten times</MenuItem>
+              <MenuItem value={"Frequently"}>More than ten times</MenuItem>
+              <MenuItem value={"Nosay"}>Prefer not to state</MenuItem>
             </Select>
           </FormControl>
 
@@ -514,24 +520,37 @@ class App extends Component {
 
           <br />
 
-          <FormControl required style={{marginBottom: 5, width: "39%", padding: 5}} fullWidth>
-            <FormLabel style={{marginBottom: 23}}>Best estimate of your current cumulative GPA</FormLabel>
+          <FormControl required style={{width: "39%", padding: 5}} fullWidth>
+            <FormLabel >Best estimate of your current cumulative GPA</FormLabel>
             <br />
-            <Slider value={this.state.gpa} valueLabelDisplay="on" step={0.1} marks min={0} max={4} onChange={(event, newValue)=>this.setState({gpa: newValue})}/>
+            <Slider disabled={this.state.gpa === 5} value={this.state.gpa} valueLabelDisplay="on" step={0.1} marks min={0} max={4} onChange={(event, newValue)=>this.setState({gpa: newValue})}/>
+            <FormControlLabel
+              control={<Checkbox color="primary" checked={this.state.gpa === 5} onChange={(event)=>{this.setState({gpa: (event.target.checked? 5 : 3)})}} size="small" />}
+              label="Check here if you would prefer to not state your GPA"
+            />
           </FormControl>
 
-          <FormControl required style={{marginBottom: 5, width: "59%", padding: 5}} fullWidth>
-            <FormLabel style={{marginBottom: 23}}>How many quarters (include current, and planned summer ones) do you have before graduating?</FormLabel>
+          <FormControl required style={{width: "59%", padding: 5}} fullWidth>
+            <FormLabel >How many quarters (include current, and planned summer ones) do you have before graduating?</FormLabel>
             <br />
-            <Slider value={this.state.moreqtrs} valueLabelDisplay="on" step={1} marks min={1} max={24} onChange={(event, newValue)=>this.setState({moreqtrs: newValue})}/>
+            <Slider disabled={this.state.moreqtrs === 99} value={this.state.moreqtrs} valueLabelDisplay="on" step={1} marks min={1} max={24} onChange={(event, newValue)=>this.setState({moreqtrs: newValue})}/>
+            <FormControlLabel
+              control={<Checkbox color="primary" checked={this.state.moreqtrs === 99} onChange={(event)=>{this.setState({moreqtrs: (event.target.checked? 99 : 15)})}} size="small" />}
+              label="Check here if you do not expect to graduate"
+            />
           </FormControl>
           <br />
 
+
+
+
           </DialogContent>
           <DialogActions>
-            <Button variant="outlined" onClick={()=>{this.setState({surveyed: true, progress: 1, help: true})}} color="primary">
-              Skip
-            </Button>
+            {/*
+              <Button variant="outlined" onClick={()=>{this.setState({surveyed: true, progress: 1, help: true})}} color="primary">
+                Skip
+              </Button>
+            */}
             <Button variant="contained" onClick={this.submitSurvey} color="primary">
               Continue
             </Button>
@@ -539,18 +558,19 @@ class App extends Component {
         </Dialog>
 
         <Dialog open={this.state.help} onClose={()=>{this.setState({help: false})}} style={{minWidth: "80%"}}>
-          <DialogTitle>Instructions</DialogTitle>
+          <DialogTitle>Instructions: Please read carefully!</DialogTitle>
           <DialogContent>
             <DialogContentText>
-              Make a four-year plan to satisfy the given requirements by dragging courses from the course list to your schedule on the left. When ready, click DO I GRADUATE? to see if you have fulfilled the requirements. Keep trying until your plan successfully graduates. Click the trashcan icon on courses to delete them; click the CLEAR button to clear all selections.
+              Make a four-year plan to satisfy the given major requirements by dragging courses from the course list to your schedule. Click DO I GRADUATE? to see if you have met the requirements.
+              Keep trying until you successfully graduate. Click the trashcan icon on courses to delete them; click the CLEAR button to clear all selections.
               <br />
               <br />
-              Note that General Education requirements are not included in this study, and you are limited to two courses per quarter.
+              Note that General Education requirements are not included in this study, and you are limited to two courses per quarter. Each course you choose will only count towards one requirement.
               <br />
               <br />
               You will be asked to create four-year plans for two separate majors.
               <hr />
-              Your progress will be saved automatically. 
+              Your progress will be saved automatically. You may close this page and return at any point.
               If you would like to start over, click here to clear your saved progress and return to the initial survey. Warning: this action cannot be undone.
               <Button disableElevation fullWidth onClick={this.restart} color="secondary" variant="outlined" style={{marginTop: 5}}>
               restart
