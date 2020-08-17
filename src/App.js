@@ -92,6 +92,7 @@ class App extends Component {
       savedState = window.localStorage.getItem("save");
       if (savedState !== null && savedState !== "cleared") {
         this.state = JSON.parse(savedState);
+        this.report("resume", {});
         return;
       }
     }
