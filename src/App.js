@@ -35,62 +35,50 @@ import majors from "./majors.json"
 const INIT_SELECTED = {
   "1f": {
     id: "1f",
-    title: "Fall",
     courseIds: [],
   },
   "1w": {
     id: "1w",
-    title: "Winter",
     courseIds: [],
   },
   "1s": {
     id: "1s",
-    title: "Spring",
     courseIds: [],
   },
   "2f": {
     id: "2f",
-    title: "Fall",
     courseIds: [],
   },
   "2w": {
     id: "2w",
-    title: "Winter",
     courseIds: [],
   },
   "2s": {
     id: "2s",
-    title: "Spring",
     courseIds: [],
   },
   "3f": {
     id: "3f",
-    title: "Fall",
     courseIds: [],
   },
   "3w": {
     id: "3w",
-    title: "Winter",
     courseIds: [],
   },
   "3s": {
     id: "3s",
-    title: "Spring",
     courseIds: [],
   },
   "4f": {
     id: "4f",
-    title: "Fall",
     courseIds: [],
   },
   "4w": {
     id: "4w",
-    title: "Winter",
     courseIds: [],
   },
   "4s": {
     id: "4s",
-    title: "Spring",
     courseIds: [],
   },
 }
@@ -457,6 +445,8 @@ class App extends Component {
               Before we begin, please tell us about yourself!
               Your information is used strictly for the purposes of this survey and will not be released to other parties.
               Please try to provide as much information as possible!
+              <br />
+              Recommended: use 100% zoom on Google Chrome for the best experience!
             </DialogContentText>
             <Divider />
             <br />
@@ -590,9 +580,6 @@ class App extends Component {
               restart
               </Button>
               <hr />
-              Recommended: use 100% zoom on Google Chrome for the best experience!
-              <br />
-              <br />
               If you would like to see this message again, click on INSTRUCTIONS to the top right of the page.
             </DialogContentText>
           </DialogContent>
