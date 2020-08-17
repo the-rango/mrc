@@ -138,6 +138,7 @@ class App extends Component {
       advifreq: "",
       surveyed: false,
       uid: null,
+      firsttime: true,
     };
   }
 
@@ -292,6 +293,12 @@ class App extends Component {
     }
   }
 
+  componentDidMount = () => {
+    window.addEventListener('beforeunload', (event) => {
+      this.report("idle", {});
+    });
+  };
+
   closeSnackbar = (event, reason) => {
     if (reason === "clickaway") {
       return;
@@ -321,17 +328,27 @@ class App extends Component {
       };
       // console.log(payload);
       this.report("demographics", payload);
-      this.report("start", {major: this.state.name, difficulty: this.state.diff});
     }
-  }
+  };
+
+  closeInstructions = () => {
+    if (this.state.firsttime){
+      this.setState({help: false, firsttime: false});
+      this.report("start", {major: this.state.name, difficulty: this.state.diff, progress: 1});
+    } else {
+      this.setState({help: false});
+    }
+  };
 
   restart = () => {
+    this.report("restart", {});
     window.localStorage.setItem("save", "cleared");
     window.location.reload(true);
   }
 
   checkout = () => {
     const nfailed = this.check();
+    console.log(nfailed.join(" "));
     this.report("submit", {selection: this.state.selected, failed: nfailed});
     if (nfailed.length === 0){
       if (this.state.progress === 1){
@@ -355,11 +372,13 @@ class App extends Component {
             courseIds: Object.keys(dept.courses),
           },
           failed: [],
-        });
-        this.report("start", {major: name, difficulty: diff});
+        }, ()=>{window.localStorage.setItem("save", JSON.stringify(this.state));});
+        this.report("start", {major: name, difficulty: diff, progress: 2});
       } else if (this.state.progress === 2){
         // successful, finished
-        this.setState({failed: [], checked: true, progress: 3});
+        this.setState({failed: [], checked: true, progress: 3}, ()=>{
+          window.localStorage.setItem("save", JSON.stringify(this.state));
+        });
       }
     } else {
       // unsuccessful,
@@ -421,9 +440,9 @@ class App extends Component {
         <Snackbar open={this.state.checked} autoHideDuration={6000} onClose={this.closeSnackbar} anchorOrigin={{vertical: "top", horizontal: "right"}}>
           <Alert onClose={this.closeSnackbar} severity= {(this.state.failed.length === 0) ? "success" : "error"}>
             {(this.state.failed.length === 0) ?
-              "Great job! You have successfully graduated! Now moving onto the next major..."
+              ("Great job! You have successfully graduated!" + ((this.state.progress === 2) ? "Now moving onto the next major..." : ""))
               :
-              "Does not meet major requirements! Please try again! " + this.state.failed.join(" ")}
+              "Does not meet major requirements! Please try again!"}
           </Alert>
         </Snackbar>
 
@@ -539,11 +558,6 @@ class App extends Component {
               label="Check here if you do not expect to graduate"
             />
           </FormControl>
-          <br />
-
-
-
-
           </DialogContent>
           <DialogActions>
             {/*
@@ -557,7 +571,7 @@ class App extends Component {
           </DialogActions>
         </Dialog>
 
-        <Dialog open={this.state.help} onClose={()=>{this.setState({help: false})}} style={{minWidth: "80%"}}>
+        <Dialog open={this.state.help} onClose={this.closeInstructions} style={{minWidth: "80%"}}>
           <DialogTitle>Instructions: Please read carefully!</DialogTitle>
           <DialogContent>
             <DialogContentText>
@@ -583,7 +597,7 @@ class App extends Component {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button variant="contained" onClick={()=>{this.setState({help: false})}} color="primary">
+            <Button variant="contained" onClick={this.closeInstructions} color="primary">
               Continue
             </Button>
           </DialogActions>
