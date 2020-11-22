@@ -107,8 +107,8 @@ class App extends Component {
       diff: diff,
       courses: dept.courses,
       selected: INIT_SELECTED,
-      requirement: major.textreq,
-      boolreq: major.boolreq,
+      requirement: major,
+      boolreq: majors["boolreqs"][diff],
       pool: {
         id: "pool",
         title: "Course Listing",
@@ -151,7 +151,7 @@ class App extends Component {
   }
 
   check = () => {
-    var SUMTAG = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    var SUMTAG = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
     var year, cid, tag;
     var unique_count = new Set();
     for (year in this.state.selected){
@@ -169,6 +169,7 @@ class App extends Component {
       if(!eval(linereq))
         nfailed.push(i);
     });
+    console.log(SUMTAG)
     return nfailed;
   }
 
@@ -353,8 +354,8 @@ class App extends Component {
           diff: diff,
           courses: dept.courses,
           selected: INIT_SELECTED,
-          requirement: major.textreq,
-          boolreq: major.boolreq,
+          requirement: major,
+          boolreq: majors["boolreqs"][diff],
           pool: {
             id: "pool",
             title: "Course Listing",

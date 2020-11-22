@@ -11,7 +11,7 @@ const Container = styled.div`
   margin-left: 8px;
   margin-bottom: 5px;
   margin-top: 5px;
-  width: 120px;
+  width: 170px;
   height: 92%;
 `;
 const CourseList = styled.div`
