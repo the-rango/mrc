@@ -1,6 +1,9 @@
 {
    "depts":[
-      "Evolutionary Biology"
+      "Biology",
+      "Psychology",
+      "Economics",
+      "English"
    ],
    "diffl":[
       4,
@@ -44,7 +47,7 @@
       ]
    },
    "requirements":{
-      "Evolutionary Biology":{
+      "Biology":{
          "courses":{
             "LIFE3":{
               "id":"LIFE3",
@@ -346,6 +349,915 @@
          "3":"<strong>3Core Curriculum</strong><br />Life Sciences: 3 and 27L<br />Chemistry: 12A and 12B, one of 119A, 119B, 130<br />Mathematics: 6A, and 6C or 6D<br />Physics: 3A and 3B<br /><strong>Foundation Courses Choose two courses from the following list:</strong><br />Ecology & Evolutionary Biology: 113 or 114, 127, 198, 129<br />Physics: One of: 111, 114A<br />Chemistry: 119B, 120, 121, 125, 130<br /><strong>Laboratory Courses -Choose five courses from the following list:</strong><br />Ecology & Evolutionary Biology: 113A, 127, 129, 130, 132 + 132A (most take BOTH courses for it to count), 137, 151, 151A, 158, 160, 161, 174, 178, 185, 192, 193<br />Microbiology: 112, 112, 118, 121<br />Physiological Science: 112, 116, 119<br /><strong>Upper Division Electives Choose eight courses from the following list:</strong><br />Anthropology: 110 and/or one of 116A, 116P, or 119A<br />Ecology & Evolutionary Biology: 127, 129, 130, 146A, 151, 151A, 154, 158, 160, 161, 174, 178, 179, 193, 198 (can be taken multiple times, but only can be counted twice towards requirements)<br />Molecular Biology: 112, 114, 115, 124, 128, 131, 133, 142",
          "2":"<strong>2Core Curriculum</strong><br />Life Sciences: 3 and 27L<br />Chemistry: 12A and 12B, one of 119A, 119B, 130<br />Mathematics: 6A, and 6C or 6D<br />Physics: 3A and 3B<br /><strong>Foundation Courses Choose two courses from the following list:</strong><br />Ecology & Evolutionary Biology: 113 or 114, 127, 198, 129<br />Physics: One of: 111, 114A<br />Chemistry: 119B, 120, 121, 125, 130<br /><strong>Laboratory Courses -Choose five courses from the following list:</strong><br />Ecology & Evolutionary Biology: 113A, 132 + 132A (most take BOTH courses for it to count), 137, 151, 151A, 161, 174, 185, 192, 193<br />Microbiology: 112, 112, 118, 121<br />Physiological Science: 112, 116, 119<br /><strong>Upper Division Electives Choose eight courses from the following list:</strong><br />Anthropology: 110 and/or one of 116A, 116P, or 119A<br />Ecology & Evolutionary Biology: 127, 129, 130, 146A, 151A, 154, 158, 160, 178, 179, 198 (can be taken multiple times, but only can be counted twice towards requirements)<br />Molecular Biology: 112, 114, 115, 124, 128, 131, 133, 142",
          "1":"<strong>1Core Curriculum</strong><br />Life Sciences: 3 and 27L<br />Chemistry: 12A and 12B<br />Mathematics: 6A, and 6C or 6D<br />Physics: 3A and 3B<br /><strong>Foundation Courses Choose two courses from the following list:</strong><br />Ecology & Evolutionary Biology: 113 or 114, 127, 198, 129<br />Physics: One of: 111, 114A<br />Chemistry: 119B, 120, 121, 125, 130<br /><strong>Laboratory Courses -Choose five courses from the following list:</strong><br />Ecology & Evolutionary Biology: 113A, 132, 132A, 137, 151, 151A, 161, 174, 185, 192, 193<br />Microbiology: 112, 112, 118, 121<br />Physiological Science: 112, 116, 119<br /><strong>Upper Division Electives Choose eight courses from the following list:</strong><br />Anthropology: 110, 116A, 116P, 119A<br />Ecology & Evolutionary Biology: 127, 129, 130, 146A, 151A, 154, 158, 160, 178, 179, 198<br />Molecular Biology: 112, 114, 115, 124, 128, 131, 133, 142"
-      }
+      },
+      "Psychology":{
+         "courses":{
+            "LIFE3":{
+              "id":"LIFE3",
+              "content": "LIFE3\nLife Sciences 3",
+              "tag":["1"]
+            },
+            "LIFE27L":{
+              "id":"LIFE27L",
+              "content":	"LIFE27L\nLife Sciences 27L",
+              "tag":["1"]
+            },
+            "CHEM12A":{
+              "id":"CHEM12A",
+              "content":	"CHEM12A\nChemistry 12A",
+              "tag":["1"]
+            },
+            "CHEM12B":{
+              "id":"CHEM12B",
+              "content":	"CHEM12B\nChemistry 12B",
+              "tag":["1"]
+            },
+            "MATH6A":{
+              "id":"MATH6A",
+              "content":	"MATH6A\nMathematics 6A",
+              "tag":["1"]
+            },
+            "MATH6C":{
+              "id":"MATH6C",
+              "content":	"MATH6C\nMathematics 6C",
+              "tag":["2"]
+            },
+            "MATH6d":{
+              "id":"MATH6d",
+              "content":	"MATH6d\nMathematics 6D",
+              "tag":["2"]
+            },
+            "PHYS3A":{
+              "id":"PHYS3A",
+              "content":	"PHYS3A\nPhysics 3A",
+              "tag":["1"]
+            },
+            "PHYS3B":{
+              "id":"PHYS3B",
+              "content":	"PHYS3B\nPhysics 3B",
+              "tag":["1"]
+            },
+            "CHEM119A":{
+              "id":"CHEM119A",
+              "content":	"CHEM119A\nChemistry 119A",
+              "tag":["3"]
+            },
+            "CHEM119B":{
+              "id":"CHEM119B",
+              "content":	"CHEM119B\nChemistry 119B",
+              "tag":["18"]
+            },
+            "CHEM120":{
+              "id":"CHEM120",
+              "content":	"CHEM120\nChemistry 120",
+              "tag":["4"]
+            },
+            "CHEM125":{
+              "id":"CHEM125",
+              "content":	"CHEM125\nChemistry 125",
+              "tag":["4"]
+            },
+            "CHEM130":{
+              "id":"CHEM130",
+              "content":	"CHEM130\nChemistry 130",
+              "tag":["18"]
+            },
+            "EEB113":{
+              "id":"EEB113",
+              "content":	"EEB113\nEcology and Evolutionary Biology 113",
+              "tag":["5"]
+            },
+            "EEB114":{
+              "id":"EEB114",
+              "content":	"EEB114\nEcology and Evolutionary Biology 114",
+              "tag":["5"]
+            },
+            "EEB127":{
+              "id":"EEB127",
+              "content":	"EEB127\nEcology and Evolutionary Biology 127",
+              "tag":["8"]
+            },
+            "EEB198":{
+              "id":"EEB198",
+              "content":	"EEB198\nEcology and Evolutionary Biology 198",
+              "tag":["15"]
+            },
+            "EEB129":{
+              "id":"EEB129",
+              "content":	"EEB129\nEcology and Evolutionary Biology 129",
+              "tag":["8"]
+            },
+            "PHYS111":{
+              "id":"PHYS111",
+              "content":	"PHYS111\nPhysics 111",
+              "tag":["6"]
+            },
+            "PHYS114A":{
+              "id":"PHYS114A",
+              "content":	"PHYS114A\nPhysics 114A",
+              "tag":["6"]
+            },
+            "CHEM121":{
+              "id":"CHEM121",
+              "content":	"CHEM121\nChemistry 121",
+              "tag":["7"]
+            },
+            "EEB113A":{
+              "id":"EEB113A",
+              "content":	"EEB113A\nEcology and Evolutionary Biology 113A",
+              "tag":["9"]
+            },
+            "EEB129":{
+              "id":"EEB129",
+              "content":	"EEB129\nEcology and Evolutionary Biology 129",
+              "tag":["10"]
+            },
+            "EEB130":{
+              "id":"EEB130",
+              "content":	"EEB130\nEcology and Evolutionary Biology 130",
+              "tag":["10"]
+            },
+            "EEB132":{
+              "id":"EEB132",
+              "content":	"EEB132\nEcology and Evolutionary Biology 132",
+              "tag":["11"]
+            },
+            "EEB132A":{
+              "id":"EEB132A",
+              "content":	"EEB132A\nEcology and Evolutionary Biology 132A",
+              "tag":["11"]
+            },
+            "EEB137":{
+              "id":"EEB137",
+              "content":	"EEB137\nEcology and Evolutionary Biology 137",
+              "tag":["9"]
+            },
+            "EEB151":{
+              "id":"EEB151",
+              "content":	"EEB151\nEcology and Evolutionary Biology 151",
+              "tag":["17"]
+            },
+            "EEB151A":{
+              "id":"EEB151A",
+              "content":	"EEB151A\nEcology and Evolutionary Biology 151A",
+              "tag":["16"]
+            },
+            "EEB158":{
+              "id":"EEB158",
+              "content":	"EEB158\nEcology and Evolutionary Biology 158",
+              "tag":["10"]
+            },
+            "EEB160":{
+              "id":"EEB160",
+              "content":	"EEB160\nEcology and Evolutionary Biology 160",
+              "tag":["10"]
+            },
+            "EEB161":{
+              "id":"EEB161",
+              "content":	"EEB161\nEcology and Evolutionary Biology 161",
+              "tag":["17"]
+            },
+            "EEB174":{
+              "id":"EEB174",
+              "content":	"EEB174\nEcology and Evolutionary Biology 174",
+              "tag":["17"]
+            },
+            "EEB178":{
+              "id":"EEB178",
+              "content":	"EEB178\nEcology and Evolutionary Biology 178",
+              "tag":["10"]
+            },
+            "EEB185":{
+              "id":"EEB185",
+              "content":	"EEB185\nEcology and Evolutionary Biology 185",
+              "tag":["9"]
+            },
+            "EEB192":{
+              "id":"EEB192",
+              "content":	"EEB192\nEcology and Evolutionary Biology 192",
+              "tag":["9"]
+            },
+            "EEB193":{
+              "id":"EEB193",
+              "content":	"EEB193\nEcology and Evolutionary Biology 193",
+              "tag":["17"]
+            },
+            "MBIO112":{
+              "id":"MBIO112",
+              "content":	"MBIO112\nMicrobiology 112",
+              "tag":["12"]
+            },
+            "MBIO118":{
+              "id":"MBIO118",
+              "content":	"MBIO118\nMicrobiology 118",
+              "tag":["12"]
+            },
+            "MBIO121":{
+              "id":"MBIO121",
+              "content":	"MBIO121\nMicrobiology 121",
+              "tag":["12"]
+            },
+            "PSCI112":{
+              "id":"PSCI112",
+              "content":	"PSCI112\nPhysiological Science 112",
+              "tag":["12"]
+            },
+            "PSCI116":{
+              "id":"PSCI116",
+              "content":	"PSCI116\nPhysiological Science 116",
+              "tag":["12"]
+            },
+            "PSCI119":{
+              "id":"PSCI119",
+              "content":	"PSCI119\nPhysiological Science 119",
+              "tag":["12"]
+            },
+            "ANTH110":{
+              "id":"ANTH110",
+              "content":	"ANTH110\nAnthropology 110",
+              "tag":["13"]
+            },
+            "ANTH116A":{
+              "id":"ANTH116A",
+              "content":	"ANTH116A\nAnthropology 116A",
+              "tag":["14"]
+            },
+            "ANTH116P":{
+              "id":"ANTH116P",
+              "content":	"ANTH116P\nAnthropology 116P",
+              "tag":["14"]
+            },
+            "ANTH119A":{
+              "id":"ANTH119A",
+              "content":	"ANTH119A\nAnthropology 119A",
+              "tag":["14"]
+            },
+            "EEB146A":{
+              "id":"EEB146A",
+              "content":	"EEB146A\nEcology and Evolutionary Biology 146A",
+              "tag":["13"]
+            },
+            "EEB154":{
+              "id":"EEB154",
+              "content":	"EEB154\nEcology and Evolutionary Biology 154",
+              "tag":["13"]
+            },
+            "EEB179":{
+              "id":"EEB179",
+              "content":	"EEB179\nEcology and Evolutionary Biology 179",
+              "tag":["13"]
+            },
+            "MOLB112":{
+              "id":"MOLB112",
+              "content":	"MOLB112\nMolecular Biology 112",
+              "tag":["13"]
+            },
+            "MOLB114":{
+              "id":"MOLB114",
+              "content":	"MOLB114\nMolecular Biology 114",
+              "tag":["13"]
+            },
+            "MOLB115":{
+              "id":"MOLB115",
+              "content":	"MOLB115\nMolecular Biology 115",
+              "tag":["13"]
+            },
+            "MOLB124":{
+              "id":"MOLB124",
+              "content":	"MOLB124\nMolecular Biology 124",
+              "tag":["13"]
+            },
+            "MOLB128":{
+              "id":"MOLB128",
+              "content":	"MOLB128\nMolecular Biology 128",
+              "tag":["13"]
+            },
+            "MOLB131":{
+              "id":"MOLB131",
+              "content":	"MOLB131\nMolecular Biology 131",
+              "tag":["13"]
+            },
+            "MOLB133":{
+              "id":"MOLB133",
+              "content":	"MOLB133\nMolecular Biology 133",
+              "tag":["13"]
+            },
+            "MOLB142":{
+              "id":"MOLB142",
+              "content":	"MOLB142\nMolecular Biology 142",
+              "tag":["13"]
+            },
+         },
+         "4":"<strong>4Introductory Courses</strong><br />Statistics: 3 and 11L<br />Psychology Methods: 14A and 14B<br />Biology: 3A, and 3C or 3D<br />Social Sciences: 2A and 2B<br /><strong>Laboratory Requirement</strong><br />Psychology Methods: 110A, 110B, 113, 120, or 123<br /><strong>Psychology Fundamentals - Choose two courses from the following list:</strong><br />Psychology: 111 or 115, 117, 196, 123<br />Social Sciences: 111, 122A<br />Psychology Methods: one of 110B, 113, 117, 120, 123<br /><strong>Research Methods - Choose five courses from the following list:</strong><br />Psychology: 111A, 117, 123, 130, 132 + 132A (most take BOTH courses for it to count), 138, 149, 149A, 163, 171, 173, 175, 177, 189, 190, 195<br />Life Sciences: 115, 115, 120, 130<br />Physiological Science: 111, 112, 114<br />At least two courses taken to fulfill this requirement must be Psychology: courses<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Anthropology: 112 and/or one of 112A, 112P, or 114A<br />Psychology: 117, 123, 130, 142A, 149, 149A, 150, 163, 171, 173, 175, 177, 182, 195, 196 (can be taken multiple times, but only can be counted twice towards requirements)<br />Sociology: 112, 114, 116, 118, 124, 126, 131, 137",
+         "3":"<strong>3Introductory Courses</strong><br />Statistics: 3 and 11L<br />Psychology Methods: 14A and 14B, one of 110A, 110B, 123<br />Biology: 3A, and 3C or 3D<br />Social Sciences: 2A and 2B<br /><strong>Psychology Fundamentals - Choose two courses from the following list:</strong><br />Psychology: 111 or 115, 117, 196, 123<br />Social Sciences: One of: 111, 122A<br />Psychology Methods: 110B, 113, 117, 120, 123<br /><strong>Research Methods - Choose five courses from the following list:</strong><br />Psychology: 111A, 117, 123, 130, 132 + 132A (most take BOTH courses for it to count), 138, 149, 149A, 163, 171, 173, 175, 177, 189, 190, 195<br />Life Sciences: 115, 115, 120, 130<br />Physiological Science: 111, 112, 114<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Anthropology: 112 and/or one of 112A, 112P, or 114A<br />Psychology: 117, 123, 130, 142A, 149, 149A, 150, 163, 171, 173, 175, 177, 182, 195, 196 (can be taken multiple times, but only can be counted twice towards requirements)<br />Sociology: 112, 114, 116, 118, 124, 126, 131, 137",
+         "2":"<strong>2Introductory Courses</strong><br />Statistics: 3 and 11L<br />Psychology Methods: 14A and 14B, one of 110A, 110B, 123<br />Biology: 3A, and 3C or 3D<br />Social Sciences: 2A and 2B<br /><strong>Psychology Fundamentals - Choose two courses from the following list:</strong><br />Psychology: 111 or 115, 117, 196, 123<br />Social Sciences: One of: 111, 122A<br />Psychology Methods: 110B, 113, 117, 120, 123<br /><strong>Research Methods - Choose five courses from the following list:</strong><br />Psychology: 111A, 132 + 132A (most take BOTH courses for it to count), 138, 149, 149A, 173, 175, 189, 190, 195<br />Life Sciences: 115, 115, 120, 130<br />Physiological Science: 111, 112, 114<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Anthropology: 112 and/or one of 112A, 112P, or 114A<br />Psychology: 117, 123, 130, 142A, 149A, 150, 163, 171, 177, 182, 196 (can be taken multiple times, but only can be counted twice towards requirements)<br />Sociology: 112, 114, 116, 118, 124, 126, 131, 137",
+         "1":"<strong>1Introductory Courses</strong><br />Statistics: 3 and 11L<br />Psychology Methods: 14A and 14B<br />Biology: 3A, and 3C or 3D<br />Social Sciences: 2A and 2B<br /><strong>Psychology Fundamentals - Choose two courses from the following list:</strong><br />Psychology: 111 or 115, 117, 196, 123<br />Social Sciences: One of: 111, 122A<br />Psychology Methods: 110B, 113, 117, 120, 123<br /><strong>Research Methods - Choose five courses from the following list:</strong><br />Psychology: 111A, 132, 132A, 138, 149, 149A, 173, 175, 189, 190, 195<br />Life Sciences: 115, 115, 120, 130<br />Physiological Science: 111, 112, 114<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Anthropology: 112, 112A, 112P, 114A<br />Psychology: 117, 123, 130, 142A, 149A, 150, 163, 171, 177, 182, 196<br />Sociology: 112, 114, 116, 118, 124, 126, 131, 137"
+      },
+      "Economics":{
+         "courses":{
+            "LIFE3":{
+              "id":"LIFE3",
+              "content": "LIFE3\nLife Sciences 3",
+              "tag":["1"]
+            },
+            "LIFE27L":{
+              "id":"LIFE27L",
+              "content":	"LIFE27L\nLife Sciences 27L",
+              "tag":["1"]
+            },
+            "CHEM12A":{
+              "id":"CHEM12A",
+              "content":	"CHEM12A\nChemistry 12A",
+              "tag":["1"]
+            },
+            "CHEM12B":{
+              "id":"CHEM12B",
+              "content":	"CHEM12B\nChemistry 12B",
+              "tag":["1"]
+            },
+            "MATH6A":{
+              "id":"MATH6A",
+              "content":	"MATH6A\nMathematics 6A",
+              "tag":["1"]
+            },
+            "MATH6C":{
+              "id":"MATH6C",
+              "content":	"MATH6C\nMathematics 6C",
+              "tag":["2"]
+            },
+            "MATH6d":{
+              "id":"MATH6d",
+              "content":	"MATH6d\nMathematics 6D",
+              "tag":["2"]
+            },
+            "PHYS3A":{
+              "id":"PHYS3A",
+              "content":	"PHYS3A\nPhysics 3A",
+              "tag":["1"]
+            },
+            "PHYS3B":{
+              "id":"PHYS3B",
+              "content":	"PHYS3B\nPhysics 3B",
+              "tag":["1"]
+            },
+            "CHEM119A":{
+              "id":"CHEM119A",
+              "content":	"CHEM119A\nChemistry 119A",
+              "tag":["3"]
+            },
+            "CHEM119B":{
+              "id":"CHEM119B",
+              "content":	"CHEM119B\nChemistry 119B",
+              "tag":["18"]
+            },
+            "CHEM120":{
+              "id":"CHEM120",
+              "content":	"CHEM120\nChemistry 120",
+              "tag":["4"]
+            },
+            "CHEM125":{
+              "id":"CHEM125",
+              "content":	"CHEM125\nChemistry 125",
+              "tag":["4"]
+            },
+            "CHEM130":{
+              "id":"CHEM130",
+              "content":	"CHEM130\nChemistry 130",
+              "tag":["18"]
+            },
+            "EEB113":{
+              "id":"EEB113",
+              "content":	"EEB113\nEcology and Evolutionary Biology 113",
+              "tag":["5"]
+            },
+            "EEB114":{
+              "id":"EEB114",
+              "content":	"EEB114\nEcology and Evolutionary Biology 114",
+              "tag":["5"]
+            },
+            "EEB127":{
+              "id":"EEB127",
+              "content":	"EEB127\nEcology and Evolutionary Biology 127",
+              "tag":["8"]
+            },
+            "EEB198":{
+              "id":"EEB198",
+              "content":	"EEB198\nEcology and Evolutionary Biology 198",
+              "tag":["15"]
+            },
+            "EEB129":{
+              "id":"EEB129",
+              "content":	"EEB129\nEcology and Evolutionary Biology 129",
+              "tag":["8"]
+            },
+            "PHYS111":{
+              "id":"PHYS111",
+              "content":	"PHYS111\nPhysics 111",
+              "tag":["6"]
+            },
+            "PHYS114A":{
+              "id":"PHYS114A",
+              "content":	"PHYS114A\nPhysics 114A",
+              "tag":["6"]
+            },
+            "CHEM121":{
+              "id":"CHEM121",
+              "content":	"CHEM121\nChemistry 121",
+              "tag":["7"]
+            },
+            "EEB113A":{
+              "id":"EEB113A",
+              "content":	"EEB113A\nEcology and Evolutionary Biology 113A",
+              "tag":["9"]
+            },
+            "EEB129":{
+              "id":"EEB129",
+              "content":	"EEB129\nEcology and Evolutionary Biology 129",
+              "tag":["10"]
+            },
+            "EEB130":{
+              "id":"EEB130",
+              "content":	"EEB130\nEcology and Evolutionary Biology 130",
+              "tag":["10"]
+            },
+            "EEB132":{
+              "id":"EEB132",
+              "content":	"EEB132\nEcology and Evolutionary Biology 132",
+              "tag":["11"]
+            },
+            "EEB132A":{
+              "id":"EEB132A",
+              "content":	"EEB132A\nEcology and Evolutionary Biology 132A",
+              "tag":["11"]
+            },
+            "EEB137":{
+              "id":"EEB137",
+              "content":	"EEB137\nEcology and Evolutionary Biology 137",
+              "tag":["9"]
+            },
+            "EEB151":{
+              "id":"EEB151",
+              "content":	"EEB151\nEcology and Evolutionary Biology 151",
+              "tag":["17"]
+            },
+            "EEB151A":{
+              "id":"EEB151A",
+              "content":	"EEB151A\nEcology and Evolutionary Biology 151A",
+              "tag":["16"]
+            },
+            "EEB158":{
+              "id":"EEB158",
+              "content":	"EEB158\nEcology and Evolutionary Biology 158",
+              "tag":["10"]
+            },
+            "EEB160":{
+              "id":"EEB160",
+              "content":	"EEB160\nEcology and Evolutionary Biology 160",
+              "tag":["10"]
+            },
+            "EEB161":{
+              "id":"EEB161",
+              "content":	"EEB161\nEcology and Evolutionary Biology 161",
+              "tag":["17"]
+            },
+            "EEB174":{
+              "id":"EEB174",
+              "content":	"EEB174\nEcology and Evolutionary Biology 174",
+              "tag":["17"]
+            },
+            "EEB178":{
+              "id":"EEB178",
+              "content":	"EEB178\nEcology and Evolutionary Biology 178",
+              "tag":["10"]
+            },
+            "EEB185":{
+              "id":"EEB185",
+              "content":	"EEB185\nEcology and Evolutionary Biology 185",
+              "tag":["9"]
+            },
+            "EEB192":{
+              "id":"EEB192",
+              "content":	"EEB192\nEcology and Evolutionary Biology 192",
+              "tag":["9"]
+            },
+            "EEB193":{
+              "id":"EEB193",
+              "content":	"EEB193\nEcology and Evolutionary Biology 193",
+              "tag":["17"]
+            },
+            "MBIO112":{
+              "id":"MBIO112",
+              "content":	"MBIO112\nMicrobiology 112",
+              "tag":["12"]
+            },
+            "MBIO118":{
+              "id":"MBIO118",
+              "content":	"MBIO118\nMicrobiology 118",
+              "tag":["12"]
+            },
+            "MBIO121":{
+              "id":"MBIO121",
+              "content":	"MBIO121\nMicrobiology 121",
+              "tag":["12"]
+            },
+            "PSCI112":{
+              "id":"PSCI112",
+              "content":	"PSCI112\nPhysiological Science 112",
+              "tag":["12"]
+            },
+            "PSCI116":{
+              "id":"PSCI116",
+              "content":	"PSCI116\nPhysiological Science 116",
+              "tag":["12"]
+            },
+            "PSCI119":{
+              "id":"PSCI119",
+              "content":	"PSCI119\nPhysiological Science 119",
+              "tag":["12"]
+            },
+            "ANTH110":{
+              "id":"ANTH110",
+              "content":	"ANTH110\nAnthropology 110",
+              "tag":["13"]
+            },
+            "ANTH116A":{
+              "id":"ANTH116A",
+              "content":	"ANTH116A\nAnthropology 116A",
+              "tag":["14"]
+            },
+            "ANTH116P":{
+              "id":"ANTH116P",
+              "content":	"ANTH116P\nAnthropology 116P",
+              "tag":["14"]
+            },
+            "ANTH119A":{
+              "id":"ANTH119A",
+              "content":	"ANTH119A\nAnthropology 119A",
+              "tag":["14"]
+            },
+            "EEB146A":{
+              "id":"EEB146A",
+              "content":	"EEB146A\nEcology and Evolutionary Biology 146A",
+              "tag":["13"]
+            },
+            "EEB154":{
+              "id":"EEB154",
+              "content":	"EEB154\nEcology and Evolutionary Biology 154",
+              "tag":["13"]
+            },
+            "EEB179":{
+              "id":"EEB179",
+              "content":	"EEB179\nEcology and Evolutionary Biology 179",
+              "tag":["13"]
+            },
+            "MOLB112":{
+              "id":"MOLB112",
+              "content":	"MOLB112\nMolecular Biology 112",
+              "tag":["13"]
+            },
+            "MOLB114":{
+              "id":"MOLB114",
+              "content":	"MOLB114\nMolecular Biology 114",
+              "tag":["13"]
+            },
+            "MOLB115":{
+              "id":"MOLB115",
+              "content":	"MOLB115\nMolecular Biology 115",
+              "tag":["13"]
+            },
+            "MOLB124":{
+              "id":"MOLB124",
+              "content":	"MOLB124\nMolecular Biology 124",
+              "tag":["13"]
+            },
+            "MOLB128":{
+              "id":"MOLB128",
+              "content":	"MOLB128\nMolecular Biology 128",
+              "tag":["13"]
+            },
+            "MOLB131":{
+              "id":"MOLB131",
+              "content":	"MOLB131\nMolecular Biology 131",
+              "tag":["13"]
+            },
+            "MOLB133":{
+              "id":"MOLB133",
+              "content":	"MOLB133\nMolecular Biology 133",
+              "tag":["13"]
+            },
+            "MOLB142":{
+              "id":"MOLB142",
+              "content":	"MOLB142\nMolecular Biology 142",
+              "tag":["13"]
+            },
+         },
+         "4":"<strong>Preparatory Requirements</strong><br />Writing: 1 and 24L<br />Mathematics: 15A and 15B<br />Communication: 3A, and 3C or 3D<br />Statistics: 5A and 5B<br /><strong>Mathematics Requirement</strong><br />Mathematics: 113A, 113B, 116, 122, or 129<br /><strong>Methods Fundamentals - Choose two courses from the following list:</strong><br />Economics: 113 or 115, 128, 196, 129<br />Statistics: 116, 122A<br />Mathematics: one of 113B, 116, 119, 122, 129<br /><strong>Lower Division Requirements - Choose five courses from the following list:</strong><br />Economics: 113A, 128, 129, 131, 134 + 134A (most take BOTH courses for it to count), 141, 151, 151A, 155, 159, 163, 172, 175, 178, 179, 190<br />Finance: 116, 116, 123, 128<br />Management: 114, 117, 119<br />At least two courses taken to fulfill this requirement must be Economics: courses<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Public Policy: 115 and/or one of 117A, 117P, or 119A<br />Economics: 128, 129, 131, 143A, 151, 151A, 154, 155, 159, 163, 172, 175, 176, 190, 196 (can be taken multiple times, but only can be counted twice towards requirements)<br />Accounting: 113, 115, 120, 122, 125, 130, 134, 140",
+         "3":"<strong>Preparatory Requirements</strong><br />Writing: 1 and 24L<br />Mathematics: 15A and 15B, one of 113A, 113B, 129<br />Communication: 3A, and 3C or 3D<br />Statistics: 5A and 5B<br /><strong>Methods Fundamentals - Choose two courses from the following list:</strong><br />Economics: 113 or 115, 128, 196, 129<br />Statistics: One of: 116, 122A<br />Mathematics: 113B, 116, 119, 122, 129<br /><strong>Lower Division Requirements - Choose five courses from the following list:</strong><br />Economics: 113A, 128, 129, 131, 134 + 134A (most take BOTH courses for it to count), 141, 151, 151A, 155, 159, 163, 172, 175, 178, 179, 190<br />Finance: 116, 116, 123, 128<br />Management: 114, 117, 119<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Public Policy: 115 and/or one of 117A, 117P, or 119A<br />Economics: 128, 129, 131, 143A, 151, 151A, 154, 155, 159, 163, 172, 175, 176, 190, 196 (can be taken multiple times, but only can be counted twice towards requirements)<br />Accounting: 113, 115, 120, 122, 125, 130, 134, 140",
+         "2":"<strong>Preparatory Requirements</strong><br />Writing: 1 and 24L<br />Mathematics: 15A and 15B, one of 113A, 113B, 129<br />Communication: 3A, and 3C or 3D<br />Statistics: 5A and 5B<br /><strong>Methods Fundamentals - Choose two courses from the following list:</strong><br />Economics: 113 or 115, 128, 196, 129<br />Statistics: One of: 116, 122A<br />Mathematics: 113B, 116, 119, 122, 129<br /><strong>Lower Division Requirements - Choose five courses from the following list:</strong><br />Economics: 113A, 134 + 134A (most take BOTH courses for it to count), 141, 151, 151A, 163, 172, 178, 179, 190<br />Finance: 116, 116, 123, 128<br />Management: 114, 117, 119<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Public Policy: 115 and/or one of 117A, 117P, or 119A<br />Economics: 128, 129, 131, 143A, 151A, 154, 155, 159, 175, 176, 196 (can be taken multiple times, but only can be counted twice towards requirements)<br />Accounting: 113, 115, 120, 122, 125, 130, 134, 140",
+         "1":"<strong>Preparatory Requirements</strong><br />Writing: 1 and 24L<br />Mathematics: 15A and 15B<br />Communication: 3A, and 3C or 3D<br />Statistics: 5A and 5B<br /><strong>Methods Fundamentals - Choose two courses from the following list:</strong><br />Economics: 113 or 115, 128, 196, 129<br />Statistics: One of: 116, 122A<br />Mathematics: 113B, 116, 119, 122, 129<br /><strong>Lower Division Requirements - Choose five courses from the following list:</strong><br />Economics: 113A, 134, 134A, 141, 151, 151A, 163, 172, 178, 179, 190<br />Finance: 116, 116, 123, 128<br />Management: 114, 117, 119<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Public Policy: 115, 117A, 117P, 119A<br />Economics: 128, 129, 131, 143A, 151A, 154, 155, 159, 175, 176, 196<br />Accounting: 113, 115, 120, 122, 125, 130, 134, 140"
+      },
+      "English":{
+         "courses":{
+            "LIFE3":{
+              "id":"LIFE3",
+              "content": "LIFE3\nLife Sciences 3",
+              "tag":["1"]
+            },
+            "LIFE27L":{
+              "id":"LIFE27L",
+              "content":	"LIFE27L\nLife Sciences 27L",
+              "tag":["1"]
+            },
+            "CHEM12A":{
+              "id":"CHEM12A",
+              "content":	"CHEM12A\nChemistry 12A",
+              "tag":["1"]
+            },
+            "CHEM12B":{
+              "id":"CHEM12B",
+              "content":	"CHEM12B\nChemistry 12B",
+              "tag":["1"]
+            },
+            "MATH6A":{
+              "id":"MATH6A",
+              "content":	"MATH6A\nMathematics 6A",
+              "tag":["1"]
+            },
+            "MATH6C":{
+              "id":"MATH6C",
+              "content":	"MATH6C\nMathematics 6C",
+              "tag":["2"]
+            },
+            "MATH6d":{
+              "id":"MATH6d",
+              "content":	"MATH6d\nMathematics 6D",
+              "tag":["2"]
+            },
+            "PHYS3A":{
+              "id":"PHYS3A",
+              "content":	"PHYS3A\nPhysics 3A",
+              "tag":["1"]
+            },
+            "PHYS3B":{
+              "id":"PHYS3B",
+              "content":	"PHYS3B\nPhysics 3B",
+              "tag":["1"]
+            },
+            "CHEM119A":{
+              "id":"CHEM119A",
+              "content":	"CHEM119A\nChemistry 119A",
+              "tag":["3"]
+            },
+            "CHEM119B":{
+              "id":"CHEM119B",
+              "content":	"CHEM119B\nChemistry 119B",
+              "tag":["18"]
+            },
+            "CHEM120":{
+              "id":"CHEM120",
+              "content":	"CHEM120\nChemistry 120",
+              "tag":["4"]
+            },
+            "CHEM125":{
+              "id":"CHEM125",
+              "content":	"CHEM125\nChemistry 125",
+              "tag":["4"]
+            },
+            "CHEM130":{
+              "id":"CHEM130",
+              "content":	"CHEM130\nChemistry 130",
+              "tag":["18"]
+            },
+            "EEB113":{
+              "id":"EEB113",
+              "content":	"EEB113\nEcology and Evolutionary Biology 113",
+              "tag":["5"]
+            },
+            "EEB114":{
+              "id":"EEB114",
+              "content":	"EEB114\nEcology and Evolutionary Biology 114",
+              "tag":["5"]
+            },
+            "EEB127":{
+              "id":"EEB127",
+              "content":	"EEB127\nEcology and Evolutionary Biology 127",
+              "tag":["8"]
+            },
+            "EEB198":{
+              "id":"EEB198",
+              "content":	"EEB198\nEcology and Evolutionary Biology 198",
+              "tag":["15"]
+            },
+            "EEB129":{
+              "id":"EEB129",
+              "content":	"EEB129\nEcology and Evolutionary Biology 129",
+              "tag":["8"]
+            },
+            "PHYS111":{
+              "id":"PHYS111",
+              "content":	"PHYS111\nPhysics 111",
+              "tag":["6"]
+            },
+            "PHYS114A":{
+              "id":"PHYS114A",
+              "content":	"PHYS114A\nPhysics 114A",
+              "tag":["6"]
+            },
+            "CHEM121":{
+              "id":"CHEM121",
+              "content":	"CHEM121\nChemistry 121",
+              "tag":["7"]
+            },
+            "EEB113A":{
+              "id":"EEB113A",
+              "content":	"EEB113A\nEcology and Evolutionary Biology 113A",
+              "tag":["9"]
+            },
+            "EEB129":{
+              "id":"EEB129",
+              "content":	"EEB129\nEcology and Evolutionary Biology 129",
+              "tag":["10"]
+            },
+            "EEB130":{
+              "id":"EEB130",
+              "content":	"EEB130\nEcology and Evolutionary Biology 130",
+              "tag":["10"]
+            },
+            "EEB132":{
+              "id":"EEB132",
+              "content":	"EEB132\nEcology and Evolutionary Biology 132",
+              "tag":["11"]
+            },
+            "EEB132A":{
+              "id":"EEB132A",
+              "content":	"EEB132A\nEcology and Evolutionary Biology 132A",
+              "tag":["11"]
+            },
+            "EEB137":{
+              "id":"EEB137",
+              "content":	"EEB137\nEcology and Evolutionary Biology 137",
+              "tag":["9"]
+            },
+            "EEB151":{
+              "id":"EEB151",
+              "content":	"EEB151\nEcology and Evolutionary Biology 151",
+              "tag":["17"]
+            },
+            "EEB151A":{
+              "id":"EEB151A",
+              "content":	"EEB151A\nEcology and Evolutionary Biology 151A",
+              "tag":["16"]
+            },
+            "EEB158":{
+              "id":"EEB158",
+              "content":	"EEB158\nEcology and Evolutionary Biology 158",
+              "tag":["10"]
+            },
+            "EEB160":{
+              "id":"EEB160",
+              "content":	"EEB160\nEcology and Evolutionary Biology 160",
+              "tag":["10"]
+            },
+            "EEB161":{
+              "id":"EEB161",
+              "content":	"EEB161\nEcology and Evolutionary Biology 161",
+              "tag":["17"]
+            },
+            "EEB174":{
+              "id":"EEB174",
+              "content":	"EEB174\nEcology and Evolutionary Biology 174",
+              "tag":["17"]
+            },
+            "EEB178":{
+              "id":"EEB178",
+              "content":	"EEB178\nEcology and Evolutionary Biology 178",
+              "tag":["10"]
+            },
+            "EEB185":{
+              "id":"EEB185",
+              "content":	"EEB185\nEcology and Evolutionary Biology 185",
+              "tag":["9"]
+            },
+            "EEB192":{
+              "id":"EEB192",
+              "content":	"EEB192\nEcology and Evolutionary Biology 192",
+              "tag":["9"]
+            },
+            "EEB193":{
+              "id":"EEB193",
+              "content":	"EEB193\nEcology and Evolutionary Biology 193",
+              "tag":["17"]
+            },
+            "MBIO112":{
+              "id":"MBIO112",
+              "content":	"MBIO112\nMicrobiology 112",
+              "tag":["12"]
+            },
+            "MBIO118":{
+              "id":"MBIO118",
+              "content":	"MBIO118\nMicrobiology 118",
+              "tag":["12"]
+            },
+            "MBIO121":{
+              "id":"MBIO121",
+              "content":	"MBIO121\nMicrobiology 121",
+              "tag":["12"]
+            },
+            "PSCI112":{
+              "id":"PSCI112",
+              "content":	"PSCI112\nPhysiological Science 112",
+              "tag":["12"]
+            },
+            "PSCI116":{
+              "id":"PSCI116",
+              "content":	"PSCI116\nPhysiological Science 116",
+              "tag":["12"]
+            },
+            "PSCI119":{
+              "id":"PSCI119",
+              "content":	"PSCI119\nPhysiological Science 119",
+              "tag":["12"]
+            },
+            "ANTH110":{
+              "id":"ANTH110",
+              "content":	"ANTH110\nAnthropology 110",
+              "tag":["13"]
+            },
+            "ANTH116A":{
+              "id":"ANTH116A",
+              "content":	"ANTH116A\nAnthropology 116A",
+              "tag":["14"]
+            },
+            "ANTH116P":{
+              "id":"ANTH116P",
+              "content":	"ANTH116P\nAnthropology 116P",
+              "tag":["14"]
+            },
+            "ANTH119A":{
+              "id":"ANTH119A",
+              "content":	"ANTH119A\nAnthropology 119A",
+              "tag":["14"]
+            },
+            "EEB146A":{
+              "id":"EEB146A",
+              "content":	"EEB146A\nEcology and Evolutionary Biology 146A",
+              "tag":["13"]
+            },
+            "EEB154":{
+              "id":"EEB154",
+              "content":	"EEB154\nEcology and Evolutionary Biology 154",
+              "tag":["13"]
+            },
+            "EEB179":{
+              "id":"EEB179",
+              "content":	"EEB179\nEcology and Evolutionary Biology 179",
+              "tag":["13"]
+            },
+            "MOLB112":{
+              "id":"MOLB112",
+              "content":	"MOLB112\nMolecular Biology 112",
+              "tag":["13"]
+            },
+            "MOLB114":{
+              "id":"MOLB114",
+              "content":	"MOLB114\nMolecular Biology 114",
+              "tag":["13"]
+            },
+            "MOLB115":{
+              "id":"MOLB115",
+              "content":	"MOLB115\nMolecular Biology 115",
+              "tag":["13"]
+            },
+            "MOLB124":{
+              "id":"MOLB124",
+              "content":	"MOLB124\nMolecular Biology 124",
+              "tag":["13"]
+            },
+            "MOLB128":{
+              "id":"MOLB128",
+              "content":	"MOLB128\nMolecular Biology 128",
+              "tag":["13"]
+            },
+            "MOLB131":{
+              "id":"MOLB131",
+              "content":	"MOLB131\nMolecular Biology 131",
+              "tag":["13"]
+            },
+            "MOLB133":{
+              "id":"MOLB133",
+              "content":	"MOLB133\nMolecular Biology 133",
+              "tag":["13"]
+            },
+            "MOLB142":{
+              "id":"MOLB142",
+              "content":	"MOLB142\nMolecular Biology 142",
+              "tag":["13"]
+            },
+         },
+         "4":"<strong>4Preparatory Subject Matter</strong><br />History: 1 and 14L<br />Communication: 15A and 15B<br />Creative Writing: 3A, and 3C or 3D<br />Foreign Language: 1A and 1B<br /><strong>Writing Requirement</strong><br />Communication: 112A, 112B, 116, 127, or 132<br /><strong>Core Requirements - Choose two courses from the following list:</strong><br />English: 119 or 122, 125, 194, 134<br />Foreign Language: 118, 120A<br />Communication: one of 112B, 116, 122, 127, 132<br /><strong>Topical Courses - Choose five courses from the following list:</strong><br />English: 119A, 125, 134, 135, 142 + 142A (most take BOTH courses for it to count), 144, 153, 153A, 156, 158, 166, 171, 172, 183, 185, 190<br />Area / Cultural Studies: 113, 113, 120, 122<br />Classics: 112, 114, 118<br />At least two courses taken to fulfill this requirement must be English: courses<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Gender & Sexuality Studies: 116 and/or one of 114A, 114P, or 118A<br />English: 125, 134, 135, 152A, 153, 153A, 155, 156, 158, 166, 171, 172, 179, 190, 194 (can be taken multiple times, but only can be counted twice towards requirements)<br />Foreign Literature: 118, 121, 138, 139, 148, 149, 150, 152",
+         "3":"<strong>3Preparatory Subject Matter</strong><br />History: 1 and 14L<br />Communication: 15A and 15B, one of 112A, 112B, 132<br />Creative Writing: 3A, and 3C or 3D<br />Foreign Language: 1A and 1B<br /><strong>Core Requirements - Choose two courses from the following list:</strong><br />English: 119 or 122, 125, 194, 134<br />Foreign Language: One of: 118, 120A<br />Communication: 112B, 116, 122, 127, 132<br /><strong>Topical Courses - Choose five courses from the following list:</strong><br />English: 119A, 125, 134, 135, 142 + 142A (most take BOTH courses for it to count), 144, 153, 153A, 156, 158, 166, 171, 172, 183, 185, 190<br />Area / Cultural Studies: 113, 113, 120, 122<br />Classics: 112, 114, 118<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Gender & Sexuality Studies: 116 and/or one of 114A, 114P, or 118A<br />English: 125, 134, 135, 152A, 153, 153A, 155, 156, 158, 166, 171, 172, 179, 190, 194 (can be taken multiple times, but only can be counted twice towards requirements)<br />Foreign Literature: 118, 121, 138, 139, 148, 149, 150, 152",
+         "2":"<strong>2Preparatory Subject Matter</strong><br />History: 1 and 14L<br />Communication: 15A and 15B, one of 112A, 112B, 132<br />Creative Writing: 3A, and 3C or 3D<br />Foreign Language: 1A and 1B<br /><strong>Core Requirements - Choose two courses from the following list:</strong><br />English: 119 or 122, 125, 194, 134<br />Foreign Language: One of: 118, 120A<br />Communication: 112B, 116, 122, 127, 132<br /><strong>Topical Courses - Choose five courses from the following list:</strong><br />English: 119A, 142 + 142A (most take BOTH courses for it to count), 144, 153, 153A, 166, 171, 183, 185, 190<br />Area / Cultural Studies: 113, 113, 120, 122<br />Classics: 112, 114, 118<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Gender & Sexuality Studies: 116 and/or one of 114A, 114P, or 118A<br />English: 125, 134, 135, 152A, 153A, 155, 156, 158, 172, 179, 194 (can be taken multiple times, but only can be counted twice towards requirements)<br />Foreign Literature: 118, 121, 138, 139, 148, 149, 150, 152",
+         "1":"<strong>Preparatory Subject Matter</strong><br />History: 1 and 14L<br />Communication: 15A and 15B<br />Creative Writing: 3A, and 3C or 3D<br />Foreign Language: 1A and 1B<br /><strong>Core Requirements - Choose two courses from the following list:</strong><br />English: 119 or 122, 125, 194, 134<br />Foreign Language: One of: 118, 120A<br />Communication: 112B, 116, 122, 127, 132<br /><strong>Topical Courses - Choose five courses from the following list:</strong><br />English: 119A, 142, 142A, 144, 153, 153A, 166, 171, 183, 185, 190<br />Area / Cultural Studies: 113, 113, 120, 122<br />Classics: 112, 114, 118<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Gender & Sexuality Studies: 116, 114A, 114P, 118A<br />English: 125, 134, 135, 152A, 153A, 155, 156, 158, 172, 179, 194<br />Foreign Literature: 118, 121, 138, 139, 148, 149, 150, 152"
+      },
    }
 }
