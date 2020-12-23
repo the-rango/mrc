@@ -352,209 +352,214 @@
       },
       "Psychology":{
          "courses":{
-            "LIFE3":{
-              "id":"LIFE3",
-              "content": "LIFE3\nLife Sciences 3",
+            "STATS3":{
+              "id":"STATS3",
+              "content": "STATS3\nStatistics 3",
               "tag":["1"]
             },
-            "LIFE27L":{
-              "id":"LIFE27L",
-              "content":	"LIFE27L\nLife Sciences 27L",
+            "STATS11L":{
+              "id":"STATS11L",
+              "content":	"STATS11L\nStatistics 27L",
               "tag":["1"]
             },
-            "CHEM12A":{
-              "id":"CHEM12A",
-              "content":	"CHEM12A\nChemistry 12A",
+            "PSYME14A":{
+              "id":"PSYME14A",
+              "content":	"PSYME14A\nPsychology Methods 14A",
               "tag":["1"]
             },
-            "CHEM12B":{
-              "id":"CHEM12B",
-              "content":	"CHEM12B\nChemistry 12B",
+            "PSYME14B":{
+              "id":"PSYME14B",
+              "content":	"PSYME14B\nPsychology Methods 14B",
               "tag":["1"]
             },
-            "MATH6A":{
-              "id":"MATH6A",
-              "content":	"MATH6A\nMathematics 6A",
+            "BIO3A":{
+              "id":"BIO3A",
+              "content":	"BIO3A\nBiology 3A",
               "tag":["1"]
             },
-            "MATH6C":{
-              "id":"MATH6C",
-              "content":	"MATH6C\nMathematics 6C",
+            "BIO3C":{
+              "id":"BIO3C",
+              "content":	"BIO3C\nBiology 3C",
               "tag":["2"]
             },
-            "MATH6d":{
-              "id":"MATH6d",
-              "content":	"MATH6d\nMathematics 6D",
+            "BIO3d":{
+              "id":"BIO3d",
+              "content":	"BIO3d\nBiology 3D",
               "tag":["2"]
             },
-            "PHYS3A":{
-              "id":"PHYS3A",
-              "content":	"PHYS3A\nPhysics 3A",
+            "SOCSCI2A":{
+              "id":"SOCSCI2A",
+              "content":	"SOCSCI2A\n Social Sciences 2A",
               "tag":["1"]
             },
-            "PHYS3B":{
-              "id":"PHYS3B",
-              "content":	"PHYS3B\nPhysics 3B",
+            "SOCSCI2B":{
+              "id":"SOCSCI2B",
+              "content":	"SOCSCI2B\n Social Sciences 2B",
               "tag":["1"]
             },
-            "CHEM119A":{
-              "id":"CHEM119A",
-              "content":	"CHEM119A\nChemistry 119A",
+            "PSYME110A":{
+              "id":"PSYME110A",
+              "content":	"PSYME110A\nPsychology Methods 110A",
               "tag":["3"]
             },
-            "CHEM119B":{
-              "id":"CHEM119B",
-              "content":	"CHEM119B\nChemistry 119B",
+            "PSYME110B":{
+              "id":"PSYME110B",
+              "content":	"PSYME110B\nPsychology Methods 110B",
               "tag":["18"]
             },
-            "CHEM120":{
-              "id":"CHEM120",
-              "content":	"CHEM120\nChemistry 120",
+            "PSYME113":{
+              "id":"PSYME113",
+              "content":	"PSYME113\nPsychology Methods 113",
               "tag":["4"]
             },
-            "CHEM125":{
-              "id":"CHEM125",
-              "content":	"CHEM125\nChemistry 125",
+            "PSYME120":{
+              "id":"PSYME120",
+              "content":	"PSYME120\nPsychology Methods 120",
               "tag":["4"]
             },
-            "CHEM130":{
-              "id":"CHEM130",
-              "content":	"CHEM130\nChemistry 130",
+            "PSYME123":{
+              "id":"PSYME123",
+              "content":	"PSYME123\nPsychology Methods 123",
               "tag":["18"]
             },
-            "EEB113":{
-              "id":"EEB113",
-              "content":	"EEB113\nEcology and Evolutionary Biology 113",
+            "PSYCH111":{
+              "id":"PSYCH111",
+              "content":	"PSYCH111\nPsychology 111",
               "tag":["5"]
             },
-            "EEB114":{
-              "id":"EEB114",
-              "content":	"EEB114\nEcology and Evolutionary Biology 114",
+            "PSYCH115":{
+              "id":"PSYCH115",
+              "content":	"PSYCH115\nPsychology 115",
               "tag":["5"]
             },
-            "EEB127":{
-              "id":"EEB127",
-              "content":	"EEB127\nEcology and Evolutionary Biology 127",
+            "PSYCH117":{
+              "id":"PSYCH117",
+              "content":	"PSYCH117\nPsychology 117",
               "tag":["8"]
             },
-            "EEB198":{
-              "id":"EEB198",
-              "content":	"EEB198\nEcology and Evolutionary Biology 198",
+            "PSYCH196":{
+              "id":"PSYCH196",
+              "content":	"PSYCH196\nPsychology 196",
               "tag":["15"]
             },
-            "EEB129":{
-              "id":"EEB129",
-              "content":	"EEB129\nEcology and Evolutionary Biology 129",
+            "PSYCH123":{
+              "id":"PSYCH123",
+              "content":	"PSYCH123\nPsychology 123",
               "tag":["8"]
             },
-            "PHYS111":{
-              "id":"PHYS111",
-              "content":	"PHYS111\nPhysics 111",
+            "SOCSCI111":{
+              "id":"SOCSCI111",
+              "content":	"SOCSCI111\nSocial Sciences 111",
               "tag":["6"]
             },
-            "PHYS114A":{
-              "id":"PHYS114A",
-              "content":	"PHYS114A\nPhysics 114A",
+            "SOCSCI122A":{
+              "id":"SOCSCI122A",
+              "content":	"SOCSCI122A\nSocial Sciences 122A",
               "tag":["6"]
             },
-            "CHEM121":{
-              "id":"CHEM121",
-              "content":	"CHEM121\nChemistry 121",
+            "PSYME117":{
+              "id":"PSYME117",
+              "content":	"PSYME117\nPsychology Methods 117",
               "tag":["7"]
             },
-            "EEB113A":{
-              "id":"EEB113A",
-              "content":	"EEB113A\nEcology and Evolutionary Biology 113A",
+            "PSYCH111A":{
+              "id":"PSYCH111A",
+              "content":	"PSYCH111A\nPsychology 111A",
               "tag":["9"]
             },
-            "EEB129":{
-              "id":"EEB129",
-              "content":	"EEB129\nEcology and Evolutionary Biology 129",
+            "PSYCH123":{
+              "id":"PSYCH123",
+              "content":	"PSYCH123\nPsychology 123",
               "tag":["10"]
             },
-            "EEB130":{
-              "id":"EEB130",
-              "content":	"EEB130\nEcology and Evolutionary Biology 130",
+            "PSYCH130":{
+              "id":"PSYCH130",
+              "content":	"PSYCH130\nPsychology 130",
               "tag":["10"]
             },
-            "EEB132":{
-              "id":"EEB132",
-              "content":	"EEB132\nEcology and Evolutionary Biology 132",
+            "PSYCH132":{
+              "id":"PSYCH132",
+              "content":	"PSYCH132\nPsychology 132",
               "tag":["11"]
             },
-            "EEB132A":{
-              "id":"EEB132A",
-              "content":	"EEB132A\nEcology and Evolutionary Biology 132A",
+            "PSYCH132A":{
+              "id":"PSYCH132A",
+              "content":	"PSYCH132A\nPsychology 132A",
               "tag":["11"]
             },
-            "EEB137":{
-              "id":"EEB137",
-              "content":	"EEB137\nEcology and Evolutionary Biology 137",
+            "PSYCH138":{
+              "id":"PSYCH138",
+              "content":	"PSYCH138\nPsychology 138",
               "tag":["9"]
             },
-            "EEB151":{
-              "id":"EEB151",
-              "content":	"EEB151\nEcology and Evolutionary Biology 151",
+            "PSYCH149":{
+              "id":"PSYCH149",
+              "content":	"PSYCH149\nPsychology 149",
               "tag":["17"]
             },
-            "EEB151A":{
-              "id":"EEB151A",
-              "content":	"EEB151A\nEcology and Evolutionary Biology 151A",
+            "PSYCH149A":{
+              "id":"PSYCH149A",
+              "content":	"PSYCH149A\nPsychology 149A",
               "tag":["16"]
             },
-            "EEB158":{
-              "id":"EEB158",
-              "content":	"EEB158\nEcology and Evolutionary Biology 158",
+            "PSYCH163":{
+              "id":"PSYCH163",
+              "content":	"PSYCH163\nPsychology 163",
               "tag":["10"]
             },
-            "EEB160":{
-              "id":"EEB160",
-              "content":	"EEB160\nEcology and Evolutionary Biology 160",
+            "PSYCH171":{
+              "id":"PSYCH171",
+              "content":	"PSYCH171\nPsychology 171",
               "tag":["10"]
             },
-            "EEB161":{
-              "id":"EEB161",
-              "content":	"EEB161\nEcology and Evolutionary Biology 161",
+            "PSYCH173":{
+              "id":"PSYCH173",
+              "content":	"PSYCH173\nPsychology 173",
               "tag":["17"]
             },
-            "EEB174":{
-              "id":"EEB174",
-              "content":	"EEB174\nEcology and Evolutionary Biology 174",
+            "PSYCH175":{
+              "id":"PSYCH175",
+              "content":	"PSYCH175\nPsychology 175",
               "tag":["17"]
             },
-            "EEB178":{
-              "id":"EEB178",
-              "content":	"EEB178\nEcology and Evolutionary Biology 178",
+            "PSYCH177":{
+              "id":"PSYCH177",
+              "content":	"PSYCH177\nPsychology 177",
               "tag":["10"]
             },
-            "EEB185":{
-              "id":"EEB185",
-              "content":	"EEB185\nEcology and Evolutionary Biology 185",
+            "PSYCH189":{
+              "id":"PSYCH189",
+              "content":	"PSYCH189\nPsychology 189",
               "tag":["9"]
             },
-            "EEB192":{
-              "id":"EEB192",
-              "content":	"EEB192\nEcology and Evolutionary Biology 192",
+            "PSYCH190":{
+              "id":"PSYCH190",
+              "content":	"PSYCH190\nPsychology 190",
               "tag":["9"]
             },
-            "EEB193":{
-              "id":"EEB193",
-              "content":	"EEB193\nEcology and Evolutionary Biology 193",
+            "PSYCH195":{
+              "id":"PSYCH195",
+              "content":	"PSYCH195\nPsychology 195",
               "tag":["17"]
             },
-            "MBIO112":{
-              "id":"MBIO112",
-              "content":	"MBIO112\nMicrobiology 112",
+            "LIFE115":{
+              "id":"LIFE115",
+              "content":	"LIFE115\nLife Science 115",
               "tag":["12"]
             },
-            "MBIO118":{
-              "id":"MBIO118",
-              "content":	"MBIO118\nMicrobiology 118",
+            "LIFE120":{
+              "id":"LIFE120",
+              "content":	"LIFE120\nLife Science 120",
               "tag":["12"]
             },
-            "MBIO121":{
-              "id":"MBIO121",
-              "content":	"MBIO121\nMicrobiology 121",
+            "LIFE130":{
+              "id":"LIFE130",
+              "content":	"LIFE130\nLife Science 130",
+              "tag":["12"]
+            },
+            "PSCI111":{
+              "id":"PSCI111",
+              "content":	"PSCI111\nPhysiological Science 111",
               "tag":["12"]
             },
             "PSCI112":{
@@ -562,89 +567,84 @@
               "content":	"PSCI112\nPhysiological Science 112",
               "tag":["12"]
             },
-            "PSCI116":{
-              "id":"PSCI116",
-              "content":	"PSCI116\nPhysiological Science 116",
+            "PSCI114":{
+              "id":"PSCI114",
+              "content":	"PSCI114\nPhysiological Science 114",
               "tag":["12"]
             },
-            "PSCI119":{
-              "id":"PSCI119",
-              "content":	"PSCI119\nPhysiological Science 119",
-              "tag":["12"]
-            },
-            "ANTH110":{
-              "id":"ANTH110",
-              "content":	"ANTH110\nAnthropology 110",
+            "ANTH112":{
+              "id":"ANTH112",
+              "content":	"ANTH112\nAnthropology 112",
               "tag":["13"]
             },
-            "ANTH116A":{
-              "id":"ANTH116A",
-              "content":	"ANTH116A\nAnthropology 116A",
+            "ANTH112A":{
+              "id":"ANTH112A",
+              "content":	"ANTH112A\nAnthropology 112A",
               "tag":["14"]
             },
-            "ANTH116P":{
-              "id":"ANTH116P",
-              "content":	"ANTH116P\nAnthropology 116P",
+            "ANTH112P":{
+              "id":"ANTH112P",
+              "content":	"ANTH112P\nAnthropology 112P",
               "tag":["14"]
             },
-            "ANTH119A":{
-              "id":"ANTH119A",
-              "content":	"ANTH119A\nAnthropology 119A",
+            "ANTH114A":{
+              "id":"ANTH114A",
+              "content":	"ANTH114A\nAnthropology 114A",
               "tag":["14"]
             },
-            "EEB146A":{
-              "id":"EEB146A",
-              "content":	"EEB146A\nEcology and Evolutionary Biology 146A",
+            "PSYCH142A":{
+              "id":"PSYCH142A",
+              "content":	"PSYCH142A\nPsychology 142A",
               "tag":["13"]
             },
-            "EEB154":{
-              "id":"EEB154",
-              "content":	"EEB154\nEcology and Evolutionary Biology 154",
+            "PSYCH150":{
+              "id":"PSYCH150",
+              "content":	"PSYCH150\nPsychology 150",
               "tag":["13"]
             },
-            "EEB179":{
-              "id":"EEB179",
-              "content":	"EEB179\nEcology and Evolutionary Biology 179",
+            "PSYCH182":{
+              "id":"PSYCH182",
+              "content":	"PSYCH182\nPsychology 182",
               "tag":["13"]
             },
-            "MOLB112":{
-              "id":"MOLB112",
-              "content":	"MOLB112\nMolecular Biology 112",
+            "SOCIO112":{
+              "id":"SOCIO112",
+              "content":	"SOCIO112\nSociology 112",
               "tag":["13"]
             },
-            "MOLB114":{
-              "id":"MOLB114",
-              "content":	"MOLB114\nMolecular Biology 114",
+            "SOCIO114":{
+              "id":"SOCIO114",
+              "content":	"SOCIO114\nSociology 114",
               "tag":["13"]
             },
-            "MOLB115":{
-              "id":"MOLB115",
-              "content":	"MOLB115\nMolecular Biology 115",
+            "SOCIO116":{
+              "id":"SOCIO116",
+              "content":	"SOCIO116\nSociology 116",
               "tag":["13"]
             },
-            "MOLB124":{
-              "id":"MOLB124",
-              "content":	"MOLB124\nMolecular Biology 124",
+            "SOCIO118":{
+              "id":"SOCIO118",
+              "content":	"SOCIO118\nSociology 118",
               "tag":["13"]
             },
-            "MOLB128":{
-              "id":"MOLB128",
-              "content":	"MOLB128\nMolecular Biology 128",
+            "SOCIO124":{
+              "id":"SOCIO124",
+              "content":	"SOCIO124\nSociology 124",
               "tag":["13"]
             },
-            "MOLB131":{
-              "id":"MOLB131",
-              "content":	"MOLB131\nMolecular Biology 131",
+            "SOCIO126":{
+              "id":"SOCIO126",
+              "content":	"SOCIO126\nSociology 126",
               "tag":["13"]
             },
-            "MOLB133":{
-              "id":"MOLB133",
-              "content":	"MOLB133\nMolecular Biology 133",
+            "SOCIO131":{
+              "id":"SOCIO131",
+              "content":	"SOCIO131\nSociology 131",
               "tag":["13"]
             },
-            "MOLB142":{
-              "id":"MOLB142",
-              "content":	"MOLB142\nMolecular Biology 142",
+            "SOCIO137":{
+              "id":"SOCIO137",
+              "content":	"SOCIO137\nSociology 137",
               "tag":["13"]
             },
          },
