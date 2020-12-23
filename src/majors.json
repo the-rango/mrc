@@ -655,299 +655,299 @@
       },
       "Economics":{
          "courses":{
-            "LIFE3":{
-              "id":"LIFE3",
-              "content": "LIFE3\nLife Sciences 3",
+            "WRIT1":{
+              "id":"WRIT1",
+              "content": "WRIT1\nWriting 1",
               "tag":["1"]
             },
-            "LIFE27L":{
-              "id":"LIFE27L",
-              "content":	"LIFE27L\nLife Sciences 27L",
+            "WRIT24L":{
+              "id":"WRIT24L",
+              "content":	"WRIT24L\nWriting 24L",
               "tag":["1"]
             },
-            "CHEM12A":{
-              "id":"CHEM12A",
-              "content":	"CHEM12A\nChemistry 12A",
+            "MATH15A":{
+              "id":"MATH15A",
+              "content":	"MATH15A\nMathematics 15A",
               "tag":["1"]
             },
-            "CHEM12B":{
-              "id":"CHEM12B",
-              "content":	"CHEM12B\nChemistry 12B",
+            "MATH15B":{
+              "id":"MATH15B",
+              "content":	"MATH15B\nMathematics 15B",
               "tag":["1"]
             },
-            "MATH6A":{
-              "id":"MATH6A",
-              "content":	"MATH6A\nMathematics 6A",
+            "COMM3A":{
+              "id":"COMM3A",
+              "content":	"COMM3A\nCommunication 3A",
               "tag":["1"]
             },
-            "MATH6C":{
-              "id":"MATH6C",
-              "content":	"MATH6C\nMathematics 6C",
+            "COMM3C":{
+              "id":"COMM3C",
+              "content":	"COMM3C\nCommunication 3C",
               "tag":["2"]
             },
-            "MATH6d":{
-              "id":"MATH6d",
-              "content":	"MATH6d\nMathematics 6D",
+            "COMM3d":{
+              "id":"COMM3d",
+              "content":	"COMM3d\nCommunication 3D",
               "tag":["2"]
             },
-            "PHYS3A":{
-              "id":"PHYS3A",
-              "content":	"PHYS3A\nPhysics 3A",
+            "STATS5A":{
+              "id":"STATS5A",
+              "content":	"STATS5A\nStatistics 5A",
               "tag":["1"]
             },
-            "PHYS3B":{
-              "id":"PHYS3B",
-              "content":	"PHYS3B\nPhysics 3B",
+            "STATS5B":{
+              "id":"STATS5B",
+              "content":	"STATS5B\nStatistics 5B",
               "tag":["1"]
             },
-            "CHEM119A":{
-              "id":"CHEM119A",
-              "content":	"CHEM119A\nChemistry 119A",
+            "MATH113A":{
+              "id":"MATH113A",
+              "content":	"MATH113A\nMathematics 113A",
               "tag":["3"]
             },
-            "CHEM119B":{
-              "id":"CHEM119B",
-              "content":	"CHEM119B\nChemistry 119B",
+            "MATH113B":{
+              "id":"MATH113B",
+              "content":	"MATH113B\nMathematics 113B",
               "tag":["18"]
             },
-            "CHEM120":{
-              "id":"CHEM120",
-              "content":	"CHEM120\nChemistry 120",
+            "MATH116":{
+              "id":"MATH116",
+              "content":	"MATH116\nMathematics 116",
               "tag":["4"]
             },
-            "CHEM125":{
-              "id":"CHEM125",
-              "content":	"CHEM125\nChemistry 125",
+            "MATH122":{
+              "id":"MATH122",
+              "content":	"MATH122\nMathematics 122",
               "tag":["4"]
             },
-            "CHEM130":{
-              "id":"CHEM130",
-              "content":	"CHEM130\nChemistry 130",
+            "MATH129":{
+              "id":"MATH129",
+              "content":	"MATH129\nMathematics 129",
               "tag":["18"]
             },
-            "EEB113":{
-              "id":"EEB113",
-              "content":	"EEB113\nEcology and Evolutionary Biology 113",
+            "ECON113":{
+              "id":"ECON113",
+              "content":	"ECON113\nEconomics 113",
               "tag":["5"]
             },
-            "EEB114":{
-              "id":"EEB114",
-              "content":	"EEB114\nEcology and Evolutionary Biology 114",
+            "ECON115":{
+              "id":"ECON115",
+              "content":	"ECON115\nEconomics 115",
               "tag":["5"]
             },
-            "EEB127":{
-              "id":"EEB127",
-              "content":	"EEB127\nEcology and Evolutionary Biology 127",
+            "ECON128":{
+              "id":"ECON128",
+              "content":	"ECON128\nEconomics 128",
               "tag":["8"]
             },
-            "EEB198":{
-              "id":"EEB198",
-              "content":	"EEB198\nEcology and Evolutionary Biology 198",
+            "ECON196":{
+              "id":"ECON196",
+              "content":	"ECON196\nEconomics 196",
               "tag":["15"]
             },
-            "EEB129":{
-              "id":"EEB129",
-              "content":	"EEB129\nEcology and Evolutionary Biology 129",
+            "ECON129":{
+              "id":"ECON129",
+              "content":	"ECON129\nEconomics 129",
               "tag":["8"]
             },
-            "PHYS111":{
-              "id":"PHYS111",
-              "content":	"PHYS111\nPhysics 111",
+            "STATS116":{
+              "id":"STATS116",
+              "content":	"STATS116\nStatistics 116",
               "tag":["6"]
             },
-            "PHYS114A":{
-              "id":"PHYS114A",
-              "content":	"PHYS114A\nPhysics 114A",
+            "STATS122A":{
+              "id":"STATS122A",
+              "content":	"STATS122A\nStatistics 122A",
               "tag":["6"]
             },
-            "CHEM121":{
-              "id":"CHEM121",
-              "content":	"CHEM121\nChemistry 121",
+            "MATH119":{
+              "id":"MATH119",
+              "content":	"MATH119\nMathematics 119",
               "tag":["7"]
             },
-            "EEB113A":{
-              "id":"EEB113A",
-              "content":	"EEB113A\nEcology and Evolutionary Biology 113A",
+            "ECON113A":{
+              "id":"ECON113A",
+              "content":	"ECON113A\nEconomics 113A",
               "tag":["9"]
             },
-            "EEB129":{
-              "id":"EEB129",
-              "content":	"EEB129\nEcology and Evolutionary Biology 129",
+            "ECON129":{
+              "id":"ECON129",
+              "content":	"ECON129\nEconomics 129",
               "tag":["10"]
             },
-            "EEB130":{
-              "id":"EEB130",
-              "content":	"EEB130\nEcology and Evolutionary Biology 130",
+            "ECON131":{
+              "id":"ECON131",
+              "content":	"ECON131\nEconomics 131",
               "tag":["10"]
             },
-            "EEB132":{
-              "id":"EEB132",
-              "content":	"EEB132\nEcology and Evolutionary Biology 132",
+            "ECON134":{
+              "id":"ECON134",
+              "content":	"ECON134\nEconomics 134",
               "tag":["11"]
             },
-            "EEB132A":{
-              "id":"EEB132A",
-              "content":	"EEB132A\nEcology and Evolutionary Biology 132A",
+            "ECON134A":{
+              "id":"ECON134A",
+              "content":	"ECON134A\nEconomics 134A",
               "tag":["11"]
             },
-            "EEB137":{
-              "id":"EEB137",
-              "content":	"EEB137\nEcology and Evolutionary Biology 137",
+            "ECON141":{
+              "id":"ECON141",
+              "content":	"ECON141\nEconomics 141",
               "tag":["9"]
             },
-            "EEB151":{
-              "id":"EEB151",
-              "content":	"EEB151\nEcology and Evolutionary Biology 151",
+            "ECON151":{
+              "id":"ECON151",
+              "content":	"ECON151\nEconomics 151",
               "tag":["17"]
             },
-            "EEB151A":{
-              "id":"EEB151A",
-              "content":	"EEB151A\nEcology and Evolutionary Biology 151A",
+            "ECON151A":{
+              "id":"ECON151A",
+              "content":	"ECON151A\nEconomics 151A",
               "tag":["16"]
             },
-            "EEB158":{
-              "id":"EEB158",
-              "content":	"EEB158\nEcology and Evolutionary Biology 158",
+            "ECON155":{
+              "id":"ECON155",
+              "content":	"ECON155\nEconomics 155",
               "tag":["10"]
             },
-            "EEB160":{
-              "id":"EEB160",
-              "content":	"EEB160\nEcology and Evolutionary Biology 160",
+            "ECON159":{
+              "id":"ECON159",
+              "content":	"ECON159\nEconomics 159",
               "tag":["10"]
             },
-            "EEB161":{
-              "id":"EEB161",
-              "content":	"EEB161\nEcology and Evolutionary Biology 161",
+            "ECON163":{
+              "id":"ECON163",
+              "content":	"ECON163\nEconomics 163",
               "tag":["17"]
             },
-            "EEB174":{
-              "id":"EEB174",
-              "content":	"EEB174\nEcology and Evolutionary Biology 174",
+            "ECON172":{
+              "id":"ECON172",
+              "content":	"ECON172\nEconomics 172",
               "tag":["17"]
             },
-            "EEB178":{
-              "id":"EEB178",
-              "content":	"EEB178\nEcology and Evolutionary Biology 178",
+            "ECON175":{
+              "id":"ECON175",
+              "content":	"ECON175\nEconomics 175",
               "tag":["10"]
             },
-            "EEB185":{
-              "id":"EEB185",
-              "content":	"EEB185\nEcology and Evolutionary Biology 185",
+            "ECON178":{
+              "id":"ECON178",
+              "content":	"ECON178\nEconomics 178",
               "tag":["9"]
             },
-            "EEB192":{
-              "id":"EEB192",
-              "content":	"EEB192\nEcology and Evolutionary Biology 192",
+            "ECON179":{
+              "id":"ECON179",
+              "content":	"ECON179\nEconomics 179",
               "tag":["9"]
             },
-            "EEB193":{
-              "id":"EEB193",
-              "content":	"EEB193\nEcology and Evolutionary Biology 193",
+            "ECON190":{
+              "id":"ECON190",
+              "content":	"ECON190\nEconomics 190",
               "tag":["17"]
             },
-            "MBIO112":{
-              "id":"MBIO112",
-              "content":	"MBIO112\nMicrobiology 112",
+            "FIN116":{
+              "id":"FIN116",
+              "content":	"FIN116\nFinance 116",
               "tag":["12"]
             },
-            "MBIO118":{
-              "id":"MBIO118",
-              "content":	"MBIO118\nMicrobiology 118",
+            "FIN123":{
+              "id":"FIN123",
+              "content":	"FIN123\nFinance 123",
               "tag":["12"]
             },
-            "MBIO121":{
-              "id":"MBIO121",
-              "content":	"MBIO121\nMicrobiology 121",
+            "FIN128":{
+              "id":"FIN128",
+              "content":	"FIN128\nFinance 128",
               "tag":["12"]
             },
-            "PSCI112":{
-              "id":"PSCI112",
-              "content":	"PSCI112\nPhysiological Science 112",
+            "MGMT114":{
+              "id":"MGMT114",
+              "content":	"MGMT114\nManagement 114",
               "tag":["12"]
             },
-            "PSCI116":{
-              "id":"PSCI116",
-              "content":	"PSCI116\nPhysiological Science 116",
+            "MGMT117":{
+              "id":"MGMT117",
+              "content":	"MGMT117\nManagement 117",
               "tag":["12"]
             },
-            "PSCI119":{
-              "id":"PSCI119",
-              "content":	"PSCI119\nPhysiological Science 119",
+            "MGMT119":{
+              "id":"MGMT119",
+              "content":	"MGMT119\nManagement 119",
               "tag":["12"]
             },
-            "ANTH110":{
-              "id":"ANTH110",
-              "content":	"ANTH110\nAnthropology 110",
+            "PUBPOL115":{
+              "id":"PUBPOL115",
+              "content":	"PUBPOL115\nPublic Policy 115",
               "tag":["13"]
             },
-            "ANTH116A":{
-              "id":"ANTH116A",
-              "content":	"ANTH116A\nAnthropology 116A",
+            "PUBPOL117A":{
+              "id":"PUBPOL117A",
+              "content":	"PUBPOL117A\nPublic Policy 117A",
               "tag":["14"]
             },
-            "ANTH116P":{
-              "id":"ANTH116P",
-              "content":	"ANTH116P\nAnthropology 116P",
+            "PUBPOL117P":{
+              "id":"PUBPOL117P",
+              "content":	"PUBPOL117P\nPublic Policy 117P",
               "tag":["14"]
             },
-            "ANTH119A":{
-              "id":"ANTH119A",
-              "content":	"ANTH119A\nAnthropology 119A",
+            "PUBPOL119A":{
+              "id":"PUBPOL119A",
+              "content":	"PUBPOL119A\nPublic Policy 119A",
               "tag":["14"]
             },
-            "EEB146A":{
-              "id":"EEB146A",
-              "content":	"EEB146A\nEcology and Evolutionary Biology 146A",
+            "ECON143A":{
+              "id":"ECON143A",
+              "content":	"ECON143A\nEconomics 143A",
               "tag":["13"]
             },
-            "EEB154":{
-              "id":"EEB154",
-              "content":	"EEB154\nEcology and Evolutionary Biology 154",
+            "ECON154":{
+              "id":"ECON154",
+              "content":	"ECON154\nEconomics 154",
               "tag":["13"]
             },
-            "EEB179":{
-              "id":"EEB179",
-              "content":	"EEB179\nEcology and Evolutionary Biology 179",
+            "ECON176":{
+              "id":"ECON176",
+              "content":	"ECON176\nEconomics 176",
               "tag":["13"]
             },
-            "MOLB112":{
-              "id":"MOLB112",
-              "content":	"MOLB112\nMolecular Biology 112",
+            "ACCTG113":{
+              "id":"ACCTG113",
+              "content":	"ACCTG113\nAccounting 113",
               "tag":["13"]
             },
-            "MOLB114":{
-              "id":"MOLB114",
-              "content":	"MOLB114\nMolecular Biology 114",
+            "ACCTG115":{
+              "id":"ACCTG115",
+              "content":	"ACCTG115\nAccounting 115",
               "tag":["13"]
             },
-            "MOLB115":{
-              "id":"MOLB115",
-              "content":	"MOLB115\nMolecular Biology 115",
+            "ACCTG120":{
+              "id":"ACCTG120",
+              "content":	"ACCTG120\nAccounting 120",
               "tag":["13"]
             },
-            "MOLB124":{
-              "id":"MOLB124",
-              "content":	"MOLB124\nMolecular Biology 124",
+            "ACCTG122":{
+              "id":"ACCTG122",
+              "content":	"ACCTG122\nAccounting 122",
               "tag":["13"]
             },
-            "MOLB128":{
-              "id":"MOLB128",
-              "content":	"MOLB128\nMolecular Biology 128",
+            "ACCTG125":{
+              "id":"ACCTG125",
+              "content":	"ACCTG125\nAccounting 125",
               "tag":["13"]
             },
-            "MOLB131":{
-              "id":"MOLB131",
-              "content":	"MOLB131\nMolecular Biology 131",
+            "ACCTG130":{
+              "id":"ACCTG130",
+              "content":	"ACCTG130\nAccounting 130",
               "tag":["13"]
             },
-            "MOLB133":{
-              "id":"MOLB133",
-              "content":	"MOLB133\nMolecular Biology 133",
+            "ACCTG134":{
+              "id":"ACCTG134",
+              "content":	"ACCTG134\nAccounting 134",
               "tag":["13"]
             },
-            "MOLB142":{
-              "id":"MOLB142",
-              "content":	"MOLB142\nMolecular Biology 142",
+            "ACCTG140":{
+              "id":"ACCTG140",
+              "content":	"ACCTG140\nAccounting 140",
               "tag":["13"]
             },
          },
