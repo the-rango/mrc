@@ -13,337 +13,455 @@
    ],
    "boolreqs":{
       "4":[
-          "SUMTAG[1] >= 7",
-          "SUMTAG[2] >= 1",
-          "SUMTAG[3] + SUMTAG[4] + SUMTAG[18] >= 1",
-          "Math.min(SUMTAG[5], 1) + SUMTAG[6] + SUMTAG[8] + SUMTAG[15] + Math.min(SUMTAG[7] + Math.max(SUMTAG[3] + SUMTAG[4] + SUMTAG[18] - 1, 0), 1) >= 2",
-          "SUMTAG[13] + Math.min(SUMTAG[14], 1) + SUMTAG[10] + SUMTAG[15] + SUMTAG[16] + Math.min(Math.max(Math.min(SUMTAG[5], 1) + SUMTAG[6] + SUMTAG[8] + SUMTAG[15]+  Math.min(SUMTAG[7] + Math.max(SUMTAG[3] + SUMTAG[4] + SUMTAG[18] - 1, 0), 1) -2,0),SUMTAG[8] + SUMTAG[15]) >= 8",
-          "SUMTAG[9] + SUMTAG[12] + 2*(SUMTAG[11] == 2) + Math.min(Math.max(SUMTAG[13] + Math.min(SUMTAG[14], 1) + SUMTAG[10] + SUMTAG[15] + SUMTAG[16] + Math.min(Math.max(Math.min(SUMTAG[5], 1) + SUMTAG[6] + SUMTAG[8] + SUMTAG[15]+  Math.min(SUMTAG[7] + Math.max(SUMTAG[3] + SUMTAG[4] + SUMTAG[18] - 1, 0), 1) -2,0),SUMTAG[8] + SUMTAG[15]) -8,0), SUMTAG[8] + SUMTAG[10] + SUMTAG[15] + SUMTAG[16]) >= 5",
-          "SUMTAG[9] + 2*(SUMTAG[11] == 2) + Math.min(Math.max(SUMTAG[13] + Math.min(SUMTAG[14], 1) + SUMTAG[10] + SUMTAG[15] + SUMTAG[16] + Math.min(Math.max(Math.min(SUMTAG[5], 1) + SUMTAG[6] + SUMTAG[8] + SUMTAG[15]+  Math.min(SUMTAG[7] + Math.max(SUMTAG[3] + SUMTAG[4] + SUMTAG[18] - 1, 0), 1) -2,0),SUMTAG[8] + SUMTAG[15]) -8,0), SUMTAG[8] + SUMTAG[10] + SUMTAG[15] + SUMTAG[16]) >= 2",
+         "SUMTAG[1] >= 7",
+         "SUMTAG[2] >= 1",
+         "SUMTAG[3] + SUMTAG[4] + SUMTAG[18] >= 1",
+         "Math.min(SUMTAG[5], 1) + SUMTAG[6] + SUMTAG[8] + SUMTAG[15] + Math.min(SUMTAG[7] + Math.max(SUMTAG[3] + SUMTAG[4] + SUMTAG[18] - 1, 0), 1) >= 2",
+         "SUMTAG[13] + Math.min(SUMTAG[14], 1) + SUMTAG[10] + SUMTAG[15] + SUMTAG[16] + Math.min(Math.max(Math.min(SUMTAG[5], 1) + SUMTAG[6] + SUMTAG[8] + SUMTAG[15]+  Math.min(SUMTAG[7] + Math.max(SUMTAG[3] + SUMTAG[4] + SUMTAG[18] - 1, 0), 1) -2,0),SUMTAG[8] + SUMTAG[15]) >= 8",
+         "SUMTAG[9] + SUMTAG[12] + 2*(SUMTAG[11] == 2) + Math.min(Math.max(SUMTAG[13] + Math.min(SUMTAG[14], 1) + SUMTAG[10] + SUMTAG[15] + SUMTAG[16] + Math.min(Math.max(Math.min(SUMTAG[5], 1) + SUMTAG[6] + SUMTAG[8] + SUMTAG[15]+  Math.min(SUMTAG[7] + Math.max(SUMTAG[3] + SUMTAG[4] + SUMTAG[18] - 1, 0), 1) -2,0),SUMTAG[8] + SUMTAG[15]) -8,0), SUMTAG[8] + SUMTAG[10] + SUMTAG[15] + SUMTAG[16]) >= 5",
+         "SUMTAG[9] + 2*(SUMTAG[11] == 2) + Math.min(Math.max(SUMTAG[13] + Math.min(SUMTAG[14], 1) + SUMTAG[10] + SUMTAG[15] + SUMTAG[16] + Math.min(Math.max(Math.min(SUMTAG[5], 1) + SUMTAG[6] + SUMTAG[8] + SUMTAG[15]+  Math.min(SUMTAG[7] + Math.max(SUMTAG[3] + SUMTAG[4] + SUMTAG[18] - 1, 0), 1) -2,0),SUMTAG[8] + SUMTAG[15]) -8,0), SUMTAG[8] + SUMTAG[10] + SUMTAG[15] + SUMTAG[16]) >= 2"
       ],
       "3":[
-          "SUMTAG[1] >= 7",
-          "SUMTAG[2] >= 1",
-          "SUMTAG[4] >= 1",
-          "Math.min(SUMTAG[5], 1) + SUMTAG[6] + SUMTAG[8] + SUMTAG[15] + Math.min(SUMTAG[7] + Math.max(SUMTAG[3] + SUMTAG[18] + SUMTAG[4] - 1, 0), 1) >= 2",
-          "SUMTAG[13] + Math.min(SUMTAG[14], 1) + SUMTAG[10] + SUMTAG[15] + SUMTAG[16] + SUMTAG[17] + Math.min(Math.max(Math.min(SUMTAG[5], 1) + SUMTAG[6] + SUMTAG[8] + SUMTAG[15]+  Math.min(SUMTAG[7] + Math.max(SUMTAG[3] + SUMTAG[4] - 1, 0), 1) -2,0),SUMTAG[8] + SUMTAG[15]) >= 8",
-          "SUMTAG[9] + SUMTAG[12] + 2*(SUMTAG[11] == 2) + Math.min(Math.max(SUMTAG[13] + Math.min(SUMTAG[14], 1) + SUMTAG[10] + SUMTAG[15] + SUMTAG[16] + SUMTAG[17] + Math.min(Math.max(Math.min(SUMTAG[5], 1) + SUMTAG[6] + SUMTAG[8] + SUMTAG[15]+  Math.min(SUMTAG[7] + Math.max(SUMTAG[3] + SUMTAG[4] - 1, 0), 1) -2,0),SUMTAG[8] + SUMTAG[15]) -8,0), SUMTAG[8] + SUMTAG[10] + SUMTAG[15] + SUMTAG[16]) >= 5",
-          "SUMTAG[3] + SUMTAG[18] >= 1",
+         "SUMTAG[1] >= 7",
+         "SUMTAG[2] >= 1",
+         "SUMTAG[4] >= 1",
+         "Math.min(SUMTAG[5], 1) + SUMTAG[6] + SUMTAG[8] + SUMTAG[15] + Math.min(SUMTAG[7] + Math.max(SUMTAG[3] + SUMTAG[18] + SUMTAG[4] - 1, 0), 1) >= 2",
+         "SUMTAG[13] + Math.min(SUMTAG[14], 1) + SUMTAG[10] + SUMTAG[15] + SUMTAG[16] + SUMTAG[17] + Math.min(Math.max(Math.min(SUMTAG[5], 1) + SUMTAG[6] + SUMTAG[8] + SUMTAG[15]+  Math.min(SUMTAG[7] + Math.max(SUMTAG[3] + SUMTAG[4] - 1, 0), 1) -2,0),SUMTAG[8] + SUMTAG[15]) >= 8",
+         "SUMTAG[9] + SUMTAG[12] + 2*(SUMTAG[11] == 2) + Math.min(Math.max(SUMTAG[13] + Math.min(SUMTAG[14], 1) + SUMTAG[10] + SUMTAG[15] + SUMTAG[16] + SUMTAG[17] + Math.min(Math.max(Math.min(SUMTAG[5], 1) + SUMTAG[6] + SUMTAG[8] + SUMTAG[15]+  Math.min(SUMTAG[7] + Math.max(SUMTAG[3] + SUMTAG[4] - 1, 0), 1) -2,0),SUMTAG[8] + SUMTAG[15]) -8,0), SUMTAG[8] + SUMTAG[10] + SUMTAG[15] + SUMTAG[16]) >= 5",
+         "SUMTAG[3] + SUMTAG[18] >= 1"
       ],
       "2":[
-          "SUMTAG[1] >= 7",
-          "SUMTAG[2] >= 1",
-          "Math.min(SUMTAG[5], 1) + Math.min(SUMTAG[6],1) + SUMTAG[8] + SUMTAG[15] + SUMTAG[7] + (SUMTAG[3] + SUMTAG[18] - 1) + SUMTAG[4]  >= 2",
-          "SUMTAG[13] + Math.min(SUMTAG[14], 1) + SUMTAG[8] + SUMTAG[10] + SUMTAG[15] + Math.min(SUMTAG[9] + 2*(SUMTAG[11] == 2) + SUMTAG[16] + SUMTAG[12] - 5, 1)  >= 8",
-          "SUMTAG[9] + 2*(SUMTAG[11] == 2) + SUMTAG[16] + SUMTAG[17] + SUMTAG[12] >= 5",
-          "SUMTAG[3] + SUMTAG[18] >= 1",
+         "SUMTAG[1] >= 7",
+         "SUMTAG[2] >= 1",
+         "Math.min(SUMTAG[5], 1) + Math.min(SUMTAG[6],1) + SUMTAG[8] + SUMTAG[15] + SUMTAG[7] + (SUMTAG[3] + SUMTAG[18] - 1) + SUMTAG[4]  >= 2",
+         "SUMTAG[13] + Math.min(SUMTAG[14], 1) + SUMTAG[8] + SUMTAG[10] + SUMTAG[15] + Math.min(SUMTAG[9] + 2*(SUMTAG[11] == 2) + SUMTAG[16] + SUMTAG[12] - 5, 1)  >= 8",
+         "SUMTAG[9] + 2*(SUMTAG[11] == 2) + SUMTAG[16] + SUMTAG[17] + SUMTAG[12] >= 5",
+         "SUMTAG[3] + SUMTAG[18] >= 1"
       ],
       "1":[
-          "SUMTAG[1] >= 7",
-          "SUMTAG[2] >= 1",
-          "Math.min(SUMTAG[5], 1) + Math.min(SUMTAG[6],1) + SUMTAG[8] + SUMTAG[15] + SUMTAG[7] + SUMTAG[3] + SUMTAG[4] + SUMTAG[18]  >= 2",
-          "SUMTAG[13] + SUMTAG[14] + SUMTAG[8] + SUMTAG[10] + SUMTAG[15] + Math.min(SUMTAG[9] + SUMTAG[11] + SUMTAG[16] + SUMTAG[12] - 5, 1)  >= 8",
-          "SUMTAG[9] + SUMTAG[11] + SUMTAG[16] + SUMTAG[17] + SUMTAG[12] >= 5",
+         "SUMTAG[1] >= 7",
+         "SUMTAG[2] >= 1",
+         "Math.min(SUMTAG[5], 1) + Math.min(SUMTAG[6],1) + SUMTAG[8] + SUMTAG[15] + SUMTAG[7] + SUMTAG[3] + SUMTAG[4] + SUMTAG[18]  >= 2",
+         "SUMTAG[13] + SUMTAG[14] + SUMTAG[8] + SUMTAG[10] + SUMTAG[15] + Math.min(SUMTAG[9] + SUMTAG[11] + SUMTAG[16] + SUMTAG[12] - 5, 1)  >= 8",
+         "SUMTAG[9] + SUMTAG[11] + SUMTAG[16] + SUMTAG[17] + SUMTAG[12] >= 5"
       ]
    },
    "requirements":{
       "Biology":{
          "courses":{
             "LIFE3":{
-              "id":"LIFE3",
-              "content": "LIFE3\nLife Sciences 3",
-              "tag":["1"]
+               "id":"LIFE3",
+               "content":"LIFE3\nLife Sciences 3",
+               "tag":[
+                  "1"
+               ]
             },
             "LIFE27L":{
-              "id":"LIFE27L",
-              "content":	"LIFE27L\nLife Sciences 27L",
-              "tag":["1"]
+               "id":"LIFE27L",
+               "content":"LIFE27L\nLife Sciences 27L",
+               "tag":[
+                  "1"
+               ]
             },
             "CHEM12A":{
-              "id":"CHEM12A",
-              "content":	"CHEM12A\nChemistry 12A",
-              "tag":["1"]
+               "id":"CHEM12A",
+               "content":"CHEM12A\nChemistry 12A",
+               "tag":[
+                  "1"
+               ]
             },
             "CHEM12B":{
-              "id":"CHEM12B",
-              "content":	"CHEM12B\nChemistry 12B",
-              "tag":["1"]
+               "id":"CHEM12B",
+               "content":"CHEM12B\nChemistry 12B",
+               "tag":[
+                  "1"
+               ]
             },
             "MATH6A":{
-              "id":"MATH6A",
-              "content":	"MATH6A\nMathematics 6A",
-              "tag":["1"]
+               "id":"MATH6A",
+               "content":"MATH6A\nMathematics 6A",
+               "tag":[
+                  "1"
+               ]
             },
             "MATH6C":{
-              "id":"MATH6C",
-              "content":	"MATH6C\nMathematics 6C",
-              "tag":["2"]
+               "id":"MATH6C",
+               "content":"MATH6C\nMathematics 6C",
+               "tag":[
+                  "2"
+               ]
             },
             "MATH6d":{
-              "id":"MATH6d",
-              "content":	"MATH6d\nMathematics 6D",
-              "tag":["2"]
+               "id":"MATH6d",
+               "content":"MATH6d\nMathematics 6D",
+               "tag":[
+                  "2"
+               ]
             },
             "PHYS3A":{
-              "id":"PHYS3A",
-              "content":	"PHYS3A\nPhysics 3A",
-              "tag":["1"]
+               "id":"PHYS3A",
+               "content":"PHYS3A\nPhysics 3A",
+               "tag":[
+                  "1"
+               ]
             },
             "PHYS3B":{
-              "id":"PHYS3B",
-              "content":	"PHYS3B\nPhysics 3B",
-              "tag":["1"]
+               "id":"PHYS3B",
+               "content":"PHYS3B\nPhysics 3B",
+               "tag":[
+                  "1"
+               ]
             },
             "CHEM119A":{
-              "id":"CHEM119A",
-              "content":	"CHEM119A\nChemistry 119A",
-              "tag":["3"]
+               "id":"CHEM119A",
+               "content":"CHEM119A\nChemistry 119A",
+               "tag":[
+                  "3"
+               ]
             },
             "CHEM119B":{
-              "id":"CHEM119B",
-              "content":	"CHEM119B\nChemistry 119B",
-              "tag":["18"]
+               "id":"CHEM119B",
+               "content":"CHEM119B\nChemistry 119B",
+               "tag":[
+                  "18"
+               ]
             },
             "CHEM120":{
-              "id":"CHEM120",
-              "content":	"CHEM120\nChemistry 120",
-              "tag":["4"]
+               "id":"CHEM120",
+               "content":"CHEM120\nChemistry 120",
+               "tag":[
+                  "4"
+               ]
             },
             "CHEM125":{
-              "id":"CHEM125",
-              "content":	"CHEM125\nChemistry 125",
-              "tag":["4"]
+               "id":"CHEM125",
+               "content":"CHEM125\nChemistry 125",
+               "tag":[
+                  "4"
+               ]
             },
             "CHEM130":{
-              "id":"CHEM130",
-              "content":	"CHEM130\nChemistry 130",
-              "tag":["18"]
+               "id":"CHEM130",
+               "content":"CHEM130\nChemistry 130",
+               "tag":[
+                  "18"
+               ]
             },
             "EEB113":{
-              "id":"EEB113",
-              "content":	"EEB113\nEcology and Evolutionary Biology 113",
-              "tag":["5"]
+               "id":"EEB113",
+               "content":"EEB113\nEcology and Evolutionary Biology 113",
+               "tag":[
+                  "5"
+               ]
             },
             "EEB114":{
-              "id":"EEB114",
-              "content":	"EEB114\nEcology and Evolutionary Biology 114",
-              "tag":["5"]
+               "id":"EEB114",
+               "content":"EEB114\nEcology and Evolutionary Biology 114",
+               "tag":[
+                  "5"
+               ]
             },
             "EEB127":{
-              "id":"EEB127",
-              "content":	"EEB127\nEcology and Evolutionary Biology 127",
-              "tag":["8"]
+               "id":"EEB127",
+               "content":"EEB127\nEcology and Evolutionary Biology 127",
+               "tag":[
+                  "8"
+               ]
             },
             "EEB198":{
-              "id":"EEB198",
-              "content":	"EEB198\nEcology and Evolutionary Biology 198",
-              "tag":["15"]
+               "id":"EEB198",
+               "content":"EEB198\nEcology and Evolutionary Biology 198",
+               "tag":[
+                  "15"
+               ]
             },
             "EEB129":{
-              "id":"EEB129",
-              "content":	"EEB129\nEcology and Evolutionary Biology 129",
-              "tag":["8"]
+               "id":"EEB129",
+               "content":"EEB129\nEcology and Evolutionary Biology 129",
+               "tag":[
+                  "8"
+               ]
             },
             "PHYS111":{
-              "id":"PHYS111",
-              "content":	"PHYS111\nPhysics 111",
-              "tag":["6"]
+               "id":"PHYS111",
+               "content":"PHYS111\nPhysics 111",
+               "tag":[
+                  "6"
+               ]
             },
             "PHYS114A":{
-              "id":"PHYS114A",
-              "content":	"PHYS114A\nPhysics 114A",
-              "tag":["6"]
+               "id":"PHYS114A",
+               "content":"PHYS114A\nPhysics 114A",
+               "tag":[
+                  "6"
+               ]
             },
             "CHEM121":{
-              "id":"CHEM121",
-              "content":	"CHEM121\nChemistry 121",
-              "tag":["7"]
+               "id":"CHEM121",
+               "content":"CHEM121\nChemistry 121",
+               "tag":[
+                  "7"
+               ]
             },
             "EEB113A":{
-              "id":"EEB113A",
-              "content":	"EEB113A\nEcology and Evolutionary Biology 113A",
-              "tag":["9"]
+               "id":"EEB113A",
+               "content":"EEB113A\nEcology and Evolutionary Biology 113A",
+               "tag":[
+                  "9"
+               ]
             },
             "EEB129":{
-              "id":"EEB129",
-              "content":	"EEB129\nEcology and Evolutionary Biology 129",
-              "tag":["10"]
+               "id":"EEB129",
+               "content":"EEB129\nEcology and Evolutionary Biology 129",
+               "tag":[
+                  "10"
+               ]
             },
             "EEB130":{
-              "id":"EEB130",
-              "content":	"EEB130\nEcology and Evolutionary Biology 130",
-              "tag":["10"]
+               "id":"EEB130",
+               "content":"EEB130\nEcology and Evolutionary Biology 130",
+               "tag":[
+                  "10"
+               ]
             },
             "EEB132":{
-              "id":"EEB132",
-              "content":	"EEB132\nEcology and Evolutionary Biology 132",
-              "tag":["11"]
+               "id":"EEB132",
+               "content":"EEB132\nEcology and Evolutionary Biology 132",
+               "tag":[
+                  "11"
+               ]
             },
             "EEB132A":{
-              "id":"EEB132A",
-              "content":	"EEB132A\nEcology and Evolutionary Biology 132A",
-              "tag":["11"]
+               "id":"EEB132A",
+               "content":"EEB132A\nEcology and Evolutionary Biology 132A",
+               "tag":[
+                  "11"
+               ]
             },
             "EEB137":{
-              "id":"EEB137",
-              "content":	"EEB137\nEcology and Evolutionary Biology 137",
-              "tag":["9"]
+               "id":"EEB137",
+               "content":"EEB137\nEcology and Evolutionary Biology 137",
+               "tag":[
+                  "9"
+               ]
             },
             "EEB151":{
-              "id":"EEB151",
-              "content":	"EEB151\nEcology and Evolutionary Biology 151",
-              "tag":["17"]
+               "id":"EEB151",
+               "content":"EEB151\nEcology and Evolutionary Biology 151",
+               "tag":[
+                  "17"
+               ]
             },
             "EEB151A":{
-              "id":"EEB151A",
-              "content":	"EEB151A\nEcology and Evolutionary Biology 151A",
-              "tag":["16"]
+               "id":"EEB151A",
+               "content":"EEB151A\nEcology and Evolutionary Biology 151A",
+               "tag":[
+                  "16"
+               ]
             },
             "EEB158":{
-              "id":"EEB158",
-              "content":	"EEB158\nEcology and Evolutionary Biology 158",
-              "tag":["10"]
+               "id":"EEB158",
+               "content":"EEB158\nEcology and Evolutionary Biology 158",
+               "tag":[
+                  "10"
+               ]
             },
             "EEB160":{
-              "id":"EEB160",
-              "content":	"EEB160\nEcology and Evolutionary Biology 160",
-              "tag":["10"]
+               "id":"EEB160",
+               "content":"EEB160\nEcology and Evolutionary Biology 160",
+               "tag":[
+                  "10"
+               ]
             },
             "EEB161":{
-              "id":"EEB161",
-              "content":	"EEB161\nEcology and Evolutionary Biology 161",
-              "tag":["17"]
+               "id":"EEB161",
+               "content":"EEB161\nEcology and Evolutionary Biology 161",
+               "tag":[
+                  "17"
+               ]
             },
             "EEB174":{
-              "id":"EEB174",
-              "content":	"EEB174\nEcology and Evolutionary Biology 174",
-              "tag":["17"]
+               "id":"EEB174",
+               "content":"EEB174\nEcology and Evolutionary Biology 174",
+               "tag":[
+                  "17"
+               ]
             },
             "EEB178":{
-              "id":"EEB178",
-              "content":	"EEB178\nEcology and Evolutionary Biology 178",
-              "tag":["10"]
+               "id":"EEB178",
+               "content":"EEB178\nEcology and Evolutionary Biology 178",
+               "tag":[
+                  "10"
+               ]
             },
             "EEB185":{
-              "id":"EEB185",
-              "content":	"EEB185\nEcology and Evolutionary Biology 185",
-              "tag":["9"]
+               "id":"EEB185",
+               "content":"EEB185\nEcology and Evolutionary Biology 185",
+               "tag":[
+                  "9"
+               ]
             },
             "EEB192":{
-              "id":"EEB192",
-              "content":	"EEB192\nEcology and Evolutionary Biology 192",
-              "tag":["9"]
+               "id":"EEB192",
+               "content":"EEB192\nEcology and Evolutionary Biology 192",
+               "tag":[
+                  "9"
+               ]
             },
             "EEB193":{
-              "id":"EEB193",
-              "content":	"EEB193\nEcology and Evolutionary Biology 193",
-              "tag":["17"]
+               "id":"EEB193",
+               "content":"EEB193\nEcology and Evolutionary Biology 193",
+               "tag":[
+                  "17"
+               ]
             },
             "MBIO112":{
-              "id":"MBIO112",
-              "content":	"MBIO112\nMicrobiology 112",
-              "tag":["12"]
+               "id":"MBIO112",
+               "content":"MBIO112\nMicrobiology 112",
+               "tag":[
+                  "12"
+               ]
             },
             "MBIO118":{
-              "id":"MBIO118",
-              "content":	"MBIO118\nMicrobiology 118",
-              "tag":["12"]
+               "id":"MBIO118",
+               "content":"MBIO118\nMicrobiology 118",
+               "tag":[
+                  "12"
+               ]
             },
             "MBIO121":{
-              "id":"MBIO121",
-              "content":	"MBIO121\nMicrobiology 121",
-              "tag":["12"]
+               "id":"MBIO121",
+               "content":"MBIO121\nMicrobiology 121",
+               "tag":[
+                  "12"
+               ]
             },
             "PSCI112":{
-              "id":"PSCI112",
-              "content":	"PSCI112\nPhysiological Science 112",
-              "tag":["12"]
+               "id":"PSCI112",
+               "content":"PSCI112\nPhysiological Science 112",
+               "tag":[
+                  "12"
+               ]
             },
             "PSCI116":{
-              "id":"PSCI116",
-              "content":	"PSCI116\nPhysiological Science 116",
-              "tag":["12"]
+               "id":"PSCI116",
+               "content":"PSCI116\nPhysiological Science 116",
+               "tag":[
+                  "12"
+               ]
             },
             "PSCI119":{
-              "id":"PSCI119",
-              "content":	"PSCI119\nPhysiological Science 119",
-              "tag":["12"]
+               "id":"PSCI119",
+               "content":"PSCI119\nPhysiological Science 119",
+               "tag":[
+                  "12"
+               ]
             },
             "ANTH110":{
-              "id":"ANTH110",
-              "content":	"ANTH110\nAnthropology 110",
-              "tag":["13"]
+               "id":"ANTH110",
+               "content":"ANTH110\nAnthropology 110",
+               "tag":[
+                  "13"
+               ]
             },
             "ANTH116A":{
-              "id":"ANTH116A",
-              "content":	"ANTH116A\nAnthropology 116A",
-              "tag":["14"]
+               "id":"ANTH116A",
+               "content":"ANTH116A\nAnthropology 116A",
+               "tag":[
+                  "14"
+               ]
             },
             "ANTH116P":{
-              "id":"ANTH116P",
-              "content":	"ANTH116P\nAnthropology 116P",
-              "tag":["14"]
+               "id":"ANTH116P",
+               "content":"ANTH116P\nAnthropology 116P",
+               "tag":[
+                  "14"
+               ]
             },
             "ANTH119A":{
-              "id":"ANTH119A",
-              "content":	"ANTH119A\nAnthropology 119A",
-              "tag":["14"]
+               "id":"ANTH119A",
+               "content":"ANTH119A\nAnthropology 119A",
+               "tag":[
+                  "14"
+               ]
             },
             "EEB146A":{
-              "id":"EEB146A",
-              "content":	"EEB146A\nEcology and Evolutionary Biology 146A",
-              "tag":["13"]
+               "id":"EEB146A",
+               "content":"EEB146A\nEcology and Evolutionary Biology 146A",
+               "tag":[
+                  "13"
+               ]
             },
             "EEB154":{
-              "id":"EEB154",
-              "content":	"EEB154\nEcology and Evolutionary Biology 154",
-              "tag":["13"]
+               "id":"EEB154",
+               "content":"EEB154\nEcology and Evolutionary Biology 154",
+               "tag":[
+                  "13"
+               ]
             },
             "EEB179":{
-              "id":"EEB179",
-              "content":	"EEB179\nEcology and Evolutionary Biology 179",
-              "tag":["13"]
+               "id":"EEB179",
+               "content":"EEB179\nEcology and Evolutionary Biology 179",
+               "tag":[
+                  "13"
+               ]
             },
             "MOLB112":{
-              "id":"MOLB112",
-              "content":	"MOLB112\nMolecular Biology 112",
-              "tag":["13"]
+               "id":"MOLB112",
+               "content":"MOLB112\nMolecular Biology 112",
+               "tag":[
+                  "13"
+               ]
             },
             "MOLB114":{
-              "id":"MOLB114",
-              "content":	"MOLB114\nMolecular Biology 114",
-              "tag":["13"]
+               "id":"MOLB114",
+               "content":"MOLB114\nMolecular Biology 114",
+               "tag":[
+                  "13"
+               ]
             },
             "MOLB115":{
-              "id":"MOLB115",
-              "content":	"MOLB115\nMolecular Biology 115",
-              "tag":["13"]
+               "id":"MOLB115",
+               "content":"MOLB115\nMolecular Biology 115",
+               "tag":[
+                  "13"
+               ]
             },
             "MOLB124":{
-              "id":"MOLB124",
-              "content":	"MOLB124\nMolecular Biology 124",
-              "tag":["13"]
+               "id":"MOLB124",
+               "content":"MOLB124\nMolecular Biology 124",
+               "tag":[
+                  "13"
+               ]
             },
             "MOLB128":{
-              "id":"MOLB128",
-              "content":	"MOLB128\nMolecular Biology 128",
-              "tag":["13"]
+               "id":"MOLB128",
+               "content":"MOLB128\nMolecular Biology 128",
+               "tag":[
+                  "13"
+               ]
             },
             "MOLB131":{
-              "id":"MOLB131",
-              "content":	"MOLB131\nMolecular Biology 131",
-              "tag":["13"]
+               "id":"MOLB131",
+               "content":"MOLB131\nMolecular Biology 131",
+               "tag":[
+                  "13"
+               ]
             },
             "MOLB133":{
-              "id":"MOLB133",
-              "content":	"MOLB133\nMolecular Biology 133",
-              "tag":["13"]
+               "id":"MOLB133",
+               "content":"MOLB133\nMolecular Biology 133",
+               "tag":[
+                  "13"
+               ]
             },
             "MOLB142":{
-              "id":"MOLB142",
-              "content":	"MOLB142\nMolecular Biology 142",
-              "tag":["13"]
-            },
+               "id":"MOLB142",
+               "content":"MOLB142\nMolecular Biology 142",
+               "tag":[
+                  "13"
+               ]
+            }
          },
          "4":"<strong>4Core Curriculum</strong><br />Life Sciences: 3 and 27L<br />Chemistry: 12A and 12B<br />Mathematics: 6A, and 6C or 6D<br />Physics: 3A and 3B<br /><hr /><strong>Chemistry</strong><br />Chemistry: 119A, 119B, 120, 125, or 130<br /><hr /><strong>Foundation Courses - Choose two courses from the following list:</strong><br />Ecology & Evolutionary Biology: 113 or 114, 127, 198, 129<br />Physics: 111, 114A<br />Chemistry: at most one of 119B, 120, 121, 125, 130<br /><hr /><strong>Laboratory Courses - Choose five courses from the following list:</strong><br />Ecology & Evolutionary Biology: 113A, 127, 129, 130, 132 + 132A (must take BOTH courses for it to count), 137, 151, 151A, 158, 160, 161, 174, 178, 185, 192, 193<br />Microbiology: 112, 118, 121<br />Physiological Science: 112, 116, 119<br />At least two courses taken to fulfill this requirement must be Ecology & Evolutionary Biology: courses<br /><hr /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Anthropology: 110 and/or at most one of 116A, 116P, or 119A<br />Ecology & Evolutionary Biology: 127, 129, 130, 146A, 151, 151A, 154, 158, 160, 161, 174, 178, 179, 193, 198 (can be taken multiple times, but only can be counted twice towards requirements)<br />Molecular Biology: 112, 114, 115, 124, 128, 131, 133, 142",
          "3":"<strong>3Core Curriculum</strong><br />Life Sciences: 3 and 27L<br />Chemistry: 12A and 12B, at most one of 119A, 119B, 130<br />Mathematics: 6A, and 6C or 6D<br />Physics: 3A and 3B<br /><strong>Foundation Courses Choose two courses from the following list:</strong><br />Ecology & Evolutionary Biology: 113 or 114, 127, 198, 129<br />Physics: One of: 111, 114A<br />Chemistry: 119B, 120, 121, 125, 130<br /><strong>Laboratory Courses -Choose five courses from the following list:</strong><br />Ecology & Evolutionary Biology: 113A, 127, 129, 130, 132 + 132A (must take BOTH courses for it to count), 137, 151, 151A, 158, 160, 161, 174, 178, 185, 192, 193<br />Microbiology: 112, 118, 121<br />Physiological Science: 112, 116, 119<br /><strong>Upper Division Electives Choose eight courses from the following list:</strong><br />Anthropology: 110 and/or at most one of 116A, 116P, or 119A<br />Ecology & Evolutionary Biology: 127, 129, 130, 146A, 151, 151A, 154, 158, 160, 161, 174, 178, 179, 193, 198 (can be taken multiple times, but only can be counted twice towards requirements)<br />Molecular Biology: 112, 114, 115, 124, 128, 131, 133, 142",
@@ -353,300 +471,418 @@
       "Psychology":{
          "courses":{
             "STATS3":{
-              "id":"STATS3",
-              "content": "STATS3\nStatistics 3",
-              "tag":["1"]
+               "id":"STATS3",
+               "content":"STATS3\nStatistics 3",
+               "tag":[
+                  "1"
+               ]
             },
             "STATS11L":{
-              "id":"STATS11L",
-              "content":	"STATS11L\nStatistics 27L",
-              "tag":["1"]
+               "id":"STATS11L",
+               "content":"STATS11L\nStatistics 27L",
+               "tag":[
+                  "1"
+               ]
             },
             "PSYME14A":{
-              "id":"PSYME14A",
-              "content":	"PSYME14A\nPsychology Methods 14A",
-              "tag":["1"]
+               "id":"PSYME14A",
+               "content":"PSYME14A\nPsychology Methods 14A",
+               "tag":[
+                  "1"
+               ]
             },
             "PSYME14B":{
-              "id":"PSYME14B",
-              "content":	"PSYME14B\nPsychology Methods 14B",
-              "tag":["1"]
+               "id":"PSYME14B",
+               "content":"PSYME14B\nPsychology Methods 14B",
+               "tag":[
+                  "1"
+               ]
             },
             "BIO3A":{
-              "id":"BIO3A",
-              "content":	"BIO3A\nBiology 3A",
-              "tag":["1"]
+               "id":"BIO3A",
+               "content":"BIO3A\nBiology 3A",
+               "tag":[
+                  "1"
+               ]
             },
             "BIO3C":{
-              "id":"BIO3C",
-              "content":	"BIO3C\nBiology 3C",
-              "tag":["2"]
+               "id":"BIO3C",
+               "content":"BIO3C\nBiology 3C",
+               "tag":[
+                  "2"
+               ]
             },
             "BIO3d":{
-              "id":"BIO3d",
-              "content":	"BIO3d\nBiology 3D",
-              "tag":["2"]
+               "id":"BIO3d",
+               "content":"BIO3d\nBiology 3D",
+               "tag":[
+                  "2"
+               ]
             },
             "SOCSCI2A":{
-              "id":"SOCSCI2A",
-              "content":	"SOCSCI2A\n Social Sciences 2A",
-              "tag":["1"]
+               "id":"SOCSCI2A",
+               "content":"SOCSCI2A\n Social Sciences 2A",
+               "tag":[
+                  "1"
+               ]
             },
             "SOCSCI2B":{
-              "id":"SOCSCI2B",
-              "content":	"SOCSCI2B\n Social Sciences 2B",
-              "tag":["1"]
+               "id":"SOCSCI2B",
+               "content":"SOCSCI2B\n Social Sciences 2B",
+               "tag":[
+                  "1"
+               ]
             },
             "PSYME110A":{
-              "id":"PSYME110A",
-              "content":	"PSYME110A\nPsychology Methods 110A",
-              "tag":["3"]
+               "id":"PSYME110A",
+               "content":"PSYME110A\nPsychology Methods 110A",
+               "tag":[
+                  "3"
+               ]
             },
             "PSYME110B":{
-              "id":"PSYME110B",
-              "content":	"PSYME110B\nPsychology Methods 110B",
-              "tag":["18"]
+               "id":"PSYME110B",
+               "content":"PSYME110B\nPsychology Methods 110B",
+               "tag":[
+                  "18"
+               ]
             },
             "PSYME113":{
-              "id":"PSYME113",
-              "content":	"PSYME113\nPsychology Methods 113",
-              "tag":["4"]
+               "id":"PSYME113",
+               "content":"PSYME113\nPsychology Methods 113",
+               "tag":[
+                  "4"
+               ]
             },
             "PSYME120":{
-              "id":"PSYME120",
-              "content":	"PSYME120\nPsychology Methods 120",
-              "tag":["4"]
+               "id":"PSYME120",
+               "content":"PSYME120\nPsychology Methods 120",
+               "tag":[
+                  "4"
+               ]
             },
             "PSYME123":{
-              "id":"PSYME123",
-              "content":	"PSYME123\nPsychology Methods 123",
-              "tag":["18"]
+               "id":"PSYME123",
+               "content":"PSYME123\nPsychology Methods 123",
+               "tag":[
+                  "18"
+               ]
             },
             "PSYCH111":{
-              "id":"PSYCH111",
-              "content":	"PSYCH111\nPsychology 111",
-              "tag":["5"]
+               "id":"PSYCH111",
+               "content":"PSYCH111\nPsychology 111",
+               "tag":[
+                  "5"
+               ]
             },
             "PSYCH115":{
-              "id":"PSYCH115",
-              "content":	"PSYCH115\nPsychology 115",
-              "tag":["5"]
+               "id":"PSYCH115",
+               "content":"PSYCH115\nPsychology 115",
+               "tag":[
+                  "5"
+               ]
             },
             "PSYCH117":{
-              "id":"PSYCH117",
-              "content":	"PSYCH117\nPsychology 117",
-              "tag":["8"]
+               "id":"PSYCH117",
+               "content":"PSYCH117\nPsychology 117",
+               "tag":[
+                  "8"
+               ]
             },
             "PSYCH196":{
-              "id":"PSYCH196",
-              "content":	"PSYCH196\nPsychology 196",
-              "tag":["15"]
+               "id":"PSYCH196",
+               "content":"PSYCH196\nPsychology 196",
+               "tag":[
+                  "15"
+               ]
             },
             "PSYCH123":{
-              "id":"PSYCH123",
-              "content":	"PSYCH123\nPsychology 123",
-              "tag":["8"]
+               "id":"PSYCH123",
+               "content":"PSYCH123\nPsychology 123",
+               "tag":[
+                  "8"
+               ]
             },
             "SOCSCI111":{
-              "id":"SOCSCI111",
-              "content":	"SOCSCI111\nSocial Sciences 111",
-              "tag":["6"]
+               "id":"SOCSCI111",
+               "content":"SOCSCI111\nSocial Sciences 111",
+               "tag":[
+                  "6"
+               ]
             },
             "SOCSCI122A":{
-              "id":"SOCSCI122A",
-              "content":	"SOCSCI122A\nSocial Sciences 122A",
-              "tag":["6"]
+               "id":"SOCSCI122A",
+               "content":"SOCSCI122A\nSocial Sciences 122A",
+               "tag":[
+                  "6"
+               ]
             },
             "PSYME117":{
-              "id":"PSYME117",
-              "content":	"PSYME117\nPsychology Methods 117",
-              "tag":["7"]
+               "id":"PSYME117",
+               "content":"PSYME117\nPsychology Methods 117",
+               "tag":[
+                  "7"
+               ]
             },
             "PSYCH111A":{
-              "id":"PSYCH111A",
-              "content":	"PSYCH111A\nPsychology 111A",
-              "tag":["9"]
+               "id":"PSYCH111A",
+               "content":"PSYCH111A\nPsychology 111A",
+               "tag":[
+                  "9"
+               ]
             },
             "PSYCH123":{
-              "id":"PSYCH123",
-              "content":	"PSYCH123\nPsychology 123",
-              "tag":["10"]
+               "id":"PSYCH123",
+               "content":"PSYCH123\nPsychology 123",
+               "tag":[
+                  "10"
+               ]
             },
             "PSYCH130":{
-              "id":"PSYCH130",
-              "content":	"PSYCH130\nPsychology 130",
-              "tag":["10"]
+               "id":"PSYCH130",
+               "content":"PSYCH130\nPsychology 130",
+               "tag":[
+                  "10"
+               ]
             },
             "PSYCH132":{
-              "id":"PSYCH132",
-              "content":	"PSYCH132\nPsychology 132",
-              "tag":["11"]
+               "id":"PSYCH132",
+               "content":"PSYCH132\nPsychology 132",
+               "tag":[
+                  "11"
+               ]
             },
             "PSYCH132A":{
-              "id":"PSYCH132A",
-              "content":	"PSYCH132A\nPsychology 132A",
-              "tag":["11"]
+               "id":"PSYCH132A",
+               "content":"PSYCH132A\nPsychology 132A",
+               "tag":[
+                  "11"
+               ]
             },
             "PSYCH138":{
-              "id":"PSYCH138",
-              "content":	"PSYCH138\nPsychology 138",
-              "tag":["9"]
+               "id":"PSYCH138",
+               "content":"PSYCH138\nPsychology 138",
+               "tag":[
+                  "9"
+               ]
             },
             "PSYCH149":{
-              "id":"PSYCH149",
-              "content":	"PSYCH149\nPsychology 149",
-              "tag":["17"]
+               "id":"PSYCH149",
+               "content":"PSYCH149\nPsychology 149",
+               "tag":[
+                  "17"
+               ]
             },
             "PSYCH149A":{
-              "id":"PSYCH149A",
-              "content":	"PSYCH149A\nPsychology 149A",
-              "tag":["16"]
+               "id":"PSYCH149A",
+               "content":"PSYCH149A\nPsychology 149A",
+               "tag":[
+                  "16"
+               ]
             },
             "PSYCH163":{
-              "id":"PSYCH163",
-              "content":	"PSYCH163\nPsychology 163",
-              "tag":["10"]
+               "id":"PSYCH163",
+               "content":"PSYCH163\nPsychology 163",
+               "tag":[
+                  "10"
+               ]
             },
             "PSYCH171":{
-              "id":"PSYCH171",
-              "content":	"PSYCH171\nPsychology 171",
-              "tag":["10"]
+               "id":"PSYCH171",
+               "content":"PSYCH171\nPsychology 171",
+               "tag":[
+                  "10"
+               ]
             },
             "PSYCH173":{
-              "id":"PSYCH173",
-              "content":	"PSYCH173\nPsychology 173",
-              "tag":["17"]
+               "id":"PSYCH173",
+               "content":"PSYCH173\nPsychology 173",
+               "tag":[
+                  "17"
+               ]
             },
             "PSYCH175":{
-              "id":"PSYCH175",
-              "content":	"PSYCH175\nPsychology 175",
-              "tag":["17"]
+               "id":"PSYCH175",
+               "content":"PSYCH175\nPsychology 175",
+               "tag":[
+                  "17"
+               ]
             },
             "PSYCH177":{
-              "id":"PSYCH177",
-              "content":	"PSYCH177\nPsychology 177",
-              "tag":["10"]
+               "id":"PSYCH177",
+               "content":"PSYCH177\nPsychology 177",
+               "tag":[
+                  "10"
+               ]
             },
             "PSYCH189":{
-              "id":"PSYCH189",
-              "content":	"PSYCH189\nPsychology 189",
-              "tag":["9"]
+               "id":"PSYCH189",
+               "content":"PSYCH189\nPsychology 189",
+               "tag":[
+                  "9"
+               ]
             },
             "PSYCH190":{
-              "id":"PSYCH190",
-              "content":	"PSYCH190\nPsychology 190",
-              "tag":["9"]
+               "id":"PSYCH190",
+               "content":"PSYCH190\nPsychology 190",
+               "tag":[
+                  "9"
+               ]
             },
             "PSYCH195":{
-              "id":"PSYCH195",
-              "content":	"PSYCH195\nPsychology 195",
-              "tag":["17"]
+               "id":"PSYCH195",
+               "content":"PSYCH195\nPsychology 195",
+               "tag":[
+                  "17"
+               ]
             },
             "LIFE115":{
-              "id":"LIFE115",
-              "content":	"LIFE115\nLife Science 115",
-              "tag":["12"]
+               "id":"LIFE115",
+               "content":"LIFE115\nLife Science 115",
+               "tag":[
+                  "12"
+               ]
             },
             "LIFE120":{
-              "id":"LIFE120",
-              "content":	"LIFE120\nLife Science 120",
-              "tag":["12"]
+               "id":"LIFE120",
+               "content":"LIFE120\nLife Science 120",
+               "tag":[
+                  "12"
+               ]
             },
             "LIFE130":{
-              "id":"LIFE130",
-              "content":	"LIFE130\nLife Science 130",
-              "tag":["12"]
+               "id":"LIFE130",
+               "content":"LIFE130\nLife Science 130",
+               "tag":[
+                  "12"
+               ]
             },
             "PSCI111":{
-              "id":"PSCI111",
-              "content":	"PSCI111\nPhysiological Science 111",
-              "tag":["12"]
+               "id":"PSCI111",
+               "content":"PSCI111\nPhysiological Science 111",
+               "tag":[
+                  "12"
+               ]
             },
             "PSCI112":{
-              "id":"PSCI112",
-              "content":	"PSCI112\nPhysiological Science 112",
-              "tag":["12"]
+               "id":"PSCI112",
+               "content":"PSCI112\nPhysiological Science 112",
+               "tag":[
+                  "12"
+               ]
             },
             "PSCI114":{
-              "id":"PSCI114",
-              "content":	"PSCI114\nPhysiological Science 114",
-              "tag":["12"]
+               "id":"PSCI114",
+               "content":"PSCI114\nPhysiological Science 114",
+               "tag":[
+                  "12"
+               ]
             },
             "ANTH112":{
-              "id":"ANTH112",
-              "content":	"ANTH112\nAnthropology 112",
-              "tag":["13"]
+               "id":"ANTH112",
+               "content":"ANTH112\nAnthropology 112",
+               "tag":[
+                  "13"
+               ]
             },
             "ANTH112A":{
-              "id":"ANTH112A",
-              "content":	"ANTH112A\nAnthropology 112A",
-              "tag":["14"]
+               "id":"ANTH112A",
+               "content":"ANTH112A\nAnthropology 112A",
+               "tag":[
+                  "14"
+               ]
             },
             "ANTH112P":{
-              "id":"ANTH112P",
-              "content":	"ANTH112P\nAnthropology 112P",
-              "tag":["14"]
+               "id":"ANTH112P",
+               "content":"ANTH112P\nAnthropology 112P",
+               "tag":[
+                  "14"
+               ]
             },
             "ANTH114A":{
-              "id":"ANTH114A",
-              "content":	"ANTH114A\nAnthropology 114A",
-              "tag":["14"]
+               "id":"ANTH114A",
+               "content":"ANTH114A\nAnthropology 114A",
+               "tag":[
+                  "14"
+               ]
             },
             "PSYCH142A":{
-              "id":"PSYCH142A",
-              "content":	"PSYCH142A\nPsychology 142A",
-              "tag":["13"]
+               "id":"PSYCH142A",
+               "content":"PSYCH142A\nPsychology 142A",
+               "tag":[
+                  "13"
+               ]
             },
             "PSYCH150":{
-              "id":"PSYCH150",
-              "content":	"PSYCH150\nPsychology 150",
-              "tag":["13"]
+               "id":"PSYCH150",
+               "content":"PSYCH150\nPsychology 150",
+               "tag":[
+                  "13"
+               ]
             },
             "PSYCH182":{
-              "id":"PSYCH182",
-              "content":	"PSYCH182\nPsychology 182",
-              "tag":["13"]
+               "id":"PSYCH182",
+               "content":"PSYCH182\nPsychology 182",
+               "tag":[
+                  "13"
+               ]
             },
             "SOCIO112":{
-              "id":"SOCIO112",
-              "content":	"SOCIO112\nSociology 112",
-              "tag":["13"]
+               "id":"SOCIO112",
+               "content":"SOCIO112\nSociology 112",
+               "tag":[
+                  "13"
+               ]
             },
             "SOCIO114":{
-              "id":"SOCIO114",
-              "content":	"SOCIO114\nSociology 114",
-              "tag":["13"]
+               "id":"SOCIO114",
+               "content":"SOCIO114\nSociology 114",
+               "tag":[
+                  "13"
+               ]
             },
             "SOCIO116":{
-              "id":"SOCIO116",
-              "content":	"SOCIO116\nSociology 116",
-              "tag":["13"]
+               "id":"SOCIO116",
+               "content":"SOCIO116\nSociology 116",
+               "tag":[
+                  "13"
+               ]
             },
             "SOCIO118":{
-              "id":"SOCIO118",
-              "content":	"SOCIO118\nSociology 118",
-              "tag":["13"]
+               "id":"SOCIO118",
+               "content":"SOCIO118\nSociology 118",
+               "tag":[
+                  "13"
+               ]
             },
             "SOCIO124":{
-              "id":"SOCIO124",
-              "content":	"SOCIO124\nSociology 124",
-              "tag":["13"]
+               "id":"SOCIO124",
+               "content":"SOCIO124\nSociology 124",
+               "tag":[
+                  "13"
+               ]
             },
             "SOCIO126":{
-              "id":"SOCIO126",
-              "content":	"SOCIO126\nSociology 126",
-              "tag":["13"]
+               "id":"SOCIO126",
+               "content":"SOCIO126\nSociology 126",
+               "tag":[
+                  "13"
+               ]
             },
             "SOCIO131":{
-              "id":"SOCIO131",
-              "content":	"SOCIO131\nSociology 131",
-              "tag":["13"]
+               "id":"SOCIO131",
+               "content":"SOCIO131\nSociology 131",
+               "tag":[
+                  "13"
+               ]
             },
             "SOCIO137":{
-              "id":"SOCIO137",
-              "content":	"SOCIO137\nSociology 137",
-              "tag":["13"]
-            },
+               "id":"SOCIO137",
+               "content":"SOCIO137\nSociology 137",
+               "tag":[
+                  "13"
+               ]
+            }
          },
          "4":"<strong>4Introductory Courses</strong><br />Statistics: 3 and 11L<br />Psychology Methods: 14A and 14B<br />Biology: 3A, and 3C or 3D<br />Social Sciences: 2A and 2B<br /><strong>Laboratory Requirement</strong><br />Psychology Methods: 110A, 110B, 113, 120, or 123<br /><strong>Psychology Fundamentals - Choose two courses from the following list:</strong><br />Psychology: 111 or 115, 117, 196, 123<br />Social Sciences: 111, 122A<br />Psychology Methods: at most one of 110B, 113, 117, 120, 123<br /><strong>Research Methods - Choose five courses from the following list:</strong><br />Psychology: 111A, 117, 123, 130, 132 + 132A (must take BOTH courses for it to count), 138, 149, 149A, 163, 171, 173, 175, 177, 189, 190, 195<br />Life Sciences: 115, 120, 130<br />Physiological Science: 111, 112, 114<br />At least two courses taken to fulfill this requirement must be Psychology: courses<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Anthropology: 112 and/or at most one of 112A, 112P, or 114A<br />Psychology: 117, 123, 130, 142A, 149, 149A, 150, 163, 171, 173, 175, 177, 182, 195, 196 (can be taken multiple times, but only can be counted twice towards requirements)<br />Sociology: 112, 114, 116, 118, 124, 126, 131, 137",
          "3":"<strong>3Introductory Courses</strong><br />Statistics: 3 and 11L<br />Psychology Methods: 14A and 14B, at most one of 110A, 110B, 123<br />Biology: 3A, and 3C or 3D<br />Social Sciences: 2A and 2B<br /><strong>Psychology Fundamentals - Choose two courses from the following list:</strong><br />Psychology: 111 or 115, 117, 196, 123<br />Social Sciences: One of: 111, 122A<br />Psychology Methods: 110B, 113, 117, 120, 123<br /><strong>Research Methods - Choose five courses from the following list:</strong><br />Psychology: 111A, 117, 123, 130, 132 + 132A (must take BOTH courses for it to count), 138, 149, 149A, 163, 171, 173, 175, 177, 189, 190, 195<br />Life Sciences: 115, 120, 130<br />Physiological Science: 111, 112, 114<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Anthropology: 112 and/or at most one of 112A, 112P, or 114A<br />Psychology: 117, 123, 130, 142A, 149, 149A, 150, 163, 171, 173, 175, 177, 182, 195, 196 (can be taken multiple times, but only can be counted twice towards requirements)<br />Sociology: 112, 114, 116, 118, 124, 126, 131, 137",
@@ -656,300 +892,418 @@
       "Economics":{
          "courses":{
             "WRIT1":{
-              "id":"WRIT1",
-              "content": "WRIT1\nWriting 1",
-              "tag":["1"]
+               "id":"WRIT1",
+               "content":"WRIT1\nWriting 1",
+               "tag":[
+                  "1"
+               ]
             },
             "WRIT24L":{
-              "id":"WRIT24L",
-              "content":	"WRIT24L\nWriting 24L",
-              "tag":["1"]
+               "id":"WRIT24L",
+               "content":"WRIT24L\nWriting 24L",
+               "tag":[
+                  "1"
+               ]
             },
             "MATH15A":{
-              "id":"MATH15A",
-              "content":	"MATH15A\nMathematics 15A",
-              "tag":["1"]
+               "id":"MATH15A",
+               "content":"MATH15A\nMathematics 15A",
+               "tag":[
+                  "1"
+               ]
             },
             "MATH15B":{
-              "id":"MATH15B",
-              "content":	"MATH15B\nMathematics 15B",
-              "tag":["1"]
+               "id":"MATH15B",
+               "content":"MATH15B\nMathematics 15B",
+               "tag":[
+                  "1"
+               ]
             },
             "COMM3A":{
-              "id":"COMM3A",
-              "content":	"COMM3A\nCommunication 3A",
-              "tag":["1"]
+               "id":"COMM3A",
+               "content":"COMM3A\nCommunication 3A",
+               "tag":[
+                  "1"
+               ]
             },
             "COMM3C":{
-              "id":"COMM3C",
-              "content":	"COMM3C\nCommunication 3C",
-              "tag":["2"]
+               "id":"COMM3C",
+               "content":"COMM3C\nCommunication 3C",
+               "tag":[
+                  "2"
+               ]
             },
             "COMM3d":{
-              "id":"COMM3d",
-              "content":	"COMM3d\nCommunication 3D",
-              "tag":["2"]
+               "id":"COMM3d",
+               "content":"COMM3d\nCommunication 3D",
+               "tag":[
+                  "2"
+               ]
             },
             "STATS5A":{
-              "id":"STATS5A",
-              "content":	"STATS5A\nStatistics 5A",
-              "tag":["1"]
+               "id":"STATS5A",
+               "content":"STATS5A\nStatistics 5A",
+               "tag":[
+                  "1"
+               ]
             },
             "STATS5B":{
-              "id":"STATS5B",
-              "content":	"STATS5B\nStatistics 5B",
-              "tag":["1"]
+               "id":"STATS5B",
+               "content":"STATS5B\nStatistics 5B",
+               "tag":[
+                  "1"
+               ]
             },
             "MATH113A":{
-              "id":"MATH113A",
-              "content":	"MATH113A\nMathematics 113A",
-              "tag":["3"]
+               "id":"MATH113A",
+               "content":"MATH113A\nMathematics 113A",
+               "tag":[
+                  "3"
+               ]
             },
             "MATH113B":{
-              "id":"MATH113B",
-              "content":	"MATH113B\nMathematics 113B",
-              "tag":["18"]
+               "id":"MATH113B",
+               "content":"MATH113B\nMathematics 113B",
+               "tag":[
+                  "18"
+               ]
             },
             "MATH116":{
-              "id":"MATH116",
-              "content":	"MATH116\nMathematics 116",
-              "tag":["4"]
+               "id":"MATH116",
+               "content":"MATH116\nMathematics 116",
+               "tag":[
+                  "4"
+               ]
             },
             "MATH122":{
-              "id":"MATH122",
-              "content":	"MATH122\nMathematics 122",
-              "tag":["4"]
+               "id":"MATH122",
+               "content":"MATH122\nMathematics 122",
+               "tag":[
+                  "4"
+               ]
             },
             "MATH129":{
-              "id":"MATH129",
-              "content":	"MATH129\nMathematics 129",
-              "tag":["18"]
+               "id":"MATH129",
+               "content":"MATH129\nMathematics 129",
+               "tag":[
+                  "18"
+               ]
             },
             "ECON113":{
-              "id":"ECON113",
-              "content":	"ECON113\nEconomics 113",
-              "tag":["5"]
+               "id":"ECON113",
+               "content":"ECON113\nEconomics 113",
+               "tag":[
+                  "5"
+               ]
             },
             "ECON115":{
-              "id":"ECON115",
-              "content":	"ECON115\nEconomics 115",
-              "tag":["5"]
+               "id":"ECON115",
+               "content":"ECON115\nEconomics 115",
+               "tag":[
+                  "5"
+               ]
             },
             "ECON128":{
-              "id":"ECON128",
-              "content":	"ECON128\nEconomics 128",
-              "tag":["8"]
+               "id":"ECON128",
+               "content":"ECON128\nEconomics 128",
+               "tag":[
+                  "8"
+               ]
             },
             "ECON196":{
-              "id":"ECON196",
-              "content":	"ECON196\nEconomics 196",
-              "tag":["15"]
+               "id":"ECON196",
+               "content":"ECON196\nEconomics 196",
+               "tag":[
+                  "15"
+               ]
             },
             "ECON129":{
-              "id":"ECON129",
-              "content":	"ECON129\nEconomics 129",
-              "tag":["8"]
+               "id":"ECON129",
+               "content":"ECON129\nEconomics 129",
+               "tag":[
+                  "8"
+               ]
             },
             "STATS116":{
-              "id":"STATS116",
-              "content":	"STATS116\nStatistics 116",
-              "tag":["6"]
+               "id":"STATS116",
+               "content":"STATS116\nStatistics 116",
+               "tag":[
+                  "6"
+               ]
             },
             "STATS122A":{
-              "id":"STATS122A",
-              "content":	"STATS122A\nStatistics 122A",
-              "tag":["6"]
+               "id":"STATS122A",
+               "content":"STATS122A\nStatistics 122A",
+               "tag":[
+                  "6"
+               ]
             },
             "MATH119":{
-              "id":"MATH119",
-              "content":	"MATH119\nMathematics 119",
-              "tag":["7"]
+               "id":"MATH119",
+               "content":"MATH119\nMathematics 119",
+               "tag":[
+                  "7"
+               ]
             },
             "ECON113A":{
-              "id":"ECON113A",
-              "content":	"ECON113A\nEconomics 113A",
-              "tag":["9"]
+               "id":"ECON113A",
+               "content":"ECON113A\nEconomics 113A",
+               "tag":[
+                  "9"
+               ]
             },
             "ECON129":{
-              "id":"ECON129",
-              "content":	"ECON129\nEconomics 129",
-              "tag":["10"]
+               "id":"ECON129",
+               "content":"ECON129\nEconomics 129",
+               "tag":[
+                  "10"
+               ]
             },
             "ECON131":{
-              "id":"ECON131",
-              "content":	"ECON131\nEconomics 131",
-              "tag":["10"]
+               "id":"ECON131",
+               "content":"ECON131\nEconomics 131",
+               "tag":[
+                  "10"
+               ]
             },
             "ECON134":{
-              "id":"ECON134",
-              "content":	"ECON134\nEconomics 134",
-              "tag":["11"]
+               "id":"ECON134",
+               "content":"ECON134\nEconomics 134",
+               "tag":[
+                  "11"
+               ]
             },
             "ECON134A":{
-              "id":"ECON134A",
-              "content":	"ECON134A\nEconomics 134A",
-              "tag":["11"]
+               "id":"ECON134A",
+               "content":"ECON134A\nEconomics 134A",
+               "tag":[
+                  "11"
+               ]
             },
             "ECON141":{
-              "id":"ECON141",
-              "content":	"ECON141\nEconomics 141",
-              "tag":["9"]
+               "id":"ECON141",
+               "content":"ECON141\nEconomics 141",
+               "tag":[
+                  "9"
+               ]
             },
             "ECON151":{
-              "id":"ECON151",
-              "content":	"ECON151\nEconomics 151",
-              "tag":["17"]
+               "id":"ECON151",
+               "content":"ECON151\nEconomics 151",
+               "tag":[
+                  "17"
+               ]
             },
             "ECON151A":{
-              "id":"ECON151A",
-              "content":	"ECON151A\nEconomics 151A",
-              "tag":["16"]
+               "id":"ECON151A",
+               "content":"ECON151A\nEconomics 151A",
+               "tag":[
+                  "16"
+               ]
             },
             "ECON155":{
-              "id":"ECON155",
-              "content":	"ECON155\nEconomics 155",
-              "tag":["10"]
+               "id":"ECON155",
+               "content":"ECON155\nEconomics 155",
+               "tag":[
+                  "10"
+               ]
             },
             "ECON159":{
-              "id":"ECON159",
-              "content":	"ECON159\nEconomics 159",
-              "tag":["10"]
+               "id":"ECON159",
+               "content":"ECON159\nEconomics 159",
+               "tag":[
+                  "10"
+               ]
             },
             "ECON163":{
-              "id":"ECON163",
-              "content":	"ECON163\nEconomics 163",
-              "tag":["17"]
+               "id":"ECON163",
+               "content":"ECON163\nEconomics 163",
+               "tag":[
+                  "17"
+               ]
             },
             "ECON172":{
-              "id":"ECON172",
-              "content":	"ECON172\nEconomics 172",
-              "tag":["17"]
+               "id":"ECON172",
+               "content":"ECON172\nEconomics 172",
+               "tag":[
+                  "17"
+               ]
             },
             "ECON175":{
-              "id":"ECON175",
-              "content":	"ECON175\nEconomics 175",
-              "tag":["10"]
+               "id":"ECON175",
+               "content":"ECON175\nEconomics 175",
+               "tag":[
+                  "10"
+               ]
             },
             "ECON178":{
-              "id":"ECON178",
-              "content":	"ECON178\nEconomics 178",
-              "tag":["9"]
+               "id":"ECON178",
+               "content":"ECON178\nEconomics 178",
+               "tag":[
+                  "9"
+               ]
             },
             "ECON179":{
-              "id":"ECON179",
-              "content":	"ECON179\nEconomics 179",
-              "tag":["9"]
+               "id":"ECON179",
+               "content":"ECON179\nEconomics 179",
+               "tag":[
+                  "9"
+               ]
             },
             "ECON190":{
-              "id":"ECON190",
-              "content":	"ECON190\nEconomics 190",
-              "tag":["17"]
+               "id":"ECON190",
+               "content":"ECON190\nEconomics 190",
+               "tag":[
+                  "17"
+               ]
             },
             "FIN116":{
-              "id":"FIN116",
-              "content":	"FIN116\nFinance 116",
-              "tag":["12"]
+               "id":"FIN116",
+               "content":"FIN116\nFinance 116",
+               "tag":[
+                  "12"
+               ]
             },
             "FIN123":{
-              "id":"FIN123",
-              "content":	"FIN123\nFinance 123",
-              "tag":["12"]
+               "id":"FIN123",
+               "content":"FIN123\nFinance 123",
+               "tag":[
+                  "12"
+               ]
             },
             "FIN128":{
-              "id":"FIN128",
-              "content":	"FIN128\nFinance 128",
-              "tag":["12"]
+               "id":"FIN128",
+               "content":"FIN128\nFinance 128",
+               "tag":[
+                  "12"
+               ]
             },
             "MGMT114":{
-              "id":"MGMT114",
-              "content":	"MGMT114\nManagement 114",
-              "tag":["12"]
+               "id":"MGMT114",
+               "content":"MGMT114\nManagement 114",
+               "tag":[
+                  "12"
+               ]
             },
             "MGMT117":{
-              "id":"MGMT117",
-              "content":	"MGMT117\nManagement 117",
-              "tag":["12"]
+               "id":"MGMT117",
+               "content":"MGMT117\nManagement 117",
+               "tag":[
+                  "12"
+               ]
             },
             "MGMT119":{
-              "id":"MGMT119",
-              "content":	"MGMT119\nManagement 119",
-              "tag":["12"]
+               "id":"MGMT119",
+               "content":"MGMT119\nManagement 119",
+               "tag":[
+                  "12"
+               ]
             },
             "PUBPOL115":{
-              "id":"PUBPOL115",
-              "content":	"PUBPOL115\nPublic Policy 115",
-              "tag":["13"]
+               "id":"PUBPOL115",
+               "content":"PUBPOL115\nPublic Policy 115",
+               "tag":[
+                  "13"
+               ]
             },
             "PUBPOL117A":{
-              "id":"PUBPOL117A",
-              "content":	"PUBPOL117A\nPublic Policy 117A",
-              "tag":["14"]
+               "id":"PUBPOL117A",
+               "content":"PUBPOL117A\nPublic Policy 117A",
+               "tag":[
+                  "14"
+               ]
             },
             "PUBPOL117P":{
-              "id":"PUBPOL117P",
-              "content":	"PUBPOL117P\nPublic Policy 117P",
-              "tag":["14"]
+               "id":"PUBPOL117P",
+               "content":"PUBPOL117P\nPublic Policy 117P",
+               "tag":[
+                  "14"
+               ]
             },
             "PUBPOL119A":{
-              "id":"PUBPOL119A",
-              "content":	"PUBPOL119A\nPublic Policy 119A",
-              "tag":["14"]
+               "id":"PUBPOL119A",
+               "content":"PUBPOL119A\nPublic Policy 119A",
+               "tag":[
+                  "14"
+               ]
             },
             "ECON143A":{
-              "id":"ECON143A",
-              "content":	"ECON143A\nEconomics 143A",
-              "tag":["13"]
+               "id":"ECON143A",
+               "content":"ECON143A\nEconomics 143A",
+               "tag":[
+                  "13"
+               ]
             },
             "ECON154":{
-              "id":"ECON154",
-              "content":	"ECON154\nEconomics 154",
-              "tag":["13"]
+               "id":"ECON154",
+               "content":"ECON154\nEconomics 154",
+               "tag":[
+                  "13"
+               ]
             },
             "ECON176":{
-              "id":"ECON176",
-              "content":	"ECON176\nEconomics 176",
-              "tag":["13"]
+               "id":"ECON176",
+               "content":"ECON176\nEconomics 176",
+               "tag":[
+                  "13"
+               ]
             },
             "ACCTG113":{
-              "id":"ACCTG113",
-              "content":	"ACCTG113\nAccounting 113",
-              "tag":["13"]
+               "id":"ACCTG113",
+               "content":"ACCTG113\nAccounting 113",
+               "tag":[
+                  "13"
+               ]
             },
             "ACCTG115":{
-              "id":"ACCTG115",
-              "content":	"ACCTG115\nAccounting 115",
-              "tag":["13"]
+               "id":"ACCTG115",
+               "content":"ACCTG115\nAccounting 115",
+               "tag":[
+                  "13"
+               ]
             },
             "ACCTG120":{
-              "id":"ACCTG120",
-              "content":	"ACCTG120\nAccounting 120",
-              "tag":["13"]
+               "id":"ACCTG120",
+               "content":"ACCTG120\nAccounting 120",
+               "tag":[
+                  "13"
+               ]
             },
             "ACCTG122":{
-              "id":"ACCTG122",
-              "content":	"ACCTG122\nAccounting 122",
-              "tag":["13"]
+               "id":"ACCTG122",
+               "content":"ACCTG122\nAccounting 122",
+               "tag":[
+                  "13"
+               ]
             },
             "ACCTG125":{
-              "id":"ACCTG125",
-              "content":	"ACCTG125\nAccounting 125",
-              "tag":["13"]
+               "id":"ACCTG125",
+               "content":"ACCTG125\nAccounting 125",
+               "tag":[
+                  "13"
+               ]
             },
             "ACCTG130":{
-              "id":"ACCTG130",
-              "content":	"ACCTG130\nAccounting 130",
-              "tag":["13"]
+               "id":"ACCTG130",
+               "content":"ACCTG130\nAccounting 130",
+               "tag":[
+                  "13"
+               ]
             },
             "ACCTG134":{
-              "id":"ACCTG134",
-              "content":	"ACCTG134\nAccounting 134",
-              "tag":["13"]
+               "id":"ACCTG134",
+               "content":"ACCTG134\nAccounting 134",
+               "tag":[
+                  "13"
+               ]
             },
             "ACCTG140":{
-              "id":"ACCTG140",
-              "content":	"ACCTG140\nAccounting 140",
-              "tag":["13"]
-            },
+               "id":"ACCTG140",
+               "content":"ACCTG140\nAccounting 140",
+               "tag":[
+                  "13"
+               ]
+            }
          },
          "4":"<strong>Preparatory Requirements</strong><br />Writing: 1 and 24L<br />Mathematics: 15A and 15B<br />Communication: 3A, and 3C or 3D<br />Statistics: 5A and 5B<br /><strong>Mathematics Requirement</strong><br />Mathematics: 113A, 113B, 116, 122, or 129<br /><strong>Methods Fundamentals - Choose two courses from the following list:</strong><br />Economics: 113 or 115, 128, 196, 129<br />Statistics: 116, 122A<br />Mathematics: at most one of 113B, 116, 119, 122, 129<br /><strong>Lower Division Requirements - Choose five courses from the following list:</strong><br />Economics: 113A, 128, 129, 131, 134 + 134A (must take BOTH courses for it to count), 141, 151, 151A, 155, 159, 163, 172, 175, 178, 179, 190<br />Finance: 116, 123, 128<br />Management: 114, 117, 119<br />At least two courses taken to fulfill this requirement must be Economics: courses<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Public Policy: 115 and/or at most one of 117A, 117P, or 119A<br />Economics: 128, 129, 131, 143A, 151, 151A, 154, 155, 159, 163, 172, 175, 176, 190, 196 (can be taken multiple times, but only can be counted twice towards requirements)<br />Accounting: 113, 115, 120, 122, 125, 130, 134, 140",
          "3":"<strong>Preparatory Requirements</strong><br />Writing: 1 and 24L<br />Mathematics: 15A and 15B, at most one of 113A, 113B, 129<br />Communication: 3A, and 3C or 3D<br />Statistics: 5A and 5B<br /><strong>Methods Fundamentals - Choose two courses from the following list:</strong><br />Economics: 113 or 115, 128, 196, 129<br />Statistics: One of: 116, 122A<br />Mathematics: 113B, 116, 119, 122, 129<br /><strong>Lower Division Requirements - Choose five courses from the following list:</strong><br />Economics: 113A, 128, 129, 131, 134 + 134A (must take BOTH courses for it to count), 141, 151, 151A, 155, 159, 163, 172, 175, 178, 179, 190<br />Finance: 116, 123, 128<br />Management: 114, 117, 119<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Public Policy: 115 and/or at most one of 117A, 117P, or 119A<br />Economics: 128, 129, 131, 143A, 151, 151A, 154, 155, 159, 163, 172, 175, 176, 190, 196 (can be taken multiple times, but only can be counted twice towards requirements)<br />Accounting: 113, 115, 120, 122, 125, 130, 134, 140",
@@ -959,305 +1313,423 @@
       "English":{
          "courses":{
             "HIST1":{
-              "id":"HIST1",
-              "content": "HIST1\nHistory 1",
-              "tag":["1"]
+               "id":"HIST1",
+               "content":"HIST1\nHistory 1",
+               "tag":[
+                  "1"
+               ]
             },
             "HIST14L":{
-              "id":"HIST14L",
-              "content":	"HIST14L\nHistory 14L",
-              "tag":["1"]
+               "id":"HIST14L",
+               "content":"HIST14L\nHistory 14L",
+               "tag":[
+                  "1"
+               ]
             },
             "COMM15A":{
-              "id":"COMM15A",
-              "content":	"COMM15A\nCommunication 15A",
-              "tag":["1"]
+               "id":"COMM15A",
+               "content":"COMM15A\nCommunication 15A",
+               "tag":[
+                  "1"
+               ]
             },
             "COMM15B":{
-              "id":"COMM15B",
-              "content":	"COMM15B\nCommunication 15B",
-              "tag":["1"]
+               "id":"COMM15B",
+               "content":"COMM15B\nCommunication 15B",
+               "tag":[
+                  "1"
+               ]
             },
             "CWRIT3A":{
-              "id":"CWRIT3A",
-              "content":	"CWRIT3A\nCreative Writing 3A",
-              "tag":["1"]
+               "id":"CWRIT3A",
+               "content":"CWRIT3A\nCreative Writing 3A",
+               "tag":[
+                  "1"
+               ]
             },
             "CWRIT3C":{
-              "id":"CWRIT3C",
-              "content":	"CWRIT3C\nCreative Writing 3C",
-              "tag":["2"]
+               "id":"CWRIT3C",
+               "content":"CWRIT3C\nCreative Writing 3C",
+               "tag":[
+                  "2"
+               ]
             },
             "CWRIT3D":{
-              "id":"CWRIT3D",
-              "content":	"CWRIT3D\nCreative Writing 3D",
-              "tag":["2"]
+               "id":"CWRIT3D",
+               "content":"CWRIT3D\nCreative Writing 3D",
+               "tag":[
+                  "2"
+               ]
             },
             "FORLAN1A":{
-              "id":"FORLAN1A",
-              "content":	"FORLAN1A\n Foreign Language 1A",
-              "tag":["1"]
+               "id":"FORLAN1A",
+               "content":"FORLAN1A\n Foreign Language 1A",
+               "tag":[
+                  "1"
+               ]
             },
             "FORLAN1B":{
-              "id":"FORLAN1B",
-              "content":	"FORLAN1B\n Foreign Language 1B",
-              "tag":["1"]
+               "id":"FORLAN1B",
+               "content":"FORLAN1B\n Foreign Language 1B",
+               "tag":[
+                  "1"
+               ]
             },
             "COMM112A":{
-              "id":"COMM112A",
-              "content":	"COMM112A\nCommunication 112A",
-              "tag":["3"]
+               "id":"COMM112A",
+               "content":"COMM112A\nCommunication 112A",
+               "tag":[
+                  "3"
+               ]
             },
             "COMM112B":{
-              "id":"COMM112B",
-              "content":	"COMM112B\nCommunication 112B",
-              "tag":["18"]
+               "id":"COMM112B",
+               "content":"COMM112B\nCommunication 112B",
+               "tag":[
+                  "18"
+               ]
             },
             "COMM116":{
-              "id":"COMM116",
-              "content":	"COMM116\nCommunication 116",
-              "tag":["4"]
+               "id":"COMM116",
+               "content":"COMM116\nCommunication 116",
+               "tag":[
+                  "4"
+               ]
             },
             "COMM127":{
-              "id":"COMM127",
-              "content":	"COMM127\nCommunication 127",
-              "tag":["4"]
+               "id":"COMM127",
+               "content":"COMM127\nCommunication 127",
+               "tag":[
+                  "4"
+               ]
             },
             "COMM132":{
-              "id":"COMM132",
-              "content":	"COMM132\nCommunication 132",
-              "tag":["18"]
+               "id":"COMM132",
+               "content":"COMM132\nCommunication 132",
+               "tag":[
+                  "18"
+               ]
             },
             "ENGL119":{
-              "id":"ENGL119",
-              "content":	"ENGL119\nEnglish 119",
-              "tag":["5"]
+               "id":"ENGL119",
+               "content":"ENGL119\nEnglish 119",
+               "tag":[
+                  "5"
+               ]
             },
             "ENGL122":{
-              "id":"ENGL122",
-              "content":	"ENGL122\nEnglish 122",
-              "tag":["5"]
+               "id":"ENGL122",
+               "content":"ENGL122\nEnglish 122",
+               "tag":[
+                  "5"
+               ]
             },
             "ENGL125":{
-              "id":"ENGL125",
-              "content":	"ENGL125\nEnglish 125",
-              "tag":["8"]
+               "id":"ENGL125",
+               "content":"ENGL125\nEnglish 125",
+               "tag":[
+                  "8"
+               ]
             },
             "ENGL194":{
-              "id":"ENGL194",
-              "content":	"ENGL194\nEnglish 194",
-              "tag":["15"]
+               "id":"ENGL194",
+               "content":"ENGL194\nEnglish 194",
+               "tag":[
+                  "15"
+               ]
             },
             "ENGL134":{
-              "id":"ENGL134",
-              "content":	"ENGL134\nEnglish 134",
-              "tag":["8"]
+               "id":"ENGL134",
+               "content":"ENGL134\nEnglish 134",
+               "tag":[
+                  "8"
+               ]
             },
             "FORLAN118":{
-              "id":"FORLAN118",
-              "content":	"FORLAN118\nForeign Language 118",
-              "tag":["6"]
+               "id":"FORLAN118",
+               "content":"FORLAN118\nForeign Language 118",
+               "tag":[
+                  "6"
+               ]
             },
             "FORLAN120A":{
-              "id":"FORLAN120A",
-              "content":	"FORLAN120A\nForeign Language 120A",
-              "tag":["6"]
+               "id":"FORLAN120A",
+               "content":"FORLAN120A\nForeign Language 120A",
+               "tag":[
+                  "6"
+               ]
             },
             "COMM122":{
-              "id":"COMM122",
-              "content":	"COMM122\nCommunication 122",
-              "tag":["7"]
+               "id":"COMM122",
+               "content":"COMM122\nCommunication 122",
+               "tag":[
+                  "7"
+               ]
             },
             "ENGL119A":{
-              "id":"ENGL119A",
-              "content":	"ENGL119A\nEnglish 119A",
-              "tag":["9"]
+               "id":"ENGL119A",
+               "content":"ENGL119A\nEnglish 119A",
+               "tag":[
+                  "9"
+               ]
             },
             "ENGL134":{
-              "id":"ENGL134",
-              "content":	"ENGL134\nEnglish 134",
-              "tag":["10"]
+               "id":"ENGL134",
+               "content":"ENGL134\nEnglish 134",
+               "tag":[
+                  "10"
+               ]
             },
             "ENGL135":{
-              "id":"ENGL135",
-              "content":	"ENGL135\nEnglish 135",
-              "tag":["10"]
+               "id":"ENGL135",
+               "content":"ENGL135\nEnglish 135",
+               "tag":[
+                  "10"
+               ]
             },
             "ENGL142":{
-              "id":"ENGL142",
-              "content":	"ENGL142\nEnglish 142",
-              "tag":["11"]
+               "id":"ENGL142",
+               "content":"ENGL142\nEnglish 142",
+               "tag":[
+                  "11"
+               ]
             },
             "ENGL142A":{
-              "id":"ENGL142A",
-              "content":	"ENGL142A\nEnglish 142A",
-              "tag":["11"]
+               "id":"ENGL142A",
+               "content":"ENGL142A\nEnglish 142A",
+               "tag":[
+                  "11"
+               ]
             },
             "ENGL144":{
-              "id":"ENGL144",
-              "content":	"ENGL144\nEnglish 144",
-              "tag":["9"]
+               "id":"ENGL144",
+               "content":"ENGL144\nEnglish 144",
+               "tag":[
+                  "9"
+               ]
             },
             "ENGL153":{
-              "id":"ENGL153",
-              "content":	"ENGL153\nEnglish 153",
-              "tag":["17"]
+               "id":"ENGL153",
+               "content":"ENGL153\nEnglish 153",
+               "tag":[
+                  "17"
+               ]
             },
             "ENGL153A":{
-              "id":"ENGL153A",
-              "content":	"ENGL153A\nEnglish 153A",
-              "tag":["16"]
+               "id":"ENGL153A",
+               "content":"ENGL153A\nEnglish 153A",
+               "tag":[
+                  "16"
+               ]
             },
             "ENGL156":{
-              "id":"ENGL156",
-              "content":	"ENGL156\nEnglish 156",
-              "tag":["10"]
+               "id":"ENGL156",
+               "content":"ENGL156\nEnglish 156",
+               "tag":[
+                  "10"
+               ]
             },
             "ENGL158":{
-              "id":"ENGL158",
-              "content":	"ENGL158\nEnglish 158",
-              "tag":["10"]
+               "id":"ENGL158",
+               "content":"ENGL158\nEnglish 158",
+               "tag":[
+                  "10"
+               ]
             },
             "ENGL166":{
-              "id":"ENGL166",
-              "content":	"ENGL166\nEnglish 166",
-              "tag":["17"]
+               "id":"ENGL166",
+               "content":"ENGL166\nEnglish 166",
+               "tag":[
+                  "17"
+               ]
             },
             "ENGL171":{
-              "id":"ENGL171",
-              "content":	"ENGL171\nEnglish 171",
-              "tag":["17"]
+               "id":"ENGL171",
+               "content":"ENGL171\nEnglish 171",
+               "tag":[
+                  "17"
+               ]
             },
             "ENGL172":{
-              "id":"ENGL172",
-              "content":	"ENGL172\nEnglish 172",
-              "tag":["10"]
+               "id":"ENGL172",
+               "content":"ENGL172\nEnglish 172",
+               "tag":[
+                  "10"
+               ]
             },
             "ENGL183":{
-              "id":"ENGL183",
-              "content":	"ENGL183\nEnglish 183",
-              "tag":["9"]
+               "id":"ENGL183",
+               "content":"ENGL183\nEnglish 183",
+               "tag":[
+                  "9"
+               ]
             },
             "ENGL185":{
-              "id":"ENGL185",
-              "content":	"ENGL185\nEnglish 185",
-              "tag":["9"]
+               "id":"ENGL185",
+               "content":"ENGL185\nEnglish 185",
+               "tag":[
+                  "9"
+               ]
             },
             "ENGL190":{
-              "id":"ENGL190",
-              "content":	"ENGL190\nEnglish 190",
-              "tag":["17"]
+               "id":"ENGL190",
+               "content":"ENGL190\nEnglish 190",
+               "tag":[
+                  "17"
+               ]
             },
             "ACS113":{
-              "id":"ACS113",
-              "content":	"ACS113\nArea/Cultural Studies 113",
-              "tag":["12"]
+               "id":"ACS113",
+               "content":"ACS113\nArea/Cultural Studies 113",
+               "tag":[
+                  "12"
+               ]
             },
             "ACS120":{
-              "id":"ACS120",
-              "content":	"ACS120\nArea/Cultural Studies 120",
-              "tag":["12"]
+               "id":"ACS120",
+               "content":"ACS120\nArea/Cultural Studies 120",
+               "tag":[
+                  "12"
+               ]
             },
             "ACS122":{
-              "id":"ACS122",
-              "content":	"ACS122\nArea/Cultural Studies 122",
-              "tag":["12"]
+               "id":"ACS122",
+               "content":"ACS122\nArea/Cultural Studies 122",
+               "tag":[
+                  "12"
+               ]
             },
             "CLSCS112":{
-              "id":"CLSCS112",
-              "content":	"CLSCS112\nClassics 112",
-              "tag":["12"]
+               "id":"CLSCS112",
+               "content":"CLSCS112\nClassics 112",
+               "tag":[
+                  "12"
+               ]
             },
             "CLSCS114":{
-              "id":"CLSCS114",
-              "content":	"CLSCS114\nClassics 114",
-              "tag":["12"]
+               "id":"CLSCS114",
+               "content":"CLSCS114\nClassics 114",
+               "tag":[
+                  "12"
+               ]
             },
             "CLSCS118":{
-              "id":"CLSCS118",
-              "content":	"CLSCS118\nClassics 118",
-              "tag":["12"]
+               "id":"CLSCS118",
+               "content":"CLSCS118\nClassics 118",
+               "tag":[
+                  "12"
+               ]
             },
             "GSS116":{
-              "id":"GSS116",
-              "content":	"GSS116\nGender & Sexuality Studies 116",
-              "tag":["13"]
+               "id":"GSS116",
+               "content":"GSS116\nGender & Sexuality Studies 116",
+               "tag":[
+                  "13"
+               ]
             },
             "GSS114A":{
-              "id":"GSS114A",
-              "content":	"GSS114A\nGender & Sexuality Studies 114A",
-              "tag":["14"]
+               "id":"GSS114A",
+               "content":"GSS114A\nGender & Sexuality Studies 114A",
+               "tag":[
+                  "14"
+               ]
             },
             "GSS114P":{
-              "id":"GSS114P",
-              "content":	"GSS114P\nGender & Sexuality Studies 114P",
-              "tag":["14"]
+               "id":"GSS114P",
+               "content":"GSS114P\nGender & Sexuality Studies 114P",
+               "tag":[
+                  "14"
+               ]
             },
             "GSS118A":{
-              "id":"GSS118A",
-              "content":	"GSS118A\nGender & Sexuality Studies 118A",
-              "tag":["14"]
+               "id":"GSS118A",
+               "content":"GSS118A\nGender & Sexuality Studies 118A",
+               "tag":[
+                  "14"
+               ]
             },
             "ENGL152A":{
-              "id":"ENGL152A",
-              "content":	"ENGL152A\nEnglish 152A",
-              "tag":["13"]
+               "id":"ENGL152A",
+               "content":"ENGL152A\nEnglish 152A",
+               "tag":[
+                  "13"
+               ]
             },
             "ENGL155":{
-              "id":"ENGL155",
-              "content":	"ENGL155\nEnglish 155",
-              "tag":["13"]
+               "id":"ENGL155",
+               "content":"ENGL155\nEnglish 155",
+               "tag":[
+                  "13"
+               ]
             },
             "ENGL179":{
-              "id":"ENGL179",
-              "content":	"ENGL179\nEnglish 179",
-              "tag":["13"]
+               "id":"ENGL179",
+               "content":"ENGL179\nEnglish 179",
+               "tag":[
+                  "13"
+               ]
             },
             "FLIT118":{
-              "id":"FLIT118",
-              "content":	"FLIT118\nForeign Literature 118",
-              "tag":["13"]
+               "id":"FLIT118",
+               "content":"FLIT118\nForeign Literature 118",
+               "tag":[
+                  "13"
+               ]
             },
             "FLIT121":{
-              "id":"FLIT121",
-              "content":	"FLIT121\nForeign Literature 121",
-              "tag":["13"]
+               "id":"FLIT121",
+               "content":"FLIT121\nForeign Literature 121",
+               "tag":[
+                  "13"
+               ]
             },
             "FLIT138":{
-              "id":"FLIT138",
-              "content":	"FLIT138\nForeign Literature 138",
-              "tag":["13"]
+               "id":"FLIT138",
+               "content":"FLIT138\nForeign Literature 138",
+               "tag":[
+                  "13"
+               ]
             },
             "FLIT139":{
-              "id":"FLIT139",
-              "content":	"FLIT139\nForeign Literature 139",
-              "tag":["13"]
+               "id":"FLIT139",
+               "content":"FLIT139\nForeign Literature 139",
+               "tag":[
+                  "13"
+               ]
             },
             "FLIT148":{
-              "id":"FLIT148",
-              "content":	"FLIT148\nForeign Literature 148",
-              "tag":["13"]
+               "id":"FLIT148",
+               "content":"FLIT148\nForeign Literature 148",
+               "tag":[
+                  "13"
+               ]
             },
             "FLIT149":{
-              "id":"FLIT149",
-              "content":	"FLIT149\nForeign Literature 149",
-              "tag":["13"]
+               "id":"FLIT149",
+               "content":"FLIT149\nForeign Literature 149",
+               "tag":[
+                  "13"
+               ]
             },
             "FLIT150":{
-              "id":"FLIT150",
-              "content":	"FLIT150\nForeign Literature 150",
-              "tag":["13"]
+               "id":"FLIT150",
+               "content":"FLIT150\nForeign Literature 150",
+               "tag":[
+                  "13"
+               ]
             },
             "FLIT152":{
-              "id":"FLIT152",
-              "content":	"FLIT152\nForeign Literature 152",
-              "tag":["13"]
-            },
+               "id":"FLIT152",
+               "content":"FLIT152\nForeign Literature 152",
+               "tag":[
+                  "13"
+               ]
+            }
          },
          "4":"<strong>4Preparatory Subject Matter</strong><br />History: 1 and 14L<br />Communication: 15A and 15B<br />Creative Writing: 3A, and 3C or 3D<br />Foreign Language: 1A and 1B<br /><strong>Writing Requirement</strong><br />Communication: 112A, 112B, 116, 127, or 132<br /><strong>Core Requirements - Choose two courses from the following list:</strong><br />English: 119 or 122, 125, 194, 134<br />Foreign Language: 118, 120A<br />Communication: at most one of 112B, 116, 122, 127, 132<br /><strong>Topical Courses - Choose five courses from the following list:</strong><br />English: 119A, 125, 134, 135, 142 + 142A (must take BOTH courses for it to count), 144, 153, 153A, 156, 158, 166, 171, 172, 183, 185, 190<br />Area / Cultural Studies: 113, 120, 122<br />Classics: 112, 114, 118<br />At least two courses taken to fulfill this requirement must be English: courses<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Gender & Sexuality Studies: 116 and/or at most one of 114A, 114P, or 118A<br />English: 125, 134, 135, 152A, 153, 153A, 155, 156, 158, 166, 171, 172, 179, 190, 194 (can be taken multiple times, but only can be counted twice towards requirements)<br />Foreign Literature: 118, 121, 138, 139, 148, 149, 150, 152",
          "3":"<strong>3Preparatory Subject Matter</strong><br />History: 1 and 14L<br />Communication: 15A and 15B, at most one of 112A, 112B, 132<br />Creative Writing: 3A, and 3C or 3D<br />Foreign Language: 1A and 1B<br /><strong>Core Requirements - Choose two courses from the following list:</strong><br />English: 119 or 122, 125, 194, 134<br />Foreign Language: One of: 118, 120A<br />Communication: 112B, 116, 122, 127, 132<br /><strong>Topical Courses - Choose five courses from the following list:</strong><br />English: 119A, 125, 134, 135, 142 + 142A (must take BOTH courses for it to count), 144, 153, 153A, 156, 158, 166, 171, 172, 183, 185, 190<br />Area / Cultural Studies: 113, 120, 122<br />Classics: 112, 114, 118<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Gender & Sexuality Studies: 116 and/or at most one of 114A, 114P, or 118A<br />English: 125, 134, 135, 152A, 153, 153A, 155, 156, 158, 166, 171, 172, 179, 190, 194 (can be taken multiple times, but only can be counted twice towards requirements)<br />Foreign Literature: 118, 121, 138, 139, 148, 149, 150, 152",
          "2":"<strong>2Preparatory Subject Matter</strong><br />History: 1 and 14L<br />Communication: 15A and 15B, at most one of 112A, 112B, 132<br />Creative Writing: 3A, and 3C or 3D<br />Foreign Language: 1A and 1B<br /><strong>Core Requirements - Choose two courses from the following list:</strong><br />English: 119 or 122, 125, 194, 134<br />Foreign Language: One of: 118, 120A<br />Communication: 112B, 116, 122, 127, 132<br /><strong>Topical Courses - Choose five courses from the following list:</strong><br />English: 119A, 142 + 142A (must take BOTH courses for it to count), 144, 153, 153A, 166, 171, 183, 185, 190<br />Area / Cultural Studies: 113, 120, 122<br />Classics: 112, 114, 118<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Gender & Sexuality Studies: 116 and/or at most one of 114A, 114P, or 118A<br />English: 125, 134, 135, 152A, 153A, 155, 156, 158, 172, 179, 194 (can be taken multiple times, but only can be counted twice towards requirements)<br />Foreign Literature: 118, 121, 138, 139, 148, 149, 150, 152",
          "1":"<strong>Preparatory Subject Matter</strong><br />History: 1 and 14L<br />Communication: 15A and 15B<br />Creative Writing: 3A, and 3C or 3D<br />Foreign Language: 1A and 1B<br /><strong>Core Requirements - Choose two courses from the following list:</strong><br />English: 119 or 122, 125, 194, 134<br />Foreign Language: One of: 118, 120A<br />Communication: 112B, 116, 122, 127, 132<br /><strong>Topical Courses - Choose five courses from the following list:</strong><br />English: 119A, 142, 142A, 144, 153, 153A, 166, 171, 183, 185, 190<br />Area / Cultural Studies: 113, 120, 122<br />Classics: 112, 114, 118<br /><strong>Upper Division Electives - Choose eight courses from the following list:</strong><br />Gender & Sexuality Studies: 116, 114A, 114P, 118A<br />English: 125, 134, 135, 152A, 153A, 155, 156, 158, 172, 179, 194<br />Foreign Literature: 118, 121, 138, 139, 148, 149, 150, 152"
-      },
+      }
    }
 }
