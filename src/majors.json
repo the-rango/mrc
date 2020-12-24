@@ -512,9 +512,9 @@
                   "2"
                ]
             },
-            "BIO3d":{
-               "id":"BIO3d",
-               "content":"BIO3d\nBiology 3D",
+            "BIO3D":{
+               "id":"BIO3D",
+               "content":"BIO3D\nBiology 3D",
                "tag":[
                   "2"
                ]
@@ -933,9 +933,9 @@
                   "2"
                ]
             },
-            "COMM3d":{
-               "id":"COMM3d",
-               "content":"COMM3d\nCommunication 3D",
+            "COMM3D":{
+               "id":"COMM3D",
+               "content":"COMM3D\nCommunication 3D",
                "tag":[
                   "2"
                ]

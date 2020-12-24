@@ -26,6 +26,7 @@ const CourseList = styled.div`
 
 export default class Pool extends React.Component{
   render(){
+    const clist = [...this.props.courses].sort((a,b)=>{return (a.id > b.id) ? 1 : -1;});
     return (
       <Container>
         <Typography variant='body1' style={{marginLeft: 5, textAlign: "center"}}>
@@ -39,7 +40,7 @@ export default class Pool extends React.Component{
               {...snapshot}
               isDraggingOver={snapshot.isDraggingOver}
             >
-              {this.props.courses.map((course, index) =><Course index={index} key={course.id} course={course}/>)}
+              {clist.map((course, index) =><Course index={index} key={course.id} course={course}/>)}
               {provided.placeholder}
             </CourseList>
           )}
