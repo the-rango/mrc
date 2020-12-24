@@ -343,9 +343,13 @@ class App extends Component {
     if (nfailed.length === 0){
       if (this.state.progress === 1){
         // successful, move onto the next major
-        const name = majors["depts"][Math.floor(Math.random() * majors["depts"].length)];
+        do { // different department
+          const name = majors["depts"][Math.floor(Math.random() * majors["depts"].length)];
+        } while (name === this.state.name);
         const dept = majors["requirements"][name];
-        const diff = majors["diffl"][Math.floor(Math.random() * majors["diffl"].length)];
+        do { // different difficulty
+          const diff = majors["diffl"][Math.floor(Math.random() * majors["diffl"].length)];
+        } while (diff === this.state.diff);
         const major = dept[diff];
         this.setState({
           checked: true,
