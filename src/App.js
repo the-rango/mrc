@@ -343,12 +343,14 @@ class App extends Component {
     if (nfailed.length === 0){
       if (this.state.progress === 1){
         // successful, move onto the next major
+        let name;
         do { // different department
-          const name = majors["depts"][Math.floor(Math.random() * majors["depts"].length)];
+          name = majors["depts"][Math.floor(Math.random() * majors["depts"].length)];
         } while (name === this.state.name);
         const dept = majors["requirements"][name];
+        let diff;
         do { // different difficulty
-          const diff = majors["diffl"][Math.floor(Math.random() * majors["diffl"].length)];
+          diff = majors["diffl"][Math.floor(Math.random() * majors["diffl"].length)];
         } while (diff === this.state.diff);
         const major = dept[diff];
         this.setState({
@@ -679,6 +681,10 @@ class App extends Component {
                     <strong>Requirements</strong>
                   </Typography>
                   <div style={{flex: "1 1 auto", marginLeft: 14, marginRight: 15}}>
+                    <Typography variant="body1">
+                      {this.state.name}
+                    </Typography>
+                    <br />
                     <Typography variant="body2" style={{whiteSpace: "pre-line"}}>
                       <div dangerouslySetInnerHTML = {{"__html": this.state.requirement}} />
                     </Typography>
