@@ -680,6 +680,7 @@ class App extends Component {
                   <Typography variant="body1" style={{marginBottom: 5, marginTop: 5, textAlign: "center"}}>
                     <strong>Requirements</strong>
                   </Typography>
+                  <br />
                   <div style={{flex: "1 1 auto", marginLeft: 14, marginRight: 15}}>
                     <Typography variant="body1">
                       {this.state.name}
