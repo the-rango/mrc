@@ -526,17 +526,6 @@ class App extends Component {
 
           <br />
 
-          <FormControl error={this.state.surveyed && this.state.candmajor===""} required fullWidth style={{marginBottom: 5, padding: 5, width: "99%"}}>
-            <FormLabel >Please enter your major(s)</FormLabel>
-            <TextField
-              error={this.state.surveyed && this.state.candmajor===""}
-              value={this.state.candmajor}
-              onChange={(event)=>this.setState({candmajor: event.target.value})}
-            />
-          </FormControl>
-
-          <br />
-
           <FormControl required style={{width: "39%", padding: 5}} fullWidth>
             <FormLabel >Best estimate of your current cumulative GPA</FormLabel>
             <br />
@@ -556,6 +545,18 @@ class App extends Component {
               label="Check here if you do not expect to graduate"
             />
           </FormControl>
+
+          <br />
+
+          <FormControl error={this.state.surveyed && this.state.candmajor===""} required fullWidth style={{marginBottom: 5, padding: 5, width: "99%"}}>
+            <FormLabel >Please enter your major(s)</FormLabel>
+            <TextField
+              error={this.state.surveyed && this.state.candmajor===""}
+              value={this.state.candmajor}
+              onChange={(event)=>this.setState({candmajor: event.target.value})}
+            />
+          </FormControl>
+
           </DialogContent>
           <DialogActions>
             {/*
