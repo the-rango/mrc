@@ -26,7 +26,26 @@ const CourseList = styled.div`
 
 export default class Pool extends React.Component{
   render(){
-    const clist = [...this.props.courses].sort((a,b)=>{return (a.id > b.id) ? 1 : -1;});
+    const clist = [...this.props.courses].sort((a,b)=>{
+      const r = /\d+/;
+      let anum = a.id.match(r);
+      let bnum = b.id.match(r);
+      const adept = a.id.substr(0, a.id.indexOf(anum));
+      const bdept = b.id.substr(0, b.id.indexOf(bnum));
+      anum = parseInt(anum);
+      bnum = parseInt(bnum);
+      if (adept > bdept){
+        return 1;
+      } else if (adept < bdept){
+        return -1;
+      } else if (anum > bnum){
+        return 1;
+      } else if (anum < bnum){
+        return -1;
+      } else {
+        return (a.id.slice(-1) > b.id.slice(-1)) ? 1 : -1;
+      }
+    });
     return (
       <Container>
         <Typography variant='body1' style={{marginLeft: 5, textAlign: "center"}}>
