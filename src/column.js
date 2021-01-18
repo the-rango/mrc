@@ -7,6 +7,7 @@ const Container = styled.div`
   margin: 5px;
   border: 1px solid lightgrey;
   width: 100%;
+  height: 95%;
   background-color: #ededed;
 `;
 const CourseList = styled.div`

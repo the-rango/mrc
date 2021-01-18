@@ -22,6 +22,10 @@ import {
   TextField,
   Checkbox,
   Divider,
+  InputLabel,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
 } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
 import {
@@ -97,9 +101,11 @@ class App extends Component {
       }
     }
 
-    const name = majors["depts"][Math.floor(Math.random() * majors["depts"].length)];
+    // const name = majors["depts"][Math.floor(Math.random() * majors["depts"].length)];
+    const name = "Economics"
     const dept = majors["requirements"][name];
-    const diff = majors["diffl"][Math.floor(Math.random() * majors["diffl"].length)];
+    // const diff = majors["diffl"][Math.floor(Math.random() * majors["diffl"].length)];
+    const diff = "1";
     const major = dept[diff];
 
     this.state = {
@@ -128,6 +134,20 @@ class App extends Component {
       surveyed: false,
       uid: null,
       firsttime: true,
+
+      pqed: false,
+      pq1: "",
+      pq21: false,
+      pq21f: 0,
+      pq22: false,
+      pq22f: 0,
+      pq23: false,
+      pq23f: 0,
+      pq24: false,
+      pq24f: 0,
+      pq25: false,
+      pq25f: 0,
+      pq3: "",
     };
   }
 
@@ -160,14 +180,17 @@ class App extends Component {
       }
     }
     unique_count.forEach((cid) => {
+      console.log(cid);
       for (tag of this.state.courses[cid]["tag"]){
         SUMTAG[tag] += 1;
       }
     });
     var nfailed = [];
     this.state.boolreq.forEach((linereq, i) => {
-      if(!eval(linereq))
+      if(!eval(linereq)){
         nfailed.push(i);
+        console.log(linereq);
+      }
     });
     console.log(SUMTAG)
     return nfailed;
@@ -382,6 +405,10 @@ class App extends Component {
     }
   }
 
+  handleCheck = (event) => {
+    this.setState({[event.target.name]: event.target.checked });
+  };
+
   render() {
     return (
       <Fragment>
@@ -443,7 +470,162 @@ class App extends Component {
         </Snackbar>
 
         <Dialog open={this.state.progress === 3} maxWidth="lg">
-          <DialogTitle>Thank you! You have completed the survey!</DialogTitle>
+          <DialogTitle>You're almost done! Please tell us about your experience</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              {(this.state.done) ?
+                "Thank you! You have completed the study!"
+               :
+                "Think back to your experience and please answer as accurately and completely as you can."
+              }
+            </DialogContentText>
+            <Divider />
+            <br />
+            <FormControl error={this.state.pqed && this.state.pq1===""} required fullWidth style={{marginBottom: 5, padding: 5, width: "99%"}}>
+              <FormLabel >1. As you were figuring out which classes would complete the major course requirements, what aspects of the requirements did you find most difficult?</FormLabel>
+              <TextField
+                error={this.state.pqed && this.state.pq1===""}
+                value={this.state.pq1}
+                onChange={(event)=>this.setState({pq1: event.target.value})}
+                style={{marginTop: 5}}
+              />
+            </FormControl>
+
+            <FormControl required fullWidth style={{marginBottom: 5, padding: 5, width: "99%"}}>
+              <FormLabel >2. As you were selecting classes to fulfill the major requirements, which of the following mistakes did you make?</FormLabel>
+              <br />
+              <Accordion expanded={this.state.pq21} style={{margin: 0, padding: 0}}>
+                <AccordionSummary elevation={0} id="pq21">
+                  <FormControlLabel
+                    control={<Checkbox checked={this.state.pq21} onChange={this.handleCheck} name="pq21"/>}
+                    label={<Typography color="textSecondary">Trying to take two classes that couldn’t be taken together (e.g., Creative Writing 3C and 3D in the following example: <em>“Creative Writing 3A, and <strong>3C or 3D”</strong></em>)</Typography>}
+                  />
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography color="textSecondary" style={{padding: 10}}>
+                    How difficult was it to find the problem after you had made the mistake?
+                  </Typography>
+                  <FormControl variant="outlined" style={{marginLeft: 10, minWidth: 150}}>
+                    <InputLabel>Difficulty</InputLabel>
+                    <Select id="pq21f" autoWidth value={this.state.pq21f} onChange={(event)=>{this.setState({pq21f: event.target.value})}}>
+                      <MenuItem value={1}>Very Easy</MenuItem>
+                      <MenuItem value={2}>Somewhat Easy</MenuItem>
+                      <MenuItem value={3}>Somewhat Difficult</MenuItem>
+                      <MenuItem value={4}>Very Difficult</MenuItem>
+                    </Select>
+                  </FormControl>
+                </AccordionDetails>
+              </Accordion>
+
+              <Accordion expanded={this.state.pq22} style={{margin: 0, padding: 0}}>
+                <AccordionSummary elevation={0} id="pq22">
+                  <FormControlLabel
+                    control={<Checkbox checked={this.state.pq22} onChange={this.handleCheck} name="pq22"/>}
+                    label={<Typography color="textSecondary">Trying to take only one class of a pair of classes that had to be taken together (e.g., English 109 and 109A in the following example <em>“English 105, 107, <strong>109 + 109A (must take BOTH courses for it to count)</strong>, 111, 114”</em>)</Typography>}
+                  />
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography color="textSecondary" style={{padding: 10}}>
+                    How difficult was it to find the problem after you had made the mistake?
+                  </Typography>
+                  <FormControl variant="outlined" style={{marginLeft: 10, minWidth: 150}}>
+                    <InputLabel>Difficulty</InputLabel>
+                    <Select id="pq22f" autoWidth value={this.state.pq22f} onChange={(event)=>{this.setState({pq22f: event.target.value})}}>
+                      <MenuItem value={1}>Very Easy</MenuItem>
+                      <MenuItem value={2}>Somewhat Easy</MenuItem>
+                      <MenuItem value={3}>Somewhat Difficult</MenuItem>
+                      <MenuItem value={4}>Very Difficult</MenuItem>
+                    </Select>
+                  </FormControl>
+                </AccordionDetails>
+              </Accordion>
+
+              <Accordion expanded={this.state.pq23} style={{margin: 0, padding: 0}}>
+                <AccordionSummary elevation={0} id="pq23">
+                  <FormControlLabel
+                    control={<Checkbox checked={this.state.pq23} onChange={this.handleCheck} name="pq23"/>}
+                    label={<Typography color="textSecondary">Not realizing that I had already used a class to fulfill an earlier requirement</Typography>}
+                  />
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography color="textSecondary" style={{padding: 10}}>
+                    How difficult was it to find the problem after you had made the mistake?
+                  </Typography>
+                  <FormControl variant="outlined" style={{marginLeft: 10, minWidth: 150}}>
+                    <InputLabel>Difficulty</InputLabel>
+                    <Select id="pq23f" autoWidth value={this.state.pq23f} onChange={(event)=>{this.setState({pq23f: event.target.value})}}>
+                      <MenuItem value={1}>Very Easy</MenuItem>
+                      <MenuItem value={2}>Somewhat Easy</MenuItem>
+                      <MenuItem value={3}>Somewhat Difficult</MenuItem>
+                      <MenuItem value={4}>Very Difficult</MenuItem>
+                    </Select>
+                  </FormControl>
+                </AccordionDetails>
+              </Accordion>
+
+              <Accordion expanded={this.state.pq24} style={{margin: 0, padding: 0}}>
+                <AccordionSummary elevation={0} id="pq24">
+                  <FormControlLabel
+                    control={<Checkbox checked={this.state.pq24} onChange={this.handleCheck} name="pq24"/>}
+                    label={<Typography color="textSecondary">Not reading subrules under requirements (e.g., <em>“At least two courses taken to fulfill this requirement must be ecology & evolutionary biology courses”</em>)</Typography>}
+                  />
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography color="textSecondary" style={{padding: 10}}>
+                    How difficult was it to find the problem after you had made the mistake?
+                  </Typography>
+                  <FormControl variant="outlined" style={{marginLeft: 10, minWidth: 150}}>
+                    <InputLabel>Difficulty</InputLabel>
+                    <Select id="pq24f" autoWidth value={this.state.pq24f} onChange={(event)=>{this.setState({pq24f: event.target.value})}}>
+                      <MenuItem value={1}>Very Easy</MenuItem>
+                      <MenuItem value={2}>Somewhat Easy</MenuItem>
+                      <MenuItem value={3}>Somewhat Difficult</MenuItem>
+                      <MenuItem value={4}>Very Difficult</MenuItem>
+                    </Select>
+                  </FormControl>
+                </AccordionDetails>
+              </Accordion>
+
+              <Accordion expanded={this.state.pq25} style={{margin: 0, padding: 0}}>
+                <AccordionSummary elevation={0} id="pq25">
+                  <FormControlLabel
+                    control={<Checkbox checked={this.state.pq25} onChange={this.handleCheck} name="pq25"/>}
+                    label={<Typography color="textSecondary">Not taking enough classes for a given requirement</Typography>}
+                  />
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography color="textSecondary" style={{padding: 10}}>
+                    How difficult was it to find the problem after you had made the mistake?
+                  </Typography>
+                  <FormControl variant="outlined" style={{marginLeft: 10, minWidth: 150}}>
+                    <InputLabel>Difficulty</InputLabel>
+                    <Select id="pq25f" autoWidth value={this.state.pq25f} onChange={(event)=>{this.setState({pq25f: event.target.value})}}>
+                      <MenuItem value={1}>Very Easy</MenuItem>
+                      <MenuItem value={2}>Somewhat Easy</MenuItem>
+                      <MenuItem value={3}>Somewhat Difficult</MenuItem>
+                      <MenuItem value={4}>Very Difficult</MenuItem>
+                    </Select>
+                  </FormControl>
+                </AccordionDetails>
+              </Accordion>
+            </FormControl>
+
+            <FormControl error={this.state.pqed && this.state.pq3===""} required fullWidth style={{marginBottom: 5, padding: 5, width: "99%"}}>
+              <FormLabel >3. Think about your own experiences choosing classes each term. What could UCI or your department do to make the process easier for you (e.g., changing how requirements are presented, where you get information, or what the requirements are)?</FormLabel>
+              <TextField
+                error={this.state.pqed && this.state.pq3===""}
+                value={this.state.pq3}
+                onChange={(event)=>this.setState({pq3: event.target.value})}
+                style={{marginTop: 5}}
+              />
+            </FormControl>
+
+          </DialogContent>
+          <DialogActions>
+            <Button variant="contained" onClick={this.submitSurvey} color="primary">
+              Submit
+            </Button>
+          </DialogActions>
         </Dialog>
 
         <Dialog open={this.state.progress === 0} maxWidth="lg">
@@ -559,11 +741,11 @@ class App extends Component {
 
           </DialogContent>
           <DialogActions>
-            {/*
+
               <Button variant="outlined" onClick={()=>{this.setState({surveyed: true, progress: 1, help: true})}} color="primary">
                 Skip
               </Button>
-            */}
+
             <Button variant="contained" onClick={this.submitSurvey} color="primary">
               Continue
             </Button>
