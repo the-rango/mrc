@@ -101,11 +101,11 @@ class App extends Component {
       }
     }
 
-    // const name = majors["depts"][Math.floor(Math.random() * majors["depts"].length)];
-    const name = "Economics"
+    const name = majors["depts"][Math.floor(Math.random() * majors["depts"].length)];
+    // const name = "Economics"
     const dept = majors["requirements"][name];
-    // const diff = majors["diffl"][Math.floor(Math.random() * majors["diffl"].length)];
-    const diff = "1";
+    const diff = majors["diffl"][Math.floor(Math.random() * majors["diffl"].length)];
+    // const diff = "1";
     const major = dept[diff];
 
     this.state = {
