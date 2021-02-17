@@ -170,13 +170,6 @@
                   "7"
                ]
             },
-            "EEB129":{
-               "id":"EEB129",
-               "content":"EEB129\nEcology and Evolutionary Biology 129",
-               "tag":[
-                  "6"
-               ]
-            },
             "PHYS111":{
                "id":"PHYS111",
                "content":"PHYS111\nPhysics 111",
@@ -209,7 +202,7 @@
                "id":"EEB129",
                "content":"EEB129\nEcology and Evolutionary Biology 129",
                "tag":[
-                  "18"
+                  "20"
                ]
             },
             "EEB130":{
@@ -591,13 +584,6 @@
                   "7"
                ]
             },
-            "PSYCH123":{
-               "id":"PSYCH123",
-               "content":"PSYCH123\nPsychology 123",
-               "tag":[
-                  "6"
-               ]
-            },
             "SOCSCI111":{
                "id":"SOCSCI111",
                "content":"SOCSCI111\nSocial Sciences 111",
@@ -630,7 +616,7 @@
                "id":"PSYCH123",
                "content":"PSYCH123\nPsychology 123",
                "tag":[
-                  "18"
+                  "20"
                ]
             },
             "PSYCH130":{
@@ -1012,13 +998,6 @@
                   "7"
                ]
             },
-            "ECON129":{
-               "id":"ECON129",
-               "content":"ECON129\nEconomics 129",
-               "tag":[
-                  "6"
-               ]
-            },
             "STATS116":{
                "id":"STATS116",
                "content":"STATS116\nStatistics 116",
@@ -1051,7 +1030,7 @@
                "id":"ECON129",
                "content":"ECON129\nEconomics 129",
                "tag":[
-                  "18"
+                  "20"
                ]
             },
             "ECON131":{
@@ -1433,13 +1412,6 @@
                   "7"
                ]
             },
-            "ENGL134":{
-               "id":"ENGL134",
-               "content":"ENGL134\nEnglish 134",
-               "tag":[
-                  "6"
-               ]
-            },
             "FORLAN118":{
                "id":"FORLAN118",
                "content":"FORLAN118\nForeign Language 118",
@@ -1472,7 +1444,7 @@
                "id":"ENGL134",
                "content":"ENGL134\nEnglish 134",
                "tag":[
-                  "18"
+                  "20"
                ]
             },
             "ENGL135":{
