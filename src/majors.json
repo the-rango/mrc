@@ -15,30 +15,30 @@
       "4":[
         "SUMTAG[1] + Math.min(SUMTAG[2],1) >= 8",
         "SUMTAG[3] + SUMTAG[4] + SUMTAG[17] >= 1",
-        "Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[7] + SUMTAG[8] + Math.min(SUMTAG[9] + SUMTAG[3] + SUMTAG[4] + SUMTAG[17] - 1,1) >= 2",
-        "Math.min(SUMTAG[6], Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[7] + SUMTAG[8] + Math.min(SUMTAG[9] + SUMTAG[3] + SUMTAG[4] + SUMTAG[17] - 1,1) - 2) + SUMTAG[10] + SUMTAG[11] + SUMTAG[19] + SUMTAG[18] + 2*(SUMTAG[12] == 2) + SUMTAG[13] >= 5",
-        "Math.min(SUMTAG[6], Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[7] + SUMTAG[8] + Math.min(SUMTAG[9] + SUMTAG[3] + SUMTAG[4] + SUMTAG[17] - 1,1) - 2) + SUMTAG[10] + SUMTAG[11] + SUMTAG[19] + SUMTAG[18] + 2*(SUMTAG[12] == 2) >= 2",
-        "SUMTAG[14] + Math.min(SUMTAG[15],1) + SUMTAG[16] + Math.min(SUMTAG[7], Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[7] + SUMTAG[8] + Math.min(SUMTAG[9] + SUMTAG[3] + SUMTAG[4] + SUMTAG[17] - 1,1) - 2) + Math.min(SUMTAG[6] + SUMTAG[11] + SUMTAG[19] + SUMTAG[18], Math.min(SUMTAG[6], Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[7] + SUMTAG[8] + Math.min(SUMTAG[9] + SUMTAG[3] + SUMTAG[4] - 1,1) - 2) + SUMTAG[10] + SUMTAG[11] + SUMTAG[19] + SUMTAG[18] + 2*(SUMTAG[12] == 2) + SUMTAG[13] - 5) >= 8"
+        "Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[20] + SUMTAG[7] + SUMTAG[8] + Math.min(SUMTAG[9] + SUMTAG[3] + SUMTAG[4] + SUMTAG[17] - 1,1) >= 2",
+        "Math.min(SUMTAG[6] + SUMTAG[20], Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[20] + SUMTAG[7] + SUMTAG[8] + Math.min(SUMTAG[9] + SUMTAG[3] + SUMTAG[4] + SUMTAG[17] - 1,1) - 2) + SUMTAG[10] + SUMTAG[11] + SUMTAG[19] + SUMTAG[18] + 2*(SUMTAG[12] == 2) + SUMTAG[13] >= 5",
+        "Math.min(SUMTAG[6] + SUMTAG[20], Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[20] + SUMTAG[7] + SUMTAG[8] + Math.min(SUMTAG[9] + SUMTAG[3] + SUMTAG[4] + SUMTAG[17] - 1,1) - 2) + SUMTAG[10] + SUMTAG[11] + SUMTAG[19] + SUMTAG[18] + 2*(SUMTAG[12] == 2) >= 2",
+        "SUMTAG[14] + Math.min(SUMTAG[15],1) + SUMTAG[16] + Math.min(SUMTAG[6] + SUMTAG[20] + SUMTAG[7], Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[20] + SUMTAG[7] + SUMTAG[8] + Math.min(SUMTAG[9] + SUMTAG[3] + SUMTAG[4] + SUMTAG[17] - 1,1) - 2) + Math.min(SUMTAG[6] + SUMTAG[20] + SUMTAG[11] + SUMTAG[19] + SUMTAG[18], Math.min(SUMTAG[6] + SUMTAG[20], Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[20] + SUMTAG[7] + SUMTAG[8] + Math.min(SUMTAG[9] + SUMTAG[3] + SUMTAG[4] - 1,1) - 2) + SUMTAG[10] + SUMTAG[11] + SUMTAG[19] + SUMTAG[18] + 2*(SUMTAG[12] == 2) + SUMTAG[13] - 5) >= 8",
       ],
       "3":[
         "SUMTAG[1] + Math.min(SUMTAG[2],1) >= 8",
         "SUMTAG[3] + SUMTAG[17] >= 1",
-        "Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[7] + Math.min(SUMTAG[8],1) + SUMTAG[4] + SUMTAG[17] - (SUMTAG[3] == 0) >= 2",
-        "Math.min(SUMTAG[6], Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[7] + SUMTAG[8] + Math.min(SUMTAG[9] + SUMTAG[3] + SUMTAG[4] + SUMTAG[17] - 1,1) - 2) + SUMTAG[10] + SUMTAG[11] + SUMTAG[19] + SUMTAG[18] + 2*(SUMTAG[12] == 2) + SUMTAG[13] >= 5",
-        "SUMTAG[14] + Math.min(SUMTAG[15],1) + SUMTAG[16] + Math.min(SUMTAG[7], Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[7] + SUMTAG[8] + Math.min(SUMTAG[9] + SUMTAG[3] + SUMTAG[4] + SUMTAG[17] - 1,1) - 2) + Math.min(SUMTAG[6] + SUMTAG[11] + SUMTAG[19] + SUMTAG[18], Math.min(SUMTAG[6], Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[7] + SUMTAG[8] + Math.min(SUMTAG[9] + SUMTAG[3] + SUMTAG[4] - 1,1) - 2) + SUMTAG[10] + SUMTAG[11] + SUMTAG[19] + SUMTAG[18] + 2*(SUMTAG[12] == 2) + SUMTAG[13] - 5) >= 8"
+        "Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[20] + SUMTAG[7] + Math.min(SUMTAG[8],1) + SUMTAG[4] + SUMTAG[17] - (SUMTAG[3] == 0) >= 2",
+        "Math.min(SUMTAG[6] + SUMTAG[20], Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[20] + SUMTAG[7] + SUMTAG[8] + Math.min(SUMTAG[9] + SUMTAG[3] + SUMTAG[4] + SUMTAG[17] - 1,1) - 2) + SUMTAG[10] + SUMTAG[11] + SUMTAG[19] + SUMTAG[18] + 2*(SUMTAG[12] == 2) + SUMTAG[13] >= 5",
+        "SUMTAG[14] + Math.min(SUMTAG[15],1) + SUMTAG[16] + Math.min(SUMTAG[6] + SUMTAG[20] + SUMTAG[7], Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[20] + SUMTAG[7] + SUMTAG[8] + Math.min(SUMTAG[9] + SUMTAG[3] + SUMTAG[4] + SUMTAG[17] - 1,1) - 2) + Math.min(SUMTAG[6] + SUMTAG[20] + SUMTAG[11] + SUMTAG[19] + SUMTAG[18], Math.min(SUMTAG[6] + SUMTAG[20], Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[20] + SUMTAG[7] + SUMTAG[8] + Math.min(SUMTAG[9] + SUMTAG[3] + SUMTAG[4] - 1,1) - 2) + SUMTAG[10] + SUMTAG[11] + SUMTAG[19] + SUMTAG[18] + 2*(SUMTAG[12] == 2) + SUMTAG[13] - 5) >= 8",
       ],
       "2":[
         "SUMTAG[1] + Math.min(SUMTAG[2],1) >= 8",
         "SUMTAG[3] + SUMTAG[17] >= 1",
-        "Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[7] + Math.min(SUMTAG[8],1) + SUMTAG[4] + SUMTAG[17] - (SUMTAG[3] == 0) >= 2",
+        "Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[7] + SUMTAG[20] + Math.min(SUMTAG[8],1) + SUMTAG[4] + SUMTAG[17] - (SUMTAG[3] == 0) >= 2",
         "SUMTAG[10] + SUMTAG[11] + 2*(SUMTAG[12] == 2) + SUMTAG[13] >= 5",
-        "SUMTAG[14] + Math.min(SUMTAG[15],1) + SUMTAG[16] + SUMTAG[18] + Math.min(SUMTAG[6], Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[7] + Math.min(SUMTAG[8],1) + SUMTAG[4] + SUMTAG[17] - (SUMTAG[3] == 0) - 2) + Math.min(SUMTAG[19], SUMTAG[10] + SUMTAG[11] + 2*(SUMTAG[12] == 2) + SUMTAG[13] - 5)  >= 8"
+        "SUMTAG[14] + Math.min(SUMTAG[15],1) + SUMTAG[16] + SUMTAG[18] + Math.min(SUMTAG[6] + SUMTAG[7] + SUMTAG[20], Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[7] + SUMTAG[20] + Math.min(SUMTAG[8],1) + SUMTAG[4] + SUMTAG[17] - (SUMTAG[3] == 0) - 2) + Math.min(SUMTAG[19], SUMTAG[10] + SUMTAG[11] + 2*(SUMTAG[12] == 2) + SUMTAG[13] - 5)  >= 8",
       ],
       "1":[
         "SUMTAG[1] + Math.min(SUMTAG[2],1) >= 8",
-        "Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[7] + Math.min(SUMTAG[8],1) + SUMTAG[4] + SUMTAG[17] >= 2",
-        "SUMTAG[10] + SUMTAG[11] + SUMTAG[12] + SUMTAG[13] >= 5",
-        "SUMTAG[14] + SUMTAG[15] + SUMTAG[16] + SUMTAG[18]  >= 8"
+        "Math.min(SUMTAG[5],1) + SUMTAG[6] + SUMTAG[7] + SUMTAG[20] + Math.min(SUMTAG[8],1) + SUMTAG[4] + SUMTAG[17] >= 2",
+        "SUMTAG[10] + SUMTAG[11] + SUMTAG[12] + SUMTAG[13] + SUMTAG[19] >= 5",
+        "SUMTAG[14] + SUMTAG[15] + SUMTAG[16] + SUMTAG[18] + SUMTAG[7] + SUMTAG[20] + Math.min(SUMTAG[19],SUMTAG[10] + SUMTAG[11] + SUMTAG[12] + SUMTAG[13] + SUMTAG[19] - 5)  >= 8",
       ]
    },
    "requirements":{
