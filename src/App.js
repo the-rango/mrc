@@ -125,7 +125,7 @@ class App extends Component {
       progress: 0,
       help: false,
       gender: "",
-      ethnicity: "",
+      ethnicity: [""],
       candmajor: "",
       standing: "",
       gpa: 3.0,
@@ -155,6 +155,20 @@ class App extends Component {
     // console.log(type);
     // console.log(payload);
 
+    /*
+    demographics - initial survey
+    reflection - final survey questions
+    start - the participant now has full access to the major selection task. This also contains information on what major and difficulty they are working on, as well as whether this is their first major or second major.
+    select - the participant has dragged a course from the pool to the schedule. This also contains a snapshot of all the courses they have selected at this point, as well as a list (under failed) of the requirements that have not been fulfilled. The table above shows the number of failed requirements.
+    idle - this is triggered when 1) there has been 60 seconds of inactivity (is this enough?), or 2) the user has closed the window.
+    resume - this is triggered when 1) the user resumes activity, or 2) the user has opened the site again. Browsers and the internet can be finicky, so this second trigger is not perfect (same with when the user closes the window); I should be able to account for this when processing the raw data.
+    delete - the participant has deleted a course. This comes also with a snapshot of their selections and the number of requirements failed.
+    clear - same as above, except everything has been deleted.
+    edit - not shown above, but this is when the participant drags a course between quarters.
+    submit - the participant has hit the DO I GRADUATE button. It also comes with their selection and how many failed.
+    restart - the participant has hit the restart button and created a new id. All records for this current id will be scrapped.
+    */
+
     fetch(
       "https://pleaserunforme.herokuapp.com/log/"+type+"/"+this.state.uid,
       {
@@ -176,17 +190,21 @@ class App extends Component {
     var unique_count = new Set();
     for (year in this.state.selected){
       for (cid of this.state.selected[year]["courseIds"]){
+        // Build unique set of all courses (remove dups)
+        // taking only the id part of the course name added
         unique_count.add(cid.substring(0, cid.indexOf("-")));
       }
     }
     unique_count.forEach((cid) => {
       console.log(cid);
+      // Each course might have multiple tags (turned out to be unnecessary)
       for (tag of this.state.courses[cid]["tag"]){
         SUMTAG[tag] += 1;
       }
     });
     var nfailed = [];
     this.state.boolreq.forEach((linereq, i) => {
+      // 0-based which line of requirments was failed
       if(!eval(linereq)){
         nfailed.push(i);
         console.log(linereq);
@@ -344,6 +362,32 @@ class App extends Component {
     }
   };
 
+  submitReflection = () => {
+    if (this.state.pq1 === "" || this.state.pq3 === "") {
+      this.setState({pqed: true});
+    } else {
+      this.setState({progress: 5, help: false, pqed: true}, ()=>{
+        window.localStorage.setItem("save", JSON.stringify(this.state));
+      });
+      const payload = {
+        pq1:this.state.pq1,
+        pq21:this.state.pq21,
+        pq21f:this.state.pq21f,
+        pq22:this.state.pq22,
+        pq22f:this.state.pq22f,
+        pq23:this.state.pq23,
+        pq23f:this.state.pq23f,
+        pq24:this.state.pq24,
+        pq24f:this.state.pq24f,
+        pq25:this.state.pq25,
+        pq25f:this.state.pq25f,
+        pq3:this.state.pq3
+      };
+      console.log(payload);
+      this.report("reflection", payload);
+    }
+  };
+
   closeInstructions = () => {
     if (this.state.firsttime){
       this.setState({help: false, firsttime: false});
@@ -473,11 +517,7 @@ class App extends Component {
           <DialogTitle>You're almost done! Please tell us about your experience</DialogTitle>
           <DialogContent>
             <DialogContentText>
-              {(this.state.done) ?
-                "Thank you! You have completed the study!"
-               :
-                "Think back to your experience and please answer as accurately and completely as you can."
-              }
+              Think back to your experience and please answer as accurately and completely as you can.
             </DialogContentText>
             <Divider />
             <br />
@@ -622,10 +662,19 @@ class App extends Component {
 
           </DialogContent>
           <DialogActions>
-            <Button variant="contained" onClick={this.submitSurvey} color="primary">
+            <Button variant="contained" onClick={this.submitReflection} color="primary">
               Submit
             </Button>
           </DialogActions>
+        </Dialog>
+
+        <Dialog open={this.state.progress === 5} maxWidth="lg">
+          <DialogTitle>Thank you!</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Your response has been recorded. Thank you for your time!
+            </DialogContentText>
+          </DialogContent>
         </Dialog>
 
         <Dialog open={this.state.progress === 0} maxWidth="lg">
@@ -651,11 +700,12 @@ class App extends Component {
             </FormControl>
 
             <FormControl error={this.state.surveyed && this.state.ethnicity===""} required style={{marginBottom: 5, width: "59%", padding: 5}}>
-            <FormLabel >Please select the ethnicity that you identify the most with:</FormLabel>
+            <FormLabel >Please select all ethnicities that you identify with:</FormLabel>
              <Select
                labelId="ethnicity"
                id="ethnicity"
                value={this.state.ethnicity}
+               multiple
                onChange={(event)=>this.setState({ethnicity: event.target.value})}
              >
                <MenuItem value={"White"}>White</MenuItem>
@@ -741,11 +791,11 @@ class App extends Component {
 
           </DialogContent>
           <DialogActions>
-
+            {/*
               <Button variant="outlined" onClick={()=>{this.setState({surveyed: true, progress: 1, help: true})}} color="primary">
                 Skip
               </Button>
-
+              */}
             <Button variant="contained" onClick={this.submitSurvey} color="primary">
               Continue
             </Button>
