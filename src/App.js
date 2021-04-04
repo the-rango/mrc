@@ -850,9 +850,14 @@ class App extends Component {
               </div>
               <div style = {{display: "flex", flexFlow: "column", height: "96%"}}>
                 <div style = {{flex: "1 1 auto", display: "flex"}}>
-                  <Typography variant = "h5" style={{verticalAlign: "middle", marginLeft: 10}}>
-                  <strong>1</strong>
-                  </Typography>
+                  <div>
+                    <Typography variant = "caption" style={{verticalAlign: "middle", marginLeft: 10}}>
+                    year
+                    </Typography>
+                    <Typography variant = "h5" style={{verticalAlign: "middle", marginLeft: 10}}>
+                    <strong>1</strong>
+                    </Typography>
+                  </div>
                   <div style={{flex: "1 1 auto", marginLeft: 3, display: "flex", justifyContent: "space-between"}}>
                     {["1f","1w","1s"].map(columnId => {
                       const column = this.state.selected[columnId];
@@ -863,9 +868,14 @@ class App extends Component {
                 </div>
 
                 <div style = {{flex: "1 1 auto", display: "flex"}}>
-                  <Typography variant = "h5" style={{verticalAlign: "middle", marginLeft: 10}}>
-                  <strong>2</strong>
-                  </Typography>
+                  <div>
+                    <Typography variant = "caption" style={{verticalAlign: "middle", marginLeft: 10}}>
+                    year
+                    </Typography>
+                    <Typography variant = "h5" style={{verticalAlign: "middle", marginLeft: 10}}>
+                    <strong>2</strong>
+                    </Typography>
+                  </div>
                   <div style={{flex: "1 1 auto", marginLeft: 3, display: "flex", justifyContent: "space-between"}}>
                     {["2f","2w","2s"].map(columnId => {
                       const column = this.state.selected[columnId];
@@ -876,9 +886,14 @@ class App extends Component {
                 </div>
 
                 <div style = {{flex: "1 1 auto", display: "flex"}}>
-                  <Typography variant = "h5" style={{verticalAlign: "middle", marginLeft: 10}}>
-                  <strong>3</strong>
-                  </Typography>
+                  <div>
+                    <Typography variant = "caption" style={{verticalAlign: "middle", marginLeft: 10}}>
+                    year
+                    </Typography>
+                    <Typography variant = "h5" style={{verticalAlign: "middle", marginLeft: 10}}>
+                    <strong>3</strong>
+                    </Typography>
+                  </div>
                   <div style={{flex: "1 1 auto", marginLeft: 3, display: "flex", justifyContent: "space-between"}}>
                     {["3f","3w","3s"].map(columnId => {
                       const column = this.state.selected[columnId];
@@ -889,9 +904,14 @@ class App extends Component {
                 </div>
 
                 <div style = {{flex: "1 1 auto", display: "flex"}}>
-                  <Typography variant = "h5" style={{verticalAlign: "middle", marginLeft: 10}}>
-                  <strong>4</strong>
-                  </Typography>
+                  <div>
+                    <Typography variant = "caption" style={{verticalAlign: "middle", marginLeft: 10}}>
+                    year
+                    </Typography>
+                    <Typography variant = "h5" style={{verticalAlign: "middle", marginLeft: 10}}>
+                    <strong>4</strong>
+                    </Typography>
+                  </div>
                   <div style={{flex: "1 1 auto", marginLeft: 3, display: "flex", justifyContent: "space-between"}}>
                     {["4f","4w","4s"].map(columnId => {
                       const column = this.state.selected[columnId];
