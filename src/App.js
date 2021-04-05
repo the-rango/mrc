@@ -810,6 +810,11 @@ class App extends Component {
               Keep trying until you successfully graduate. Click the trashcan icon on courses to delete them; click the CLEAR button to clear all selections.
               <br />
               <br />
+              <em>
+              Please check to make sure that your course selections are “sticking” to your schedule when you drag them over!
+              </em>
+              <br />
+              <br />
               Note that General Education requirements are not included in this study, and you are limited to two courses per quarter. Each course you choose will only count towards one requirement.
               <br />
               <br />
