@@ -148,6 +148,10 @@ class App extends Component {
       pq25: false,
       pq25f: 0,
       pq3: "",
+
+      contactSubmitted: false,
+      pname: "",
+      pemail: "",
     };
   }
 
@@ -385,6 +389,22 @@ class App extends Component {
       };
       console.log(payload);
       this.report("reflection", payload);
+    }
+  };
+
+  submitContact = () => {
+    if (this.state.pname === "" || this.state.pemail === "") {
+      this.setState({contactSubmitted: true});
+    } else {
+      this.setState({progress: 6, help: false, contactSubmitted: true}, ()=>{
+        window.localStorage.setItem("save", JSON.stringify(this.state));
+      });
+      const payload = {
+        pname:this.state.pname,
+        pemail:this.state.pemail,
+      };
+      console.log(payload);
+      this.report("contact", payload);
     }
   };
 
@@ -669,6 +689,40 @@ class App extends Component {
         </Dialog>
 
         <Dialog open={this.state.progress === 5} maxWidth="lg">
+          <DialogTitle>Contact information</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Please enter your contact information to receive your gift card.
+              <br />
+              You should received your gift card within 7 business days.
+            </DialogContentText>
+            <FormControl error={this.state.contactSubmitted && this.state.pname===""} required fullWidth style={{marginBottom: 5, padding: 5, width: "99%"}}>
+              <FormLabel >Name</FormLabel>
+              <TextField
+                error={this.state.contactSubmitted && this.state.pname===""}
+                value={this.state.pname}
+                onChange={(event)=>this.setState({pname: event.target.value})}
+                style={{marginTop: 5}}
+              />
+            </FormControl>
+            <FormControl error={this.state.contactSubmitted && this.state.pemail===""} required fullWidth style={{marginBottom: 5, padding: 5, width: "99%"}}>
+              <FormLabel >Email</FormLabel>
+              <TextField
+                error={this.state.contactSubmitted && this.state.pemail===""}
+                value={this.state.pemail}
+                onChange={(event)=>this.setState({pemail: event.target.value})}
+                style={{marginTop: 5}}
+              />
+            </FormControl>
+          </DialogContent>
+          <DialogActions>
+            <Button variant="contained" onClick={this.submitContact} color="primary">
+              Continue
+            </Button>
+          </DialogActions>
+        </Dialog>
+
+        <Dialog open={this.state.progress === 6} maxWidth="lg">
           <DialogTitle>Thank you!</DialogTitle>
           <DialogContent>
             <DialogContentText>
