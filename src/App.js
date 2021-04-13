@@ -106,6 +106,7 @@ class App extends Component {
     const dept = majors["requirements"][name];
     const diff = majors["diffl"][Math.floor(Math.random() * majors["diffl"].length)];
     // const diff = "1";
+    console.log(diff);
     const major = dept[diff];
 
     this.state = {
@@ -122,7 +123,7 @@ class App extends Component {
       },
       failed: [],
       checked: false,
-      progress: 0,
+      progress: -1,
       help: false,
       gender: "",
       ethnicity: [""],
@@ -474,6 +475,7 @@ class App extends Component {
   };
 
   render() {
+    const study = '<iframe src="https://github.com/the-rango/mrc-public/blob/main/study.pdf" />'
     return (
       <Fragment>
       <IdleTimer
@@ -729,6 +731,21 @@ class App extends Component {
               Your response has been recorded. Thank you for your time!
             </DialogContentText>
           </DialogContent>
+        </Dialog>
+
+        <Dialog open={this.state.progress === -1} fullScreen>
+          <DialogTitle>Study Information Sheet</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+            Please read carefully. Also linked <a href="https://drive.google.com/file/d/1KJq9nPjql2cNcMzAIZ4ZMJa056oCFNNC/view?usp=sharing" target="_blank" rel="noopener noreferrer">here</a>
+            </DialogContentText>
+            <div dangerouslySetInnerHTML={{ __html: study}} />
+          </DialogContent>
+          <DialogActions>
+            <Button variant="contained" onClick={()=>{this.setState({progress: 0})}} color="primary">
+              I consent
+            </Button>
+          </DialogActions>
         </Dialog>
 
         <Dialog open={this.state.progress === 0} maxWidth="lg">
