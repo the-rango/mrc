@@ -34,7 +34,8 @@ import {
 import IdleTimer from 'react-idle-timer'
 import Column from "./column";
 import Pool from "./pool";
-import majors from "./majors.json"
+import majors from "./majors.json";
+import study from "./study.jpg";
 
 const INIT_SELECTED = {
   "1f": {
@@ -475,7 +476,6 @@ class App extends Component {
   };
 
   render() {
-    const study = '<iframe src="https://github.com/the-rango/mrc-public/blob/main/study.pdf" />'
     return (
       <Fragment>
       <IdleTimer
@@ -734,18 +734,16 @@ class App extends Component {
         </Dialog>
 
         <Dialog open={this.state.progress === -1} fullScreen>
-          <DialogTitle>Study Information Sheet</DialogTitle>
+          <DialogTitle>Study Information Sheet | Please read the entire document carefully; also linked <a href="https://drive.google.com/file/d/1KJq9nPjql2cNcMzAIZ4ZMJa056oCFNNC/view?usp=sharing" target="_blank" rel="noopener noreferrer">here</a></DialogTitle>
           <DialogContent>
-            <DialogContentText>
-            Please read carefully. Also linked <a href="https://drive.google.com/file/d/1KJq9nPjql2cNcMzAIZ4ZMJa056oCFNNC/view?usp=sharing" target="_blank" rel="noopener noreferrer">here</a>
-            </DialogContentText>
-            <div dangerouslySetInnerHTML={{ __html: study}} />
+            <img style={{width: "100%"}} src={study} />
+            <div style = {{display: "flex", paddingBottom: "20px"}}>
+              <div style = {{flexGrow: 1}}/>
+              <Button variant="contained" onClick={()=>{this.setState({progress: 0})}} color="primary">
+                I consent
+              </Button>
+            </div>
           </DialogContent>
-          <DialogActions>
-            <Button variant="contained" onClick={()=>{this.setState({progress: 0})}} color="primary">
-              I consent
-            </Button>
-          </DialogActions>
         </Dialog>
 
         <Dialog open={this.state.progress === 0} maxWidth="lg">
